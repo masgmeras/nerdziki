@@ -1,0 +1,29 @@
+* {
+    background: white;
+}
+
+#add_card {
+        width: 200px;
+        height: 150px;
+        background: white;
+        text-align: center;
+        border: 2px lightgray solid;
+}
+#add_card:hover {
+opacity: 60%;
+cursor: pointer;
+}
+#add_icon {
+        width: 80px;
+        height: 80px;
+}
+p {
+        color: gray;
+}
+.cards {
+		width: 200px;
+        height: 150px;
+        background: white;
+        text-align: center;
+        border: 2px lightgray solid;
+        }
