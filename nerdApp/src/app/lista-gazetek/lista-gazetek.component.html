@@ -1,0 +1,15 @@
+<p>lista-gazetek works!</p>
+
+<div class="container">
+  <input type="text" placeholder="Wyszukaj produkt" [(ngModel)]="nrUzytkownika">
+  <button class="button_product" (click)="getSpecificUser(nrUzytkownika)">pobierz</button>
+</div>
+
+<div class="tile" *ngFor="let obiekt of daneZRestApi ">
+  <!--        <span>{{obiekt.thumbnailUrl}}</span>-->
+  <img [src]="obiekt.thumbnailUrl" alt="special_offer_1">
+</div>
+
+<div>
+  {{heros.adressUrl}}
+</div>
