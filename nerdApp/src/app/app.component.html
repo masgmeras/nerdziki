@@ -155,8 +155,9 @@ p {text-align: center;}
     <img src="assets/images/zniżkowo_full_logo.png"/>
   </div>
   <div class="search-box">
-    <input type="text" id="search-input" placeholder="Wyszukaj produkt">
-    <input type="submit" id="search-bottom" value="Szukaj" onclick="searchCategory()">
+    właśnie szukasz - {{szukanyProdukt}}
+    <input type="text" id="search-input" placeholder="Wyszukaj produkt" [(ngModel)]="szukanyProdukt">
+    <input type="submit" id="search-bottom" value="Szukaj" (click)="searchCategory(szukanyProdukt)">
   </div>
 </header>
 <main>
@@ -183,6 +184,9 @@ p {text-align: center;}
   </section>
   <section>
     <h1>Najlepsze Promocje</h1>
+
+    <app-lista-gazetek></app-lista-gazetek>
+
     <div class="container">
       <div class="tile">
         <img src="https://gazetki-promocyjne.net.pl/images/leaflets/lidl-gazetka-19330331111687763594299_239_400_mini.jpg" alt="special_offer_1">

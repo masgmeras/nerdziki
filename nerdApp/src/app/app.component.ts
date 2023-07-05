@@ -14,6 +14,8 @@ export class AppComponent {
   listaMiesa = ["drób", "wołowina"];
   listaNabialu = ["jajca", "mleko"];
   listaChemia = ["płyn do prania", "sól do zmywarki"];
+  allProducts = [...this.listaOwocow, ...this.listaWarzyw, ...this.listaMiesa, ...this.listaNabialu, ...this.listaChemia];
+  filteredProducts: string[] = [];
 
   ustawKategorie(kategoria: string) {
     this.szukanyProdukt = kategoria;
@@ -23,21 +25,28 @@ export class AppComponent {
     this.szukanyProdukt = "";
   }
 
+  searchCategory(szukanyProdukt: string) {
+    this.filteredProducts = this.allProducts.filter(x => x.toLowerCase().includes(szukanyProdukt.toLowerCase()));
+  }
+
   getProdukty() {
+
     if (this.szukanyProdukt == "") {
-      return [...this.listaOwocow, ...this.listaWarzyw, ...this.listaMiesa, ...this.listaNabialu, ...this.listaChemia]
+      this.filteredProducts = this.allProducts;
     }
 
     if (this.szukanyProdukt == "Owoce") {
-      return this.listaOwocow;
-    } else if (this.szukanyProdukt == "Warzywa"){
-      return this.listaWarzyw;
-    } else if (this.szukanyProdukt == "Mięso"){
-      return this.listaMiesa;
-  }  else if (this.szukanyProdukt == "Nabiał") {
-     return this.listaNabialu;
-  } else {
-  return this.listaChemia;
+      this.filteredProducts = this.listaOwocow;
+    } else if (this.szukanyProdukt == "Warzywa") {
+      this.filteredProducts = this.listaWarzyw;
+    } else if (this.szukanyProdukt == "Mięso") {
+      this.filteredProducts = this.listaMiesa;
+    } else if (this.szukanyProdukt == "Nabiał") {
+      this.filteredProducts = this.listaNabialu;
+    } else if (this.szukanyProdukt == "Chemia") {
+      this.filteredProducts = this.listaChemia;
+    }
+
+    return this.filteredProducts;
   }
-}
 }
