@@ -8,9 +8,12 @@ import {Component} from '@angular/core';
 export class AppComponent {
   title = 'nerdApp';
   szukanyProdukt: string = '';
-  listaKategorii = ['Owoce', 'Warzywa']
+  listaKategorii = ['Owoce', 'Warzywa', 'Mięso', 'Nabiał', 'Chemia']
   listaOwocow = ["truskawki", "banbany"];
   listaWarzyw = ["Ogorek", "Salata"];
+  listaMiesa = ["drób", "wołowina"];
+  listaNabialu = ["jajca", "mleko"];
+  listaChemia = ["płyn do prania", "sól do zmywarki"];
 
   ustawKategorie(kategoria: string) {
     this.szukanyProdukt = kategoria;
@@ -22,13 +25,19 @@ export class AppComponent {
 
   getProdukty() {
     if (this.szukanyProdukt == "") {
-      return [...this.listaOwocow, ...this.listaWarzyw]
+      return [...this.listaOwocow, ...this.listaWarzyw, ...this.listaMiesa, ...this.listaNabialu, ...this.listaChemia]
     }
 
     if (this.szukanyProdukt == "Owoce") {
       return this.listaOwocow;
-    } else {
+    } else if (this.szukanyProdukt == "Warzywa"){
       return this.listaWarzyw;
-    }
+    } else if (this.szukanyProdukt == "Mięso"){
+      return this.listaMiesa;
+  }  else if (this.szukanyProdukt == "Nabiał") {
+     return this.listaNabialu;
+  } else {
+  return this.listaChemia;
   }
+}
 }
