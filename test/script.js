@@ -11,8 +11,6 @@ async function odczytajNapisy(plikObrazu) {
   // Wczytaj obraz
   const image = await cv.imreadAsync(plikObrazu);
 
-  // Konwertuj obraz na odcienie szarości
-  const gray = image.cvtColor(cv.COLOR_BGR2GRAY);
 
   // Wykorzystaj bibliotekę Tesseract.js do odczytu napisów
   const { createWorker } = Tesseract;

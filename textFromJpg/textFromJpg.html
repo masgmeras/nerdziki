@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <script src='https://unpkg.com/tesseract.js@2.0.2/dist/tesseract.min.js'></script>
+</head>
+<body>
+<p>TEKST z obrazka. Poczekaj 15sec :)</p>
+<img style="width: 200px; height: 300px;" src="gazetka.jpg">
+<div id="place"></div>
+<script>
+  Tesseract.recognize(
+    'gazetka.jpg',
+    'pol',
+    { logger: m => console.log(m) }
+  ).then(({ data: { text } }) => {
+    console.log(text);
+    document.getElementById('place').innerHTML=text;
+  })
+</script>
+</body>
+</html>

@@ -49,4 +49,16 @@ export class AppComponent {
 
     return this.filteredProducts;
   }
+  marka:string ='';
+  markiSklep= ['lidl', 'biedronka','kaufland'];
+
+ wybierzSklep(shop:string){
+ this.marka = shop;
+ }
+ getSearch() {
+ if (this.marka=="lidl"){
+
+ }
+ }
+
 }

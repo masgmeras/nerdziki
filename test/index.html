@@ -13,28 +13,28 @@
 </head>
 
 <body>
-  <input type="file" id="uploader">
+<input type="file" id="uploader">
 
-  <div class="row">
-    <div class="column">
-      <p>Input Image</p>
-      <img id="imgInput" style="max-width:500px;">
-    </div>
-    <div class="column">
-      <p>Rotated, Original Color</p>
-      <img id="imgOriginal" style="max-width:500px;">
-    </div>
-    <div class="column">
-      <p>Rotated, Grey</p>
-      <img id="imgGrey" style="max-width:500px;">
-    </div>
-    <div class="column">
-      <p>Rotated, Binary</p>
-      <img id="imgBinary" style="max-width:500px;">
-    </div>
+<div class="row">
+  <div class="column">
+    <p>Input Image</p>
+    <img id="imgInput" style="max-width:500px;">
   </div>
+  <div class="column">
+    <p>Rotated, Original Color</p>
+    <img id="imgOriginal" style="max-width:500px;">
+  </div>
+  <div class="column">
+    <p>Rotated, Grey</p>
+    <img id="imgGrey" style="max-width:500px;">
+  </div>
+  <div class="column">
+    <p>Rotated, Binary</p>
+    <img id="imgBinary" style="max-width:500px;">
+  </div>
+</div>
 
-  <script>
+<script>
     const recognize = async ({ target: { files } }) => {
       document.getElementById("imgInput").src = URL.createObjectURL(files[0]);
       const worker = await Tesseract.createWorker({

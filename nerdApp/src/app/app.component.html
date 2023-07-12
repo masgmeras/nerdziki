@@ -1,6 +1,4 @@
-
-
-<style>
+<style xmlns="http://www.w3.org/1999/html">
 body {
     background-color: white;
     font-family: Arial, sans-serif;
@@ -84,7 +82,6 @@ h1 {
 #search-input {
     padding: 10px;
     width: 200px;
-
 }
 
 #search-bottom {
@@ -166,12 +163,12 @@ p {text-align: center;}
       <div id="menu">
         <div class="main_menu">
 
-        <div  *ngFor="let kategoria of listaKategorii">
-          <button class="button_product" (click)="ustawKategorie(kategoria)">{{kategoria}}</button>
+          <div  *ngFor="let kategoria of listaKategorii">
+            <button class="button_product" (click)="ustawKategorie(kategoria)">{{kategoria}}</button>
 
-        </div>
-        <button class="button_showAll" (click)="clear()">Pokaż wszystko</button>
-        <!--    <input [(ngModel)]="szukanyProdukt" #ctrl="ngModel" required>-->
+          </div>
+          <button class="button_showAll" (click)="clear()">Pokaż wszystko</button>
+          <!--    <input [(ngModel)]="szukanyProdukt" #ctrl="ngModel" required>-->
         </div>
 
         <p>Wyszukaj: {{ szukanyProdukt }}</p>
@@ -184,6 +181,19 @@ p {text-align: center;}
   </section>
   <section>
     <h1>Najlepsze Promocje</h1>
+
+    <div class="button-row">
+     <div >Wybierz sklep</div>
+
+      <div *ngFor="let shop of markiSklep">
+        <button class="button_showAll" (click)="wybierzSklep(shop)">{{shop}}</button>
+      </div>
+    </div>
+
+    <p>Wyszukaj:</p>
+    <!--<div *ngFor="let szukaj of getSearch() ">
+      <span>{{szukaj}}</span>
+    </div>-->
 
     <app-lista-gazetek></app-lista-gazetek>
 
