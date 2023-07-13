@@ -1,8 +1,18 @@
-<p>lista-gazetek works!</p>
 
+<div class="button-row">
+  <div >Wybierz sklep</div>
+  <div *ngFor="let shop of markiSklep">
+    <button class="button_showAll" (click)="wybierzSklep(shop)">{{shop}}</button>
+
+  </div>
+</div>
+
+
+
+<p>lista-gazetek works!</p>
 <div class="container">
   <input type="text" placeholder="Wyszukaj produkt" [(ngModel)]="nrUzytkownika">
-  <button class="button_product" (click)="getSpecificUser(nrUzytkownika)">pobierz</button>
+  <button class="button_product" (click)="getSpecificUser(nrUzytkownika)">szukaj</button>
 </div>
 
 <div class="tile" *ngFor="let obiekt of daneZRestApi ">
@@ -11,5 +21,6 @@
 </div>
 
 <div>
+  {{title}}
   {{heros.adressUrl}}
 </div>

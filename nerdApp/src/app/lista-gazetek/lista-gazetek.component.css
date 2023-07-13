@@ -1,0 +1,21 @@
+.button_showAll {
+  padding: 10px;
+    margin: 5px;
+    border: 2px solid black;
+    border-radius: 50%;
+   background-color: black;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+.button_showAll:hover {
+   background-color: white;
+    color: black;
+}
+p {text-align: center;}

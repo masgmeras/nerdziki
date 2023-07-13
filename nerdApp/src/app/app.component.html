@@ -182,19 +182,6 @@ p {text-align: center;}
   <section>
     <h1>Najlepsze Promocje</h1>
 
-    <div class="button-row">
-     <div >Wybierz sklep</div>
-
-      <div *ngFor="let shop of markiSklep">
-        <button class="button_showAll" (click)="wybierzSklep(shop)">{{shop}}</button>
-      </div>
-    </div>
-
-    <p>Wyszukaj:</p>
-    <!--<div *ngFor="let szukaj of getSearch() ">
-      <span>{{szukaj}}</span>
-    </div>-->
-
     <app-lista-gazetek></app-lista-gazetek>
 
     <div class="container">

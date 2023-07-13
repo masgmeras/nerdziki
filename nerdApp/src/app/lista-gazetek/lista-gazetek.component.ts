@@ -15,10 +15,23 @@ export class ListaGazetekComponent implements OnInit {
     id: 1,
     name: 'Windstorm'
   };
+  title = 'dupa jasiu karuzela nie działa :/...kupa, nie umiem :/';
 
+  wyszukiwarkaLidl = []
+  wyszukiwarkaBiedronka = []
+  wyszukiwarkaKaufland = []
 
+//class wyszukiwarka {constructor(public name: string, public id: number ){}
+
+ marka:string ='';
+  markiSklep= ['Lidl', 'Biedronka', 'Kaufland'];
+
+ wybierzSklep(shop:string){
+ this.marka = shop;
+ }
   constructor(private listaGazetekService: ListaGazetekService) {
   }
+
 
   ngOnInit() {
     // Called after the constructor and called  after the first ngOnChanges()
