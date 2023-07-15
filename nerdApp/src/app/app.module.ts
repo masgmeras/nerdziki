@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from "@angular/common/http";
 import { ListaGazetekComponent } from './lista-gazetek/lista-gazetek.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,9 @@ import { ListaGazetekComponent } from './lista-gazetek/lista-gazetek.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+	MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
