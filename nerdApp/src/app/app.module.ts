@@ -5,15 +5,24 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from "@angular/common/http";
-import { ListaGazetekComponent } from './lista-gazetek/lista-gazetek.component';
+import { LeafletsComponent } from './lista-gazetek/leaflets.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {BrandFilterComponent} from "./brand-filter/brand-filter.component";
+import {MatCheckboxModule} from "@angular/material/checkbox";
+// import { BrandFilterComponent } from './brand-filter/brand-filter.component';
+
+import {MatIconModule} from '@angular/material/icon';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from "@angular/material/card";
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListaGazetekComponent
+    LeafletsComponent,
+    BrandFilterComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +30,11 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-	MatSlideToggleModule
+	  MatSlideToggleModule,
+    MatCheckboxModule,
+    MatButtonModule,
+    MatIconModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

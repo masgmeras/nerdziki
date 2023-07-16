@@ -1,0 +1,30 @@
+
+
+
+
+<p>lista-gazetek works!</p>
+<!--<div class="container">-->
+<!--  <input type="text" placeholder="Wyszukaj produkt" [(ngModel)]="nrUzytkownika">-->
+<!--  <button class="button_product" (click)="getSpecificUser(nrUzytkownika)">szukaj</button>-->
+<!--</div>-->
+
+<!--<div class="tile" *ngFor="let obiekt of daneZRestApi ">-->
+<!--  &lt;!&ndash;        <span>{{obiekt.thumbnailUrl}}</span>&ndash;&gt;-->
+<!--  <img [src]="obiekt.thumbnailUrl" alt="special_offer_1">-->
+<!--</div>-->
+
+<div>
+
+  <div class="button-row">
+    <div >Wybierz sklep</div>
+    <div *ngFor="let store of storesList">
+      <button class="button_showAll" (click)="pickStore(store)">{{store}}</button>
+    </div>
+  </div>
+
+
+  <div class="tile" *ngFor="let leafletModel of leafletsList ">
+            <span>{{leafletModel.brand}}</span>
+            <span>{{leafletModel.pageUrl}}</span>
+  </div>
+</div>

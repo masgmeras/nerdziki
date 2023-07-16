@@ -1,22 +1,30 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {LeafletModel} from "./leafletModel";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
-export class ListaGazetekService {
+export class LeafletsService {
 
   constructor(private http: HttpClient) {
   }
 
   getData() {
     // this.http.get('https://jsonplaceholder.typicode.com/users')
-    this.http.get('https://jsonplaceholder.typicode.com/photos')
+    return this.http.get('http://firelocker.pl:3000/getLeaflets')
       .subscribe(data => {
-        console.log(data);
+        //console.log(data);
         return data;
         // handle the data
       });
+  }
+
+  public getLeaflets(): Observable<LeafletModel[]> {
+    const url = 'http://firelocker.pl:3000/getLeaflets';
+
+    return this.http.get<LeafletModel[]>(url);
   }
 
   getSpecificUser(nrUzytkownika: string) {

@@ -181,9 +181,20 @@ p {text-align: center;}
   </section>
   <section>
     <h1>Najlepsze Promocje</h1>
-	<mat-slide-toggle>Toggle me!</mat-slide-toggle>
+	  <mat-slide-toggle>Toggle me!</mat-slide-toggle>
+    <mat-checkbox class="example-margin" >Indeterminate</mat-checkbox>
 
-    <app-lista-gazetek></app-lista-gazetek>
+    <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
+      <mat-icon>delete</mat-icon>
+    </button>
+
+    <mat-card>
+      <mat-card-content>Simple card</mat-card-content>
+    </mat-card>
+
+    <app-brand-filter></app-brand-filter>
+
+    <app-leaflets></app-leaflets>
 
     <div class="container">
       <div class="tile">
