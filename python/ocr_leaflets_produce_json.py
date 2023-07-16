@@ -27,15 +27,17 @@ def find_urls_with_class(leaflet):
     for w in wrapper:
         pdf = [w]
         ahref = w.find_elements(By.XPATH, "a[contains(@class, 'm-flyer-tile')]")
-        createJsonModel(leaflet, ahref[0].get_attribute('href'), pdf[0].get_attribute('data-download-url'))
+        thumbnail = w.find_elements(By.XPATH, "a/div/figure/img")
+        createJsonModel(leaflet, ahref[0].get_attribute('href'), pdf[0].get_attribute('data-download-url'), thumbnail[0].get_attribute('src'))
     #LIDL
     wrapper = driver.find_elements(By.XPATH, "//div[contains(@class, 'flyer__content')]")
     for w in wrapper:
         pdf = w.find_elements(By.XPATH, "a")
         ahref = w.find_elements(By.XPATH, "div[contains(@class, 'flyer__image')]/a")
-        createJsonModel(leaflet, ahref[0].get_attribute('href'), pdf[0].get_attribute('href'))
+        thumbnail = w.find_elements(By.XPATH, "div[contains(@class, 'flyer__image')]/a/img")
+        createJsonModel(leaflet, ahref[0].get_attribute('href'), pdf[0].get_attribute('href'), thumbnail[0].get_attribute('src'))
 
-def createJsonModel(leaflet, pageUrl, pdfUrl):
+def createJsonModel(leaflet, pageUrl, pdfUrl, thumbnailUrl):
     response = requests.get(pdfUrl)
     file = open(TEMP_PDF_FILENAME, "wb")
     file.write(response.content)
@@ -47,17 +49,18 @@ def createJsonModel(leaflet, pageUrl, pdfUrl):
                           colorspace=fitz.csRGB, clip=None, alpha=True, annots=True)
         pix.save("samplepdfimage-%i.png" % page.number)  # save file
         result = reader.readtext("samplepdfimage-%i.png" % page.number, detail = 0)
-        json.dump(createOcrParsedPageItem(leaflet, pageUrl, pdfUrl, page, result), text_file)
+        json.dump(createOcrParsedPageItem(leaflet, pageUrl, pdfUrl, thumbnailUrl, page, result), text_file)
         text_file.write(",")   
         os.remove("samplepdfimage-%i.png" % page.number)
     doc.close()
     os.remove(TEMP_PDF_FILENAME)
 
-def createOcrParsedPageItem(leaflet, pageUrl, pdfUrl, page, result):
+def createOcrParsedPageItem(leaflet, pageUrl, pdfUrl, thumbnailUrl, page, result):
     dictionary = {
         "brand": leaflet['brand'],
         "pageUrl": pageUrl,
         "pdfUrl": pdfUrl,
+        "thumbnailUrl": thumbnailUrl,
         "pageNo": page.number + 1,
         "ocrResult": result
         }
