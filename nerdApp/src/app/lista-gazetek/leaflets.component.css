@@ -1,0 +1,13 @@
+.example-card {
+  max-width: 400px;
+}
+
+mat-card {
+  width: calc(100% - 50px);
+  /*height: calc(100% - 70px);*/
+}
+
+.example-header-image {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/65/Kaufland_Deutschland.png');
+  background-size: cover;
+}

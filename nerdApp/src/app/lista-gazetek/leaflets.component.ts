@@ -9,6 +9,7 @@ import {LeafletModel} from "./leafletModel";
 })
 export class LeafletsComponent implements OnInit {
   leafletsList: LeafletModel[] = [];
+  groupedLeafletsListByPageUrl: LeafletModel[] = [];
   storesList: string[] = [];
   selectedStore: string = '';
 
@@ -18,6 +19,7 @@ export class LeafletsComponent implements OnInit {
   ngOnInit() {
     this.leafletsService.getLeaflets().subscribe(data => {
       this.leafletsList = data;
+      this.createGroupedLeaflets(data);
       this.storesList = [...new Set(data.map(leaflet => leaflet.brand))];
     })
   }
@@ -25,4 +27,22 @@ export class LeafletsComponent implements OnInit {
   pickStore(selectedStore: string) {
     this.selectedStore = selectedStore;
   }
+
+  private createGroupedLeaflets(leafletsList: LeafletModel[]){
+    const groupByPageUrl = this.groupBy(leafletsList, "pageUrl");
+    for (const [key] of Object.entries(groupByPageUrl)) {
+      this.groupedLeafletsListByPageUrl.push(groupByPageUrl[key][0]);
+    }
+  }
+
+  private groupBy(arr: any, key: any) {
+    const initialValue = {};
+    return arr.reduce((acc: any, cval:any) => {
+      const myAttribute = cval[key];
+      acc[myAttribute] = [...(acc[myAttribute] || []), cval]
+      return acc;
+    }, initialValue);
+  }
+
+
 }
