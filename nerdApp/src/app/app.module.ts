@@ -9,12 +9,10 @@ import { LeafletsComponent } from './lista-gazetek/leaflets.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import {BrandFilterComponent} from "./brand-filter/brand-filter.component";
+
 import {MatCheckboxModule} from "@angular/material/checkbox";
-// import { BrandFilterComponent } from './brand-filter/brand-filter.component';
 
 import {MatIconModule} from '@angular/material/icon';
-import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from "@angular/material/card";
 import {MatGridListModule} from "@angular/material/grid-list";
@@ -23,8 +21,7 @@ import {MatTooltipModule} from "@angular/material/tooltip";
 @NgModule({
   declarations: [
     AppComponent,
-    LeafletsComponent,
-    BrandFilterComponent
+    LeafletsComponent
   ],
   imports: [
     BrowserModule,
