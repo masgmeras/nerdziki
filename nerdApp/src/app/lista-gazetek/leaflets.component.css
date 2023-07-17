@@ -1,5 +1,6 @@
 .example-card {
   max-width: 400px;
+  /*max-height: 400px;*/
 }
 
 mat-card {
@@ -7,7 +8,20 @@ mat-card {
   /*height: calc(100% - 70px);*/
 }
 
-.example-header-image {
+.example-header-image-kaufland {
   background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/65/Kaufland_Deutschland.png');
   background-size: cover;
+}
+
+.example-header-image-lidl {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/91/Lidl-Logo.svg');
+  background-size: cover;
+}
+
+.example-image {
+  margin: 0 auto;
+  height: 300px;
+  /*width: 200px;*/
+  max-width: 50%;
+  max-height: 70%;
 }
