@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {LeafletModel} from "./leafletModel";
 import {Observable} from "rxjs";
@@ -23,8 +23,8 @@ export class LeafletsService {
 
   public getLeaflets(): Observable<LeafletModel[]> {
     const url = 'http://firelocker.pl:3000/getLeaflets';
-
-    return this.http.get<LeafletModel[]>(url);
+    const localUrl = '../assets/generate_urls.json';
+    return this.http.get<LeafletModel[]>(localUrl);
   }
 
   getSpecificUser(nrUzytkownika: string) {
