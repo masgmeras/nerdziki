@@ -13,6 +13,7 @@ export class LeafletsComponent implements OnInit {
   filteredGroupedLeafletsListByPageUrl: LeafletModel[] = [];
   storesList: any = [];
   selectedStore: string = '';
+  selectedProduct: string = '';
   private originalList: any;
 
   constructor(private leafletsService: LeafletsService) {
@@ -21,6 +22,7 @@ export class LeafletsComponent implements OnInit {
   ngOnInit() {
     this.leafletsService.getLeaflets().subscribe(data => {
       this.leafletsList = data;
+      console.log(data)
       this.createGroupedLeaflets(data);
 
       let brands = [...new Set(data.map(leaflet => leaflet.brand))];
@@ -33,7 +35,14 @@ export class LeafletsComponent implements OnInit {
   pickStore() {
     // @ts-ignore
     let listaWybranych = this.storesList.filter(x => x.checked).map(x => x.brand);
+
     this.filteredGroupedLeafletsListByPageUrl = this.groupedLeafletsListByPageUrl.filter(x => listaWybranych.includes(x.brand))
+    if (this.selectedProduct) {
+      this.filteredGroupedLeafletsListByPageUrl = this.filteredGroupedLeafletsListByPageUrl.filter(x => x.ocrResult.includes(this.selectedProduct));
+      console.log(this.filteredGroupedLeafletsListByPageUrl)
+    }
+
+    console.log(this.filteredGroupedLeafletsListByPageUrl)
   }
 
   private createGroupedLeaflets(leafletsList: LeafletModel[]){

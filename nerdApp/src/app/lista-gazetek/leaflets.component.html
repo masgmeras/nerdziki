@@ -27,7 +27,7 @@
   <div class="button-row">
     <div>Wybierz sklep</div>
 
-
+    <input [(ngModel)]="selectedProduct" (ngModelChange)="pickStore()"/>
     <div *ngFor="let store of storesList">
       <mat-checkbox [(ngModel)]="store.checked" (click)="pickStore()">{{store.brand}}</mat-checkbox>
     </div>
