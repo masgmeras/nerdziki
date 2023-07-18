@@ -30,7 +30,7 @@ export class LeafletsComponent implements OnInit {
     })
   }
 
-  pickStore() {
+  updateStoreResults() {
     // @ts-ignore
     let listaWybranych = this.storesList.filter(x => x.checked).map(x => x.brand);
 

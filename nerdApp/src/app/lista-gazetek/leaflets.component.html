@@ -27,9 +27,9 @@
   <div class="button-row">
     <div>Wybierz sklep</div>
 
-    <input [(ngModel)]="selectedProduct" (ngModelChange)="pickStore()"/>
+    <input [(ngModel)]="selectedProduct" (ngModelChange)="updateStoreResults()"/>
     <div *ngFor="let store of storesList">
-      <mat-checkbox [(ngModel)]="store.checked" (click)="pickStore()">{{store.brand}}</mat-checkbox>
+      <mat-checkbox [(ngModel)]="store.checked" (click)="updateStoreResults()">{{store.brand}}</mat-checkbox>
     </div>
 <!--          <button class="button_showAll" (click)="pickStore()">Szukaj wybranych</button>-->
     {{storesList | json}}
