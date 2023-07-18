@@ -10,8 +10,10 @@ import {LeafletModel} from "./leafletModel";
 export class LeafletsComponent implements OnInit {
   leafletsList: LeafletModel[] = [];
   groupedLeafletsListByPageUrl: LeafletModel[] = [];
-  storesList: string[] = [];
+  filteredGroupedLeafletsListByPageUrl: LeafletModel[] = [];
+  storesList: any = [];
   selectedStore: string = '';
+  private originalList: any;
 
   constructor(private leafletsService: LeafletsService) {
   }
@@ -20,12 +22,18 @@ export class LeafletsComponent implements OnInit {
     this.leafletsService.getLeaflets().subscribe(data => {
       this.leafletsList = data;
       this.createGroupedLeaflets(data);
-      this.storesList = [...new Set(data.map(leaflet => leaflet.brand))];
+
+      let brands = [...new Set(data.map(leaflet => leaflet.brand))];
+      for (let i = 0; i < brands.length; i++) {
+        this.storesList.push({'brand': brands[i], 'checked': true});
+      }
     })
   }
 
-  pickStore(selectedStore: string) {
-    this.selectedStore = selectedStore;
+  pickStore() {
+    // @ts-ignore
+    let listaWybranych = this.storesList.filter(x => x.checked).map(x => x.brand);
+    this.filteredGroupedLeafletsListByPageUrl = this.groupedLeafletsListByPageUrl.filter(x => listaWybranych.includes(x.brand))
   }
 
   private createGroupedLeaflets(leafletsList: LeafletModel[]){
@@ -33,6 +41,7 @@ export class LeafletsComponent implements OnInit {
     for (const [key] of Object.entries(groupByPageUrl)) {
       this.groupedLeafletsListByPageUrl.push(groupByPageUrl[key][0]);
     }
+    this.filteredGroupedLeafletsListByPageUrl = this.groupedLeafletsListByPageUrl;
   }
 
   private groupBy(arr: any, key: any) {
