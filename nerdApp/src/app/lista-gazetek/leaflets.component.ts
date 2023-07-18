@@ -12,9 +12,7 @@ export class LeafletsComponent implements OnInit {
   groupedLeafletsListByPageUrl: LeafletModel[] = [];
   filteredGroupedLeafletsListByPageUrl: LeafletModel[] = [];
   storesList: any = [];
-  selectedStore: string = '';
   selectedProduct: string = '';
-  private originalList: any;
 
   constructor(private leafletsService: LeafletsService) {
   }
