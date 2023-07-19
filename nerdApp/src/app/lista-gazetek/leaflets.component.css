@@ -18,6 +18,12 @@ mat-card {
   background-size: cover;
 }
 
+.example-header-image-Janusze-kradno {
+  background-image: url('https://i0.wp.com/cowkrakowie.pl/wp-content/uploads/2019/03/janusz.jpg?resize=850%2C491&ssl=1');
+  background-size: cover;
+}
+
+
 .example-image {
   margin: 0 auto;
   height: 300px;
