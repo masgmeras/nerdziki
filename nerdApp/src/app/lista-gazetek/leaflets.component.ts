@@ -22,12 +22,15 @@ export class LeafletsComponent implements OnInit {
       this.leafletsList = data;
       console.log(data)
 
+      /*
       for (let i = 0; i < data.length; i++) { // 0 -> 365
         let ocrResult = data[i].ocrResult; // 0 ['od poniedziałku', 'od pomiedziaeku, 17.07',]
         for (let j = 0; j < ocrResult.length; j++) {
           ocrResult[j] = ocrResult[j].toLowerCase();
         }
       }
+      */
+
 
       console.log(data)
 

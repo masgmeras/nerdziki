@@ -2,7 +2,7 @@
 
 <!--https://medium.com/the-clever-dev/awesome-angular-material-responsive-grid-list-with-cards-example-6b0aab655594-->
 <!--https://stackoverflow.com/questions/54218485/angular-7-responsive-layout-using-material-grid-->
-<mat-grid-list cols="4" rowHeight="1:1">
+<mat-grid-list cols="3" rowHeight="1:1">
   <mat-grid-tile rowspan="1" *ngFor="let leaflet of filteredGroupedLeafletsListByPageUrl">
     <mat-card class="example-card tile">
       <mat-card-header>
@@ -14,6 +14,7 @@
       <!--      <mat-card-content>Simple card</mat-card-content>-->
       <mat-card-actions>
         <a mat-icon-button color="primary" [href]="leaflet.pdfUrl" target="_blank">
+<!--        <a mat-icon-button color="primary" [href]="leaflet.pdfUrl + '?page=' + leaflet.pageNo" target="_blank">-->
           <mat-icon>open_in_new</mat-icon>
         </a>
       </mat-card-actions>
