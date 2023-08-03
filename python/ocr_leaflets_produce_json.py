@@ -48,7 +48,7 @@ def createJsonModel(leaflet, pageUrl, pdfUrl, thumbnailUrl):
         pix = page.get_pixmap(matrix=fitz.Identity, dpi=None,
                           colorspace=fitz.csRGB, clip=None, alpha=True, annots=True)
         pix.save("samplepdfimage-%i.png" % page.number)  # save file
-        result = reader.readtext("samplepdfimage-%i.png" % page.number, detail = 0)
+        result = reader.readtext("samplepdfimage-%i.png" % page.number, detail = 0, paragraph=True)
         json.dump(createOcrParsedPageItem(leaflet, pageUrl, pdfUrl, thumbnailUrl, page, result), text_file)
         text_file.write(",")   
         os.remove("samplepdfimage-%i.png" % page.number)
