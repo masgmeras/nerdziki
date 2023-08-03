@@ -1,3 +1,4 @@
+import { ObserversModule } from '@angular/cdk/observers';
 import {Component} from '@angular/core';
 
 @Component({
@@ -49,5 +50,7 @@ export class AppComponent {
 
     return this.filteredProducts;
   }
+
+  
 
 }

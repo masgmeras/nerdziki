@@ -1,155 +1,43 @@
-<style xmlns="http://www.w3.org/1999/html">
-body {
-    background-color: white;
-    font-family: Arial, sans-serif;
-}
-
-  header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 5px 40px 20px 40px;
-      width: 960px;
-      margin: 0 auto;
-}
-
-h1 {
-    color: black;
-    font-size: 36px;
-    font-weight: bold;
-    letter-spacing: 5px;
-    text-align: center;
-    margin: 20px 0;
-    text-transform: uppercase;
-}
-
-.logo {
-    height: 80px;
-    width: auto;
-    display: flex;
-}
-
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.tile {
-    width: 30%;
-    margin: 1.5%;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease-in-out;
-}
-
-.tile:hover {
-    transform: scale(1.1);
-    box-shadow: 0px 0px 10px 5px rgba(34, 36, 36, 0.388);
-    border-radius: 10px;
-}
-
-.tile:before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: -10%;
-    left: -10%;
-    width: 120%;
-    height: 120%;
-    background-color: rgba(255,255,255,0.3);
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    border-radius: 10px;
-}
-
-.tile img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 10px;
-}
-
-.search-box {
-    margin-bottom: 20px;
-    display: flex;
-}
-
-#search-input {
-    padding: 10px;
-    width: 200px;
-}
-
-#search-bottom {
-    padding: 10px 20px;
-    background-color: #000c01;
-    color: white;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.search-results {
-    font-weight: bold;
-}
-
-.main_menu{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.button_product {
-    padding: 10px;
-    margin: 5px;
-    border: 2px solid black;
-    border-radius: 50%;
-    background-color: white;
-    color: black;
-    text-decoration: none;
-    text-align: center;
-    width: 100px;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0.3s;
-}
-
-.button_product:hover {
-    background-color: black;
-    color: white;
-}
-.button_showAll {
-  padding: 10px;
-    margin: 5px;
-    border: 2px solid black;
-    border-radius: 50%;
-   background-color: black;
-    color: white;
-    text-decoration: none;
-    text-align: center;
-    width: 100px;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0.3s;
-}
-.button_showAll:hover {
-   background-color: white;
-    color: black;
-}
-p {text-align: center;}
-
-</style>
-
 <body>
 <header>
   <div class="logo">
-    <img src="assets/images/zniżkowo_full_logo.png"/>
+    <img src="images/zniżka_full_logo.png"/>
+    <img src="images/arrow.png" id="arrow-top" class="arrow">
+    <img src="images/arrow.png" class="arrow" id="arrow-aside">
+    <span id="text-top">Oraz produkty</span>
+    <span id="text-aside">Wybierz Sklep</span>
+  </div>
+  <div class="checkbox-container" id="checkbox-top">
+    <label class="checkbox-label" id="owoce">
+      <input type="checkbox">
+      <img src="images/button-row-first-color/owoce1.png" alt="Owoce">
+      <span class="product-name">Owoce</span>
+    </label>
+    <label class="checkbox-label" id="warzywa">
+      <input type="checkbox">
+      <img src="images/button-row-first-color/warzywa1.png" alt="Warzywa">
+      <span class="product-name">Warzywa</span>
+    </label>
+    <label class="checkbox-label" id="mieso">
+      <input type="checkbox">
+      <img src="images/button-row-first-color/mieso1.png" alt="Mięso">
+      <span class="product-name">Mięso</span>
+    </label>
+    <label class="checkbox-label" id="nabial">
+      <input type="checkbox">
+      <img src="images/button-row-first-color/nabial1.png" alt="Nabiał">
+      <span class="product-name">Nabiał</span>
+    </label>
+    <label class="checkbox-label" id="chemia">
+      <input type="checkbox">
+      <img src="images/button-row-first-color/chemia1.png" alt="Chemia">
+      <span class="product-name">Chemia</span>
+    </label>
+    <label class="checkbox-label" id="wszystko">
+      <input type="button">
+      <img src="images/button-row-first-color/wszystko1.png" alt="Pokaż Wszystko">
+      <span class="product-name">  Pokaż Wszystko</span>
+    </label>
   </div>
   <div class="search-box">
     właśnie szukasz - {{szukanyProdukt}}
@@ -159,6 +47,54 @@ p {text-align: center;}
 </header>
 <main>
   <section>
+    <div class="checkbox-container" id="checkbox-aside">
+      <label class="checkbox-label" id="lidl">
+        <input type="checkbox">
+        <img src="images/button-row-first-color/lidl1.png" alt="Lidl">
+        <span class="product-name">Lidl</span>
+      </label>
+      <label class="checkbox-label" id="kaufland">
+        <input type="checkbox">
+        <img src="images/button-row-first-color/kaufland1.png" alt="Kaufland">
+        <span class="product-name">Kaufland</span>
+      </label>
+      <label class="checkbox-label" id="biedronka">
+        <input type="checkbox">
+        <img src="images/button-row-first-color/biedronka1.png" alt="Biedronka">
+        <span class="product-name">Biedronka</span>
+      </label>
+</div>
+  <section>
+      <div id="tiles-container" class="container">
+        <div class="tile">
+          <img src="https://gazetki-promocyjne.net.pl/images/leaflets/lidl-gazetka-19330331111687763594299_239_400_mini.jpg" alt="special_offer_1">
+        </div>
+        <div class="tile">
+          <img src="https://gazetki-promocyjne.net.pl/images/leaflets/kaufland-gazetka-10570790341687842543980_240_400_mini.jpg" alt="special_offer_2">
+        </div>
+        <div class="tile">
+          <img src="https://gazetki-promocyjne.net.pl/images/leaflets/biedronka-gazetka-9684796931687730305206_254_400_mini.jpg" alt="special_offer_3">
+        </div>
+        <div class="tile">
+          <img src="https://gazetki-promocyjne.net.pl/images/leaflets/rossmann-gazetka-3276381041687604737302_244_400_mini.jpg" alt="special_offer_4">
+        </div>
+        <div class="tile">
+          <img src="https://gazetkapromocyjna.com.pl/lidl/1337/lidl-2023-06-26-cover.jpg" alt="special_offer_5">
+        </div>
+        <div class="tile">
+          <img src="https://polskagazeta.com/uploads/6efce8f8c59934e377f4ef64376b4b95-0.webp" alt="special_offer_6">
+        </div>
+        <div class="tile">
+          <img src="https://www.gazetkapromocyjna24.pl/media/k2/items/cache/a7e4f6eacfc7194b8598720b5f1dd65c_M.webp" alt="special_offer_7">
+        </div>
+        <div class="tile">
+          <img src="https://www.gazetkapromocyjna24.pl/media/k2/items/cache/faf6bc687118bda8527951b50c560f45_M.webp" alt="special_offer_8">
+        </div>
+        <div class="tile">
+          <img src="https://gazetki-promocyjne.net.pl/images/leaflets/biedronka-gazetka-14818212531686340621737_900_1412_big.jpg" alt="special_offer_9">
+        </div>
+      </div>
+  </section>
     <div class="button-row">
       <div id="menu">
         <div class="main_menu">
