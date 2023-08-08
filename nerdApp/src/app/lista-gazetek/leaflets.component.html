@@ -1,9 +1,7 @@
-<p>lista-gazetek works!</p>
-
 <!--https://medium.com/the-clever-dev/awesome-angular-material-responsive-grid-list-with-cards-example-6b0aab655594-->
 <!--https://stackoverflow.com/questions/54218485/angular-7-responsive-layout-using-material-grid-->
 <mat-grid-list cols="3" rowHeight="1:1">
-  <mat-grid-tile rowspan="1" *ngFor="let leaflet of filteredGroupedLeafletsListByPageUrl">
+  <mat-grid-tile rowspan="1" rowHeight="fit" *ngFor="let leaflet of filteredGroupedLeafletsListByPageUrl">
     <mat-card class="example-card tile">
       <mat-card-header>
         <div mat-card-avatar [class]="'example-header-image-' + leaflet.brand" ></div>
@@ -29,10 +27,10 @@
     <div>Wybierz sklep</div>
 
     <input [(ngModel)]="selectedProduct" (ngModelChange)="updateStoreResults()"/>
-    <div *ngFor="let store of storesList">
+    <div *ngFor="let store of getStoreList()">
       <mat-checkbox [(ngModel)]="store.checked" (click)="updateStoreResults()">{{store.brand}}</mat-checkbox>
     </div>
 <!--          <button class="button_showAll" (click)="pickStore()">Szukaj wybranych</button>-->
-    {{storesList | json}}
+    {{getStoreList() | json}}
   </div>
 </div>

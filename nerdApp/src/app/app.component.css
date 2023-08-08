@@ -1,249 +1,268 @@
-  body {
-    background-color: #A8D0E6;
-    font-family: Arial, sans-serif;
-  }
+body {
+  background-color: #A8D0E6;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+main {
+  background-color: #A8D0E6;
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+}
   
-  header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-      margin: 0 auto;
-  }
+h1 {
+  color: black;
+  font-size: 36px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-align: center;
+  margin: 20px 0;
+  text-transform: uppercase;
+}
+
+.logo {
+  height: 80px;
+  width: auto;
+  display: flex;
+}
+
+/*.container {    
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  max-width: 960px;
+  margin-top: 40px;
+  margin-left: 150px;
+  padding: 20px;
+  border: 2px solid white;
+  border-right: none;
+  border-bottom: none; 
+}
+
+#container {
+  flex-grow: 3;
+}*/
   
-  main {
-    margin: 20px auto;
-    display: flex;
-    justify-content: space-around;
-  }
-    
-  h1 {
-    color: black;
-    font-size: 36px;
-    font-weight: bold;
-    letter-spacing: 5px;
-    text-align: center;
-    margin: 20px 0;
-    text-transform: uppercase;
-  }
+.tile {
+  width: 30%;
+  margin: 1.5%;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
   
-  .logo {
-    height: 80px;
-    width: auto;
-    display: flex;
-  }
-   
-  .container {    /* Kafle z zdjęciami */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    align-items: center;
-    max-width: 960px;
-    margin: 0 auto;
-    margin-top: 20px;
-    padding: 20px;
-    border: 2px solid white;
-  }
-    
-  .tile {
-    width: 30%;
-    margin: 1.5%;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease-in-out;
-  }
-    
-  .tile:hover {
-    transform: scale(1.1);
-    box-shadow: 0px 0px 10px 5px rgba(34, 36, 36, 0.388);
-    border-radius: 10px;
-  }
-    
-  .tile:before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: -10%;
-    left: -10%;
-    width: 120%;
-    height: 120%;
-    background-color: rgba(255,255,255,0.3);
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    border-radius: 10px;
-  }
-    
-  .tile img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 10px;
-  }
+.tile:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 10px 5px rgba(34, 36, 36, 0.388);
+  border-radius: 10px;
+}
   
-  .search-box {           /* Wyszukiwarka */
-    margin-top: 8px;
-    display: flex;
-    background-color: white;
-    border-radius: 30px;
-    padding: 20px;
-    height: 20px;
-  }
+.tile:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  background-color: rgba(255,255,255,0.3);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
   
-  .search-box input[type="text"] {
-    padding: 10px;
-    width: 120px;
-    background-color: transparent;
-    border: none;
-  }
-  
-  .search-box input[type="submit"] {
-    padding: 10px 20px;
-    background-color: white;
-    color: grey;
-    cursor: pointer;
-  }
-  
-  .search-results {
-    font-weight: bold;
-  }
-  
-  .checkbox-container {      /* checkboxy kategori produktów i sklepów */
-    display: flex;
-    margin-top: 20px;
-  }
-  .checkbox-label {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 60px;
-    height: 60px;
-    margin: 10px;
-    cursor: pointer;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  .checkbox-label img {
-    position: relative;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    transition: opacity 0.5s ease-in-out;
-  }
-  
-  #checkbox-aside {
-    flex-direction: column;
-  }
-  
-  .checkbox-label input {
-    display: none;
-  }
-  
-  .product-name {
-    color: #24305E;
-    font-size: 15px;
-    text-align: center;
-    white-space: pre-line;
-  }
-  
-  #owoce:hover img {/* owoce */
-    content: url("images/button-row-second-color/owoce2.png")
-  }
-  
-  #owoce input:checked + img {
-    content: url("images/button-row-second-color/owoce2.png")
-  }
-  
-  #warzywa:hover img {/* warzywa */
-    content: url("images/button-row-second-color/warzywa2.png")
-  }
-  
-  #warzywa input:checked + img {
-    content: url("images/button-row-second-color/warzywa2.png")
-  }
-  
-  #mieso:hover img {/* mięso */
-    content: url("images/button-row-second-color/mieso2.png")
-  }
-  
-  #mieso input:checked + img {
-    content: url("images/button-row-second-color/mieso2.png")
-  }
-  
-  #nabial:hover img {/* nabiał */
-    content: url("images/button-row-second-color/nabial2.png")
-  }
-  
-  #nabial input:checked + img {
-    content: url("images/button-row-second-color/nabial2.png")
-  }
-  
-  #chemia:hover img {/* chemia */
-    content: url("images/button-row-second-color/chemia2.png")
-  }
-  
-  #chemia input:checked + img {
-    content: url("images/button-row-second-color/chemia2.png")
-  }
-  
-  #wszystko:hover img {/* wszystko */
-    content: url("images/button-row-second-color/wszystko2.png")
-  }
-  
-  #lidl:hover img {/* lidl */
-    content: url("images/button-row-second-color/lidl2.png")
-  }
-  
-  #lidl input:checked + img {
-    content: url("images/button-row-second-color/lidl2.png")
-  }
-  
-  #kaufland:hover img {/* kaufland */
-    content: url("images/button-row-second-color/kaufland2.png")
-  }
-  
-  #kaufland input:checked + img {
-    content: url("images/button-row-second-color/kaufland2.png")
-  }
-  
-  #biedronka:hover img {/* biedronka */
-    content: url("images/button-row-second-color/biedronka2.png")
-  }
-  
-  #biedronka input:checked + img {
-    content: url("images/button-row-second-color/biedronka2.png")
-  }
-  
-  .arrow { /* Strzałki i napisy */
-    height: 40px;
-    width: auto;
-    position: absolute;
-  }
-  
-  #arrow-top {
-    margin-top: 20px;
-    margin-left: 230px;
-  }
-  
-  #arrow-aside {
-    transform: scaleY(-1);
-    margin-top: 50px;
-    margin-left: 230px;
-  }
-  
-  header div.logo span {
-    font-family: Buree Chalk;
-    color: white;
-    position: absolute;
-    font-size: 21px;
-  }
-  
-  #text-top {
-    margin-top: 0px;
-    margin-left: 255px;
-  }
-  
-  #text-aside {
-    margin-top: 85px;
-    margin-left: 180px;
-  }
+.tile img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+.search-box {           /* Wyszukiwarka */
+  margin-top: 8px;
+  display: flex;
+  background-color: white;
+  border-radius: 30px;
+  padding: 20px;
+  height: 20px;
+}
+
+.search-box input[type="text"] {
+  padding: 10px;
+  width: 120px;
+  background-color: transparent;
+  border: none;
+}
+
+.search-box input[type="submit"] {
+  padding: 10px 20px;
+  background-color: white;
+  color: grey;
+  cursor: pointer;
+}
+
+.search-results {
+  font-weight: bold;
+}
+
+.checkbox-container {      /* checkboxy kategori produktów i sklepów */
+  display: flex;
+  margin-top: 20px;
+}
+.checkbox-label {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  margin: 10px;
+  cursor: pointer;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.checkbox-label img {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#checkbox-aside {
+  flex-direction: column;
+}
+
+.checkbox-aside {
+  flex-direction: row;
+}
+
+.checkbox-label input {
+  display: none;
+}
+
+.product-name {
+  color: #24305E;
+  font-size: 15px;
+  text-align: center;
+  white-space: pre-line;
+}
+
+.product-name-aside {
+  color: #24305E;
+  font-size: 15px;
+  text-align: center;
+  white-space: pre-line;
+  margin: 0 0 0 10px;
+}
+
+#owoce:hover img {/* owoce */
+  content: url("../assets/images/button-row-second-color/owoce2.png")
+}
+
+#owoce input:checked + img {
+  content: url("../assets/images/button-row-second-color/owoce2.png")
+}
+
+#warzywa:hover img {/* warzywa */
+  content: url("../assets/images/button-row-second-color/warzywa2.png")
+}
+
+#warzywa input:checked + img {
+  content: url("../assets/images/button-row-second-color/warzywa2.png")
+}
+
+#mieso:hover img {/* mięso */
+  content: url("../assets/images/button-row-second-color/mieso2.png")
+}
+
+#mieso input:checked + img {
+  content: url("../assets/images/button-row-second-color/mieso2.png")
+}
+
+#nabial:hover img {/* nabiał */
+  content: url("../assets/images/button-row-second-color/nabial2.png")
+}
+
+#nabial input:checked + img {
+  content: url("../assets/images/button-row-second-color/nabial2.png")
+}
+
+#chemia:hover img {/* chemia */
+  content: url("../assets/images/button-row-second-color/chemia2.png")
+}
+
+#chemia input:checked + img {
+  content: url("../assets/images/button-row-second-color/chemia2.png")
+}
+
+#wszystko:hover img {/* wszystko */
+  content: url("../assets/images/button-row-second-color/wszystko2.png")
+}
+
+#lidl:hover img {/* lidl */
+  content: url("../assets/images/button-row-second-color/lidl2.png")
+}
+
+#lidl input:checked + img {
+  content: url("../assets/images/button-row-second-color/lidl2.png")
+}
+
+#kaufland:hover img {/* kaufland */
+  content: url("../assets/images/button-row-second-color/kaufland2.png")
+}
+
+#kaufland input:checked + img {
+  content: url("../assets/images/button-row-second-color/kaufland2.png")
+}
+
+#biedronka:hover img {/* biedronka */
+  content: url("../assets/images/button-row-second-color/biedronka2.png")
+}
+
+#biedronka input:checked + img {
+  content: url("../assets/images/button-row-second-color/biedronka2.png")
+}
+
+.arrow { /* Strzałki i napisy */
+  height: 40px;
+  width: auto;
+  position: absolute;
+}
+
+#arrow-top {
+  margin-top: 20px;
+  margin-left: 230px;
+}
+
+#arrow-aside {
+  transform: scaleY(-1);
+  margin-top: 50px;
+  margin-left: 230px;
+}
+
+header div.logo span {
+  font-family: Buree Chalk;
+  color: white;
+  position: absolute;
+  font-size: 21px;
+}
+
+#text-top {
+  margin-top: 0px;
+  margin-left: 255px;
+}
+
+#text-aside {
+  margin-top: 85px;
+  margin-left: 180px;
+}

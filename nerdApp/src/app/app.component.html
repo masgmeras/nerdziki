@@ -1,157 +1,126 @@
 <body>
 <header>
-  <div class="logo">
-    <img src="images/zniżka_full_logo.png"/>
-    <img src="images/arrow.png" id="arrow-top" class="arrow">
-    <img src="images/arrow.png" class="arrow" id="arrow-aside">
-    <span id="text-top">Oraz produkty</span>
-    <span id="text-aside">Wybierz Sklep</span>
-  </div>
-  <div class="checkbox-container" id="checkbox-top">
-    <label class="checkbox-label" id="owoce">
-      <input type="checkbox">
-<!--      <img src="../   ../assets/../assets/images/button-row-first-color/owoce1.png" alt="Owoce">-->
-      <img src="../assets/images/button-row-first-color/owoce1.png" alt="Owoce">
-      <span class="product-name">Owoce</span>
-    </label>
-    <label class="checkbox-label" id="warzywa">
-      <input type="checkbox">
-      <img src="../assets/../assets/images/button-row-first-color/warzywa1.png" alt="Warzywa">
-      <span class="product-name">Warzywa</span>
-    </label>
-    <label class="checkbox-label" id="mieso">
-      <input type="checkbox">
-      <img src="../assets/../assets/images/button-row-first-color/mieso1.png" alt="Mięso">
-      <span class="product-name">Mięso</span>
-    </label>
-    <label class="checkbox-label" id="nabial">
-      <input type="checkbox">
-      <img src="../assets/../assets/images/button-row-first-color/nabial1.png" alt="Nabiał">
-      <span class="product-name">Nabiał</span>
-    </label>
-    <label class="checkbox-label" id="chemia">
-      <input type="checkbox">
-      <img src="../assets/../assets/images/button-row-first-color/chemia1.png" alt="Chemia">
-      <span class="product-name">Chemia</span>
-    </label>
-    <label class="checkbox-label" id="wszystko">
-      <input type="button">
-      <img src="../assets/../assets/images/button-row-first-color/wszystko1.png" alt="Pokaż Wszystko">
-      <span class="product-name">  Pokaż Wszystko</span>
-    </label>
-  </div>
-  <div class="search-box">
-    właśnie szukasz - {{szukanyProdukt}}
-    <input type="text" id="search-input" placeholder="Wyszukaj produkt" [(ngModel)]="szukanyProdukt">
-    <input type="submit" id="search-bottom" value="Szukaj" (click)="searchCategory(szukanyProdukt)">
-  </div>
+    <div class="logo">
+      <img src="../assets/images/zniżka_full_logo.png"/>
+      <img src="../assets/images/arrow.png" id="arrow-top" class="arrow">
+      <img src="../assets/images/arrow.png" class="arrow" id="arrow-aside">
+      <span id="text-top">Oraz produkty</span>
+      <span id="text-aside">Wybierz Sklep</span>
+    </div>
+    <div class="checkbox-container" id="checkbox-top">
+      <label class="checkbox-label" id="owoce">
+        <input type="checkbox">
+        <img src="../assets/images/button-row-first-color/owoce1.png" alt="Owoce">
+        <span class="product-name">Owoce</span>
+      </label>
+      <label class="checkbox-label" id="warzywa">
+        <input type="checkbox">
+        <img src="../assets/../assets/images/button-row-first-color/warzywa1.png" alt="Warzywa">
+        <span class="product-name">Warzywa</span>
+      </label>
+      <label class="checkbox-label" id="mieso">
+        <input type="checkbox">
+        <img src="../assets/../assets/images/button-row-first-color/mieso1.png" alt="Mięso">
+        <span class="product-name">Mięso</span>
+      </label>
+      <label class="checkbox-label" id="nabial">
+        <input type="checkbox">
+        <img src="../assets/../assets/images/button-row-first-color/nabial1.png" alt="Nabiał">
+        <span class="product-name">Nabiał</span>
+      </label>
+      <label class="checkbox-label" id="chemia">
+        <input type="checkbox">
+        <img src="../assets/../assets/images/button-row-first-color/chemia1.png" alt="Chemia">
+        <span class="product-name">Chemia</span>
+      </label>
+      <label class="checkbox-label" id="wszystko">
+        <input type="button">
+        <img src="../assets/../assets/images/button-row-first-color/wszystko1.png" alt="Pokaż Wszystko">
+        <span class="product-name">  Pokaż Wszystko</span>
+      </label>
+    </div>
+    <div class="search-box">
+      <input type="text" id="search-input" placeholder="Wyszukaj produkt" [(ngModel)]="szukanyProdukt">
+      <img src="../assets/images/loupe.png" (click)="searchCategory(szukanyProdukt)">
+    </div>
 </header>
 <main>
-  <section>
-    <div class="checkbox-container" id="checkbox-aside">
-      <label class="checkbox-label" id="lidl">
-        <input type="checkbox">
-        <img src="../assets/../assets/images/button-row-first-color/lidl1.png" alt="Lidl">
-        <span class="product-name">Lidl</span>
-      </label>
-      <label class="checkbox-label" id="kaufland">
-        <input type="checkbox">
-        <img src="../assets/../assets/images/button-row-first-color/kaufland1.png" alt="Kaufland">
-        <span class="product-name">Kaufland</span>
-      </label>
-      <label class="checkbox-label" id="biedronka">
-        <input type="checkbox">
-        <img src="../assets/../assets/images/button-row-first-color/biedronka1.png" alt="Biedronka">
-        <span class="product-name">Biedronka</span>
-      </label>
-</div>
-  <section>
-      <div id="tiles-container" class="container">
-        <div class="tile">
-          <img src="https://gazetki-promocyjne.net.pl/images/leaflets/lidl-gazetka-19330331111687763594299_239_400_mini.jpg" alt="special_offer_1">
-        </div>
-        <div class="tile">
-          <img src="https://gazetki-promocyjne.net.pl/images/leaflets/kaufland-gazetka-10570790341687842543980_240_400_mini.jpg" alt="special_offer_2">
-        </div>
-        <div class="tile">
-          <img src="https://gazetki-promocyjne.net.pl/images/leaflets/biedronka-gazetka-9684796931687730305206_254_400_mini.jpg" alt="special_offer_3">
-        </div>
-        <div class="tile">
-          <img src="https://gazetki-promocyjne.net.pl/images/leaflets/rossmann-gazetka-3276381041687604737302_244_400_mini.jpg" alt="special_offer_4">
-        </div>
-        <div class="tile">
-          <img src="https://gazetkapromocyjna.com.pl/lidl/1337/lidl-2023-06-26-cover.jpg" alt="special_offer_5">
-        </div>
-        <div class="tile">
-          <img src="https://polskagazeta.com/uploads/6efce8f8c59934e377f4ef64376b4b95-0.webp" alt="special_offer_6">
-        </div>
-        <div class="tile">
-          <img src="https://www.gazetkapromocyjna24.pl/media/k2/items/cache/a7e4f6eacfc7194b8598720b5f1dd65c_M.webp" alt="special_offer_7">
-        </div>
-        <div class="tile">
-          <img src="https://www.gazetkapromocyjna24.pl/media/k2/items/cache/faf6bc687118bda8527951b50c560f45_M.webp" alt="special_offer_8">
-        </div>
-        <div class="tile">
-          <img src="https://gazetki-promocyjne.net.pl/images/leaflets/biedronka-gazetka-14818212531686340621737_900_1412_big.jpg" alt="special_offer_9">
-        </div>
+    <section>
+      <div class="checkbox-container" id="checkbox-aside">
+        <label class="checkbox-label checkbox-aside" id="lidl">
+          <input type="checkbox" id="lidl">
+          <img src="../assets/../assets/images/button-row-first-color/lidl1.png" alt="Lidl">
+          <span class="product-name-aside">Lidl</span>
+        </label>
+        <label class="checkbox-label checkbox-aside" id="kaufland">
+          <input type="checkbox">
+          <img src="../assets/../assets/images/button-row-first-color/kaufland1.png" alt="Kaufland">
+          <span class="product-name-aside">Kaufland</span>
+        </label>
+        <label class="checkbox-label checkbox-aside" id="biedronka">
+          <input type="checkbox">
+          <img src="../assets/../assets/images/button-row-first-color/biedronka1.png" alt="Biedronka">
+          <span class="product-name-aside">Biedronka</span>
+        </label>
       </div>
-  </section>
-    <div class="button-row">
-      <div id="menu">
-        <div class="main_menu">
-
-          <div  *ngFor="let kategoria of listaKategorii">
-            <button class="button_product" (click)="ustawKategorie(kategoria)">{{kategoria}}</button>
-
+    </section>
+    <section id="container">
+        <div id="tiles-container" class="container">
+          <app-leaflets></app-leaflets>
+          <!--<div class="tile">
+            <img src="https://gazetki-promocyjne.net.pl/images/leaflets/lidl-gazetka-19330331111687763594299_239_400_mini.jpg" alt="special_offer_1">
           </div>
-          <button class="button_showAll" (click)="clear()">Pokaż wszystko</button>
-          <!--    <input [(ngModel)]="szukanyProdukt" #ctrl="ngModel" required>-->
+          <div class="tile">
+            <img src="https://gazetki-promocyjne.net.pl/images/leaflets/kaufland-gazetka-10570790341687842543980_240_400_mini.jpg" alt="special_offer_2">
+          </div>
+          <div class="tile">
+            <img src="https://gazetki-promocyjne.net.pl/images/leaflets/biedronka-gazetka-9684796931687730305206_254_400_mini.jpg" alt="special_offer_3">
+          </div>
+          <div class="tile">
+            <img src="https://gazetki-promocyjne.net.pl/images/leaflets/rossmann-gazetka-3276381041687604737302_244_400_mini.jpg" alt="special_offer_4">
+          </div>
+          <div class="tile">
+            <img src="https://gazetkapromocyjna.com.pl/lidl/1337/lidl-2023-06-26-cover.jpg" alt="special_offer_5">
+          </div>
+          <div class="tile">
+            <img src="https://polskagazeta.com/uploads/6efce8f8c59934e377f4ef64376b4b95-0.webp" alt="special_offer_6">
+          </div>
+          <div class="tile">
+            <img src="https://www.gazetkapromocyjna24.pl/media/k2/items/cache/a7e4f6eacfc7194b8598720b5f1dd65c_M.webp" alt="special_offer_7">
+          </div>
+          <div class="tile">
+            <img src="https://www.gazetkapromocyjna24.pl/media/k2/items/cache/faf6bc687118bda8527951b50c560f45_M.webp" alt="special_offer_8">
+          </div>
+          <div class="tile">
+            <img src="https://gazetki-promocyjne.net.pl/images/leaflets/biedronka-gazetka-14818212531686340621737_900_1412_big.jpg" alt="special_offer_9">
+          </div> -->
         </div>
+    </section>
+<!--      <div class="button-row">
+        <div id="menu">
+          <div class="main_menu">
 
-        <p>Wyszukaj: {{ szukanyProdukt }}</p>
-        <div *ngFor="let produkt of getProdukty() ">
-          <span>{{produkt}}</span>
+            <div  *ngFor="let kategoria of listaKategorii">
+              <button class="button_product" (click)="ustawKategorie(kategoria)">{{kategoria}}</button>
+
+            </div>
+            <button class="button_showAll" (click)="clear()">Pokaż wszystko</button> 
+            
+          </div> --> <!--    <input [(ngModel)]="szukanyProdukt" #ctrl="ngModel" required>-->
+
+          <!--<p>Wyszukaj: {{ szukanyProdukt }}</p>
+          <div *ngFor="let produkt of getProdukty() ">
+            <span>{{produkt}}</span>
+          </div>
+
         </div>
-
       </div>
-    </div>
-  </section>
-  <section>
-    <h1>Najlepsze Promocje</h1>
-
-<!--    <app-brand-filter></app-brand-filter>-->
-    <app-leaflets></app-leaflets>
-
-    <div class="container">
-      <div class="tile">
-        <img src="https://gazetki-promocyjne.net.pl/images/leaflets/lidl-gazetka-19330331111687763594299_239_400_mini.jpg" alt="special_offer_1">
-      </div>
-      <div class="tile">
-        <img src="https://gazetki-promocyjne.net.pl/images/leaflets/kaufland-gazetka-10570790341687842543980_240_400_mini.jpg" alt="special_offer_2">
-      </div>
-      <div class="tile">
-        <img src="https://gazetki-promocyjne.net.pl/images/leaflets/biedronka-gazetka-9684796931687730305206_254_400_mini.jpg" alt="special_offer_3">
-      </div>
-      <div class="tile">
-        <img src="https://gazetki-promocyjne.net.pl/images/leaflets/rossmann-gazetka-3276381041687604737302_244_400_mini.jpg" alt="special_offer_4">
-      </div>
-      <div class="tile">
-        <img src="https://gazetkapromocyjna.com.pl/lidl/1337/lidl-2023-06-26-cover.jpg" alt="special_offer_5">
-      </div>
-      <div class="tile">
-        <img src="https://polskagazeta.com/uploads/6efce8f8c59934e377f4ef64376b4b95-0.webp" alt="special_offer_6">
-      </div>
-      <div class="tile">
-        <img src="https://www.gazetkapromocyjna24.pl/media/k2/items/cache/a7e4f6eacfc7194b8598720b5f1dd65c_M.webp" alt="special_offer_7">
-      </div>
-      <div class="tile">
-        <img src="https://www.gazetkapromocyjna24.pl/media/k2/items/cache/faf6bc687118bda8527951b50c560f45_M.webp" alt="special_offer_8">
-      </div>
-      <div class="tile">
-        <img src="https://gazetki-promocyjne.net.pl/images/leaflets/biedronka-gazetka-14818212531686340621737_900_1412_big.jpg" alt="special_offer_9">
-      </div>
-    </div>
-  </section>
+    </section>
+    <section>
+      <h1>Najlepsze Promocje</h1>
+  
+      <app-leaflets></app-leaflets>
+    </section> --> <!--    <app-brand-filter></app-brand-filter>-->
 </main>
 </body>
 

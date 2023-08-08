@@ -7,7 +7,8 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class LeafletsService {
-
+  storesList: any = [];
+  
   constructor(private http: HttpClient) {
   }
 

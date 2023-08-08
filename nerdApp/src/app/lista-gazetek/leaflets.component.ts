@@ -11,7 +11,6 @@ export class LeafletsComponent implements OnInit {
   leafletsList: LeafletModel[] = [];
   groupedLeafletsListByPageUrl: LeafletModel[] = [];
   filteredGroupedLeafletsListByPageUrl: LeafletModel[] = [];
-  storesList: any = [];
   selectedProduct: string = '';
 
   constructor(private leafletsService: LeafletsService) {
@@ -38,9 +37,13 @@ export class LeafletsComponent implements OnInit {
 
       let brands = [...new Set(data.map(leaflet => leaflet.brand))];
       for (let i = 0; i < brands.length; i++) {
-        this.storesList.push({'brand': brands[i], 'checked': true});
+        this.leafletsService.storesList.push({'brand': brands[i], 'checked': true});
       }
     })
+  }
+
+  getStoreList() {
+    return this.leafletsService.storesList;
   }
 
   updateStoreResults() {

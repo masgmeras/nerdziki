@@ -1,11 +1,11 @@
 .example-card {
-  max-width: 400px;
-  /*max-height: 400px;*/
+  max-width: 800px;
+  max-height: 400px;
 }
 
 mat-card {
   width: calc(100% - 50px);
-  /*height: calc(100% - 70px);*/
+  height: calc(100% - 70px);
 }
 
 .example-header-image-kaufland {
@@ -23,11 +23,17 @@ mat-card {
   background-size: cover;
 }
 
-
 .example-image {
   margin: 0 auto;
-  height: 300px;
-  /*width: 200px;*/
-  max-width: 50%;
+  height: 900px; 
+  max-width: 300px;
   max-height: 70%;
+}
+
+.mat-grid-card {
+  width: 45%;
+  margin: 2%;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
 }
