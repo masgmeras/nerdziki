@@ -1,0 +1,15 @@
+.search-box {                                         /* Wyszukiwarka */
+  margin: 8px 20px 0 0;
+  display: flex;
+  background-color: white;
+  border-radius: 30px;
+  padding: 20px;
+  height: 20px;
+}
+
+.search-box input[type="text"] {
+  padding: 10px;
+  width: 120px;
+  background-color: transparent;
+  border: none;
+}

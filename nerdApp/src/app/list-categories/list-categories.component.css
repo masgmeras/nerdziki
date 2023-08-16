@@ -1,0 +1,121 @@
+:host {
+  display: flex;
+}
+
+.product-name {
+  color: #24305E;
+  font-size: 15px;
+  text-align: center;
+  white-space: pre-line;
+}
+
+.checkbox-label {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  margin: 10px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.checkbox-category-container { /* checkboxy kategori produktów i sklepów */
+  display: flex;
+  background-color: red;
+  margin-top: 20px;
+}
+
+.checkbox-label img {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#button-row {                                      /* lista i login */
+  position: fixed;
+  bottom: 10px;
+  right: 0px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+#checkbox-aside {
+  flex-direction: column;
+  margin-top: 40px;
+  margin-left: 30px;
+}
+
+.checkbox-aside {
+  flex-direction: row;
+
+}
+
+.checkbox-label input {
+  display: none;
+}
+
+#owoce:hover img { /* owoce */
+  content: url('../../assets/images/button-row-second-color/owoce2.png')
+}
+
+#owoce input:checked + img {
+  content: url('../../assets/images/button-row-second-color/owoce2.png')
+}
+
+
+#warzywa:hover img { /* warzywa */
+  content: url('../../assets/images/button-row-second-color/warzywa2.png')
+}
+
+#warzywa input:checked + img {
+  content: url('../../assets/images/button-row-second-color/warzywa2.png')
+}
+
+#mieso:hover img { /* mięso */
+  content: url('../../assets/images/button-row-second-color/mieso2.png')
+}
+
+#mieso input:checked + img {
+  content: url('../../assets/images/button-row-second-color/mieso2.png')
+}
+
+#nabial:hover img { /* nabiał */
+  content: url('../../assets/images/button-row-second-color/nabial2.png')
+}
+
+#nabial input:checked + img {
+  content: url('../../assets/images/button-row-second-color/nabial2.png')
+}
+
+#chemia:hover img { /* chemia */
+  content: url('../../assets/images/button-row-second-color/chemia2.png')
+}
+
+#chemia input:checked + img {
+  content: url('../../assets/images/button-row-second-color/chemia2.png')
+}
+
+#napoje:hover img { /* napoje*/
+  content: url('../../assets/images/button-row-second-color/napoje2.png')
+}
+
+#napoje input:checked + img {
+  content: url('../../assets/images/button-row-second-color/napoje2.png')
+}
+
+#alkohol:hover img { /* alkohol */
+  content: url('../../assets/images/button-row-second-color/alkohol2.png')
+}
+
+#alkohol input:checked + img {
+  content: url('../../assets/images/button-row-second-color/alkohol2.png')
+}
+
+#wszystko:hover img { /* wszystko */
+  content: url('../../assets/images/button-row-second-color/wszystko2.png')
+}

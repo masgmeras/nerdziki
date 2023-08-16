@@ -1,0 +1,9 @@
+<div>
+    <div class="button-row">
+        <div *ngFor="let store of getStoresList()">
+            <mat-checkbox [(ngModel)]="store.checked" (click)="updateStoreResults()">
+                <div [ngClass]="'shop-header-image-' + store.brand"></div>
+            </mat-checkbox>
+        </div>
+    </div>
+</div>

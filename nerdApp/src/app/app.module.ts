@@ -18,14 +18,18 @@ import {MatCardModule} from "@angular/material/card";
 import {MatGridListModule} from "@angular/material/grid-list";
 import {MatTooltipModule} from "@angular/material/tooltip";
 import { LoginPanelComponent } from './login-panel/login-panel.component';
-import { SearchComponent } from './search/search.component';
+import { ProductSearchComponent } from './product-search/product-search.component';
+import { ListCategoriesComponent } from './list-categories/list-categories.component';
+import { ListBrandsComponent } from './list-brands/list-brands.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LeafletsComponent,
     LoginPanelComponent,
-        SearchComponent
+        ProductSearchComponent,
+        ListCategoriesComponent,
+        ListBrandsComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,7 @@ import { SearchComponent } from './search/search.component';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-	  MatSlideToggleModule,
+    MatSlideToggleModule,
     MatCheckboxModule,
     MatButtonModule,
     MatIconModule,
