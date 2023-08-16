@@ -33,6 +33,16 @@
         <img src="../assets/../assets/images/button-row-first-color/chemia1.png" alt="Chemia">
         <span class="product-name">Chemia</span>
       </label>
+      <label class="checkbox-label" id="napoje">
+        <input type="checkbox">
+        <img src="../assets/../assets/images/button-row-first-color/napoje1.png" alt="Napoje">
+        <span class="product-name">Napoje</span>
+      </label>
+      <label class="checkbox-label" id="alkohol">
+        <input type="checkbox">
+        <img src="../assets/../assets/images/button-row-first-color/alkohol1.png" alt="Alkohol">
+        <span class="product-name">Alkohol</span>
+      </label>
       <label class="checkbox-label" id="wszystko">
         <input type="button">
         <img src="../assets/../assets/images/button-row-first-color/wszystko1.png" alt="Pokaż Wszystko">
@@ -45,7 +55,7 @@
     </div>
 </header>
 <main>
-    <section>
+    <div>
       <div class="checkbox-container" id="checkbox-aside">
         <label class="checkbox-label checkbox-aside" id="lidl">
           <input type="checkbox" id="lidl">
@@ -63,40 +73,26 @@
           <span class="product-name-aside">Biedronka</span>
         </label>
       </div>
-    </section>
-    <section id="container">
+    </div>
+    <div id="container">
+      <div id="dots">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
         <div id="tiles-container" class="container">
           <app-leaflets></app-leaflets>
-          <!--<div class="tile">
-            <img src="https://gazetki-promocyjne.net.pl/images/leaflets/lidl-gazetka-19330331111687763594299_239_400_mini.jpg" alt="special_offer_1">
-          </div>
-          <div class="tile">
-            <img src="https://gazetki-promocyjne.net.pl/images/leaflets/kaufland-gazetka-10570790341687842543980_240_400_mini.jpg" alt="special_offer_2">
-          </div>
-          <div class="tile">
-            <img src="https://gazetki-promocyjne.net.pl/images/leaflets/biedronka-gazetka-9684796931687730305206_254_400_mini.jpg" alt="special_offer_3">
-          </div>
-          <div class="tile">
-            <img src="https://gazetki-promocyjne.net.pl/images/leaflets/rossmann-gazetka-3276381041687604737302_244_400_mini.jpg" alt="special_offer_4">
-          </div>
-          <div class="tile">
-            <img src="https://gazetkapromocyjna.com.pl/lidl/1337/lidl-2023-06-26-cover.jpg" alt="special_offer_5">
-          </div>
-          <div class="tile">
-            <img src="https://polskagazeta.com/uploads/6efce8f8c59934e377f4ef64376b4b95-0.webp" alt="special_offer_6">
-          </div>
-          <div class="tile">
-            <img src="https://www.gazetkapromocyjna24.pl/media/k2/items/cache/a7e4f6eacfc7194b8598720b5f1dd65c_M.webp" alt="special_offer_7">
-          </div>
-          <div class="tile">
-            <img src="https://www.gazetkapromocyjna24.pl/media/k2/items/cache/faf6bc687118bda8527951b50c560f45_M.webp" alt="special_offer_8">
-          </div>
-          <div class="tile">
-            <img src="https://gazetki-promocyjne.net.pl/images/leaflets/biedronka-gazetka-14818212531686340621737_900_1412_big.jpg" alt="special_offer_9">
-          </div> -->
         </div>
-    </section>
-<!--      <div class="button-row">
+      </div>
+    <div id="button-row">
+        <div class="button" id="leaflets-my-list">
+          <input type="button" class="nothing">
+          <img src="../assets/../assets/images/button-row-first-color/lista1.png" alt="Moja Lista">
+          <span class="product-name">Moja lista</span>
+        </div>
+    </div>
+   <!-- <app-login-panel></app-login-panel>
+      <div class="button-row">
         <div id="menu">
           <div class="main_menu">
 

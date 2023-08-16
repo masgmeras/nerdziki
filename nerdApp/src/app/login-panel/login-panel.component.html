@@ -1,0 +1,24 @@
+<div class="button" id="login" (click)="toggleLoginForm()">
+    <input type="button" class="nothing">
+    <img src="../assets/../assets/images/button-row-first-color/login1.png" alt="Zaloguj się">
+    <span class="product-name">Zaloguj się</span>
+  </div>
+
+<div id="login-board" [class.hidden]="!isLoginFormVisible">
+    <form autocomplete="off">
+        <div class="input-box">
+          <input type="text" placeholder="Nazwa użytkownika" required>
+          <i class='bx bxs-user' ></i>
+        </div>
+        <div class="input-box">
+          <input type="password" placeholder="Hasło" required>
+          <i class='bx bxs-lock-alt' ></i>
+        </div>
+        <div id="remember-forgot">
+          <label><input type="checkbox">Zapamiętaj mnie</label>
+          <a href="#">Nie pamiętam hasła</a>
+        </div>
+        <button type="submit">Zaloguj</button>
+        <div id="register-link"><p>Nie masz konta? <a href="#">Stwórz nowe!</a></p></div>
+    </form>
+  </div>

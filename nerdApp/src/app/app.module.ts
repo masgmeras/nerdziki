@@ -17,11 +17,13 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from "@angular/material/card";
 import {MatGridListModule} from "@angular/material/grid-list";
 import {MatTooltipModule} from "@angular/material/tooltip";
+import { LoginPanelComponent } from './login-panel/login-panel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LeafletsComponent
+    LeafletsComponent,
+    LoginPanelComponent,
   ],
   imports: [
     BrowserModule,

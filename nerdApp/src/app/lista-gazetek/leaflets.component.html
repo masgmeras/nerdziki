@@ -1,6 +1,6 @@
 <!--https://medium.com/the-clever-dev/awesome-angular-material-responsive-grid-list-with-cards-example-6b0aab655594-->
 <!--https://stackoverflow.com/questions/54218485/angular-7-responsive-layout-using-material-grid-->
-<mat-grid-list cols="3" rowHeight="1:1">
+<mat-grid-list cols="3" rowHeight="2:3" [gutterSize]="'1px'">
   <mat-grid-tile rowspan="1" rowHeight="fit" *ngFor="let leaflet of filteredGroupedLeafletsListByPageUrl">
     <mat-card class="example-card tile">
       <mat-card-header>

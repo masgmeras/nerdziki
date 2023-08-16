@@ -1,4 +1,6 @@
 .example-card {
+  background: none;
+  border: 2px solid white;
   max-width: 800px;
   max-height: 400px;
 }
@@ -9,24 +11,24 @@ mat-card {
 }
 
 .example-header-image-kaufland {
-  background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/65/Kaufland_Deutschland.png');
+  background-image: url('../../assets/images/button-row-second-color/kaufland2.png');
   background-size: cover;
 }
 
 .example-header-image-lidl {
-  background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/91/Lidl-Logo.svg');
+  background-image: url('../../assets/images/button-row-second-color/lidl2.png');
   background-size: cover;
 }
 
-.example-header-image-Janusze-kradno {
-  background-image: url('https://i0.wp.com/cowkrakowie.pl/wp-content/uploads/2019/03/janusz.jpg?resize=850%2C491&ssl=1');
+.example-header-image-biedronka {
+  background-image: url('../../assets/images/button-row-second-color/biedronka2.png');
   background-size: cover;
 }
 
 .example-image {
   margin: 0 auto;
   height: 900px; 
-  max-width: 300px;
+  max-width: 60%;
   max-height: 70%;
 }
 
@@ -36,4 +38,9 @@ mat-card {
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease-in-out;
+}
+
+.mat-grid-list { 
+  width: 70vw;
+  row-gap: 0px;
 }
