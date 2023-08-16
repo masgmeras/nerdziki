@@ -16,7 +16,7 @@ main {
   justify-content: flex-end;
   flex-grow: 1;
 }
-  
+
 h1 {
   color: black;
   font-size: 36px;
@@ -33,7 +33,7 @@ h1 {
   display: flex;
 }
 
-.container {    
+.container {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -41,14 +41,14 @@ h1 {
   padding: 20px;
   border: 2px solid white;
   border-right: none;
-  border-bottom: none; 
+  border-bottom: none;
   max-width: auto;
 }
 
 #container {
   flex-grow: 5;
 }
-  
+
 .tile {                                                     /* kafle */
   width: 30%;
   margin: 1.5%;
@@ -56,13 +56,13 @@ h1 {
   overflow: hidden;
   transition: all 0.3s ease-in-out;
 }
-  
+
 .tile:hover {
   transform: scale(1.1);
   box-shadow: 0px 0px 10px 5px rgba(34, 36, 36, 0.388);
   border-radius: 10px;
 }
-  
+
 .tile:before {
   content: '';
   display: block;
@@ -76,7 +76,7 @@ h1 {
   transition: opacity 0.3s ease-in-out;
   border-radius: 10px;
 }
-  
+
 .tile img {
   width: 100%;
   height: auto;
@@ -144,6 +144,7 @@ h1 {
 
 .checkbox-aside {
   flex-direction: row;
+
 }
 
 .checkbox-label input {
@@ -225,27 +226,30 @@ h1 {
   content: url("../assets/images/button-row-second-color/wszystko2.png")
 }
 
-#lidl:hover img {/* lidl */
+.img-shop{ width: 80px;
+                  height: 80px;}
+
+.lidl:hover img {/* lidl */
   content: url("../assets/images/button-row-second-color/lidl2.png")
 }
 
-#lidl input:checked + img {
+.lidl input:checked + img {
   content: url("../assets/images/button-row-second-color/lidl2.png")
 }
 
-#kaufland:hover img {/* kaufland */
+.kaufland:hover img {/* kaufland */
   content: url("../assets/images/button-row-second-color/kaufland2.png")
 }
 
-#kaufland input:checked + img {
+.kaufland input:checked + img {
   content: url("../assets/images/button-row-second-color/kaufland2.png")
 }
 
-#biedronka:hover img {/* biedronka */
+.biedronka:hover img {/* biedronka */
   content: url("../assets/images/button-row-second-color/biedronka2.png")
 }
 
-#biedronka input:checked + img {
+.biedronka input:checked + img {
   content: url("../assets/images/button-row-second-color/biedronka2.png")
 }
 
@@ -309,9 +313,10 @@ header div.logo span {
   right: 0px;
   display: flex;
   flex-direction: column;
+
 }
 
-.button { 
+.button {
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -428,7 +433,7 @@ header div.logo span {
 #login-board #register link {
   font-size: 14px;
   text-align: center;
-  margin: 20px 0 15px; 
+  margin: 20px 0 15px;
 }
 
 #register-link p a {

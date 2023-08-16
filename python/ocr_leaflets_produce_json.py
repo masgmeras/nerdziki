@@ -11,7 +11,8 @@ TEMP_PDF_FILENAME = 'temp_gazetka.pdf'
 OUTPUT_FILE_NAME = "generate_urls.json"
 LEAFLETS_LIST = [ 
     {'brand': 'lidl', 'brand_url': 'https://www.lidl.pl/informacje-dla-klienta/nasze-gazetki'},
-    {'brand': 'kaufland', 'brand_url': 'https://www.kaufland.pl/gazeta-reklamowa.html'}
+    {'brand': 'kaufland', 'brand_url': 'https://www.kaufland.pl/gazeta-reklamowa.html'},
+     {'brand': 'biedronka', 'brand_url': 'https://www.kaufland.pl/gazeta-reklamowa.html'}
 ]
 options = webdriver.ChromeOptions() 
 options.add_argument('--headless')  

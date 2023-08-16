@@ -49,6 +49,7 @@
         <span class="product-name">  Pokaż Wszystko</span>
       </label>
     </div>
+  <app-search></app-search>
     <div class="search-box">
       <input type="text" id="search-input" placeholder="Wyszukaj produkt" [(ngModel)]="szukanyProdukt">
       <img src="../assets/images/loupe.png" (click)="searchCategory(szukanyProdukt)">
@@ -57,7 +58,7 @@
 <main>
     <div>
       <div class="checkbox-container" id="checkbox-aside">
-        <label class="checkbox-label checkbox-aside" id="lidl">
+       <!-- <label class="checkbox-label checkbox-aside" id="lidl">
           <input type="checkbox" id="lidl">
           <img src="../assets/../assets/images/button-row-first-color/lidl1.png" alt="Lidl">
           <span class="product-name-aside">Lidl</span>
@@ -80,8 +81,8 @@
         <div class="dot"></div>
         <div class="dot"></div>
       </div>
-        <div id="tiles-container" class="container">
-          <app-leaflets></app-leaflets>
+        <div id="tiles-container" class="container">-->
+        <app-leaflets></app-leaflets>
         </div>
       </div>
     <div id="button-row">
@@ -100,8 +101,8 @@
               <button class="button_product" (click)="ustawKategorie(kategoria)">{{kategoria}}</button>
 
             </div>
-            <button class="button_showAll" (click)="clear()">Pokaż wszystko</button> 
-            
+            <button class="button_showAll" (click)="clear()">Pokaż wszystko</button>
+
           </div> --> <!--    <input [(ngModel)]="szukanyProdukt" #ctrl="ngModel" required>-->
 
           <!--<p>Wyszukaj: {{ szukanyProdukt }}</p>
@@ -111,12 +112,16 @@
 
         </div>
       </div>
-    </section>
-    <section>
+
+    </section>-->
+   <!-- <section>
       <h1>Najlepsze Promocje</h1>
-  
+
       <app-leaflets></app-leaflets>
-    </section> --> <!--    <app-brand-filter></app-brand-filter>-->
+    </section>     <app-brand-filter></app-brand-filter>-->
 </main>
+<div>
+<app-leaflets></app-leaflets>
+</div>
 </body>
 

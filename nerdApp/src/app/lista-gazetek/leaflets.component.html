@@ -19,18 +19,24 @@
     </mat-card>
   </mat-grid-tile>
 
+
 </mat-grid-list>
 
+<mat-grid-list cols="3" rowHeight="1:1">
+  <body>
 
-<div>
-  <div class="button-row">
-    <div>Wybierz sklep</div>
+  <div>
+    <div class="button-row">
 
-    <input [(ngModel)]="selectedProduct" (ngModelChange)="updateStoreResults()"/>
-    <div *ngFor="let store of getStoreList()">
-      <mat-checkbox [(ngModel)]="store.checked" (click)="updateStoreResults()">{{store.brand}}</mat-checkbox>
+
+      <!--<input [(ngModel)]="selectedProduct" (ngModelChange)="updateStoreResults()"/>-->
+      <div *ngFor="let store of storesList">
+        <mat-checkbox [(ngModel)]="store.checked" (click)="updateStoreResults()">
+          <div [class]="'shop-header-image-' + store.brand"></div>
+        </mat-checkbox>
+      </div>
+      <!--          <button class="button_showAll" (click)="pickStore()">Szukaj wybranych</button>
+      {{getStoreList() | json}}-->
     </div>
-<!--          <button class="button_showAll" (click)="pickStore()">Szukaj wybranych</button>-->
-    {{getStoreList() | json}}
   </div>
-</div>
+</body>

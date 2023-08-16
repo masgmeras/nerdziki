@@ -18,12 +18,14 @@ import {MatCardModule} from "@angular/material/card";
 import {MatGridListModule} from "@angular/material/grid-list";
 import {MatTooltipModule} from "@angular/material/tooltip";
 import { LoginPanelComponent } from './login-panel/login-panel.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LeafletsComponent,
     LoginPanelComponent,
+        SearchComponent
   ],
   imports: [
     BrowserModule,
