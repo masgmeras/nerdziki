@@ -1,0 +1,18 @@
+<div class="button" id="leaflets-my-list">
+<img src="../assets/../assets/images/button-row-first-color/lista1.png" alt="Moja Lista">
+
+  <div>
+  <div>
+<input class="product-name" placeholder="Moja lista" [(ngModel)]="mySelectProduct">
+  <button (click)="addProduct()">+</button>
+  </div>
+  <div>
+    <ul>
+      <li  *ngFor="let myProduct of myListProduct">
+        {{myProduct}}
+        <button (click)="remove(myProduct)">-</button>
+      </li>
+    </ul>
+  </div>
+</div>
+</div>

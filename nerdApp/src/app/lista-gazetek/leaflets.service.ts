@@ -15,6 +15,7 @@ export class LeafletsService {
     selectedProduct: string = '';
 
 
+
     constructor(private http: HttpClient) {
     }
 
@@ -27,6 +28,7 @@ export class LeafletsService {
                 // handle the data
             });
     }
+
 
     public getLeaflets(): Observable<LeafletModel[]> {
         const url = 'http://firelocker.pl:3000/getLeaflets';
