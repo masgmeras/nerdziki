@@ -1,0 +1,29 @@
+
+#button-row {                                      /* lista i login */
+  position: fixed;
+  bottom: 10px;
+  left: 0px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.button {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  margin: 10px;
+}
+
+.button img {
+  width: 60px;
+  height: 60px;
+}
+
+
+#leaflets-my-list:hover img {/* lista */
+  content: url("../../assets/images/button-row-second-color/lista2.png")
+}
+
