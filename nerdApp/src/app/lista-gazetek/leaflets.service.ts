@@ -62,10 +62,13 @@ export class LeafletsService {
     let filterProduct;
     if (this.selectedProduct) {
       filterProduct = (x: LeafletModel) => x.ocrResult.includes(this.selectedProduct);
-    } else {
-      filterProduct = (x: LeafletModel) => x.ocrResult.some(r => this.selectedProductsList.includes(r));
+      this.filteredGroupedLeafletsListByPageUrl = this.filteredGroupedLeafletsListByPageUrl.filter(filterProduct);
     }
-    this.filteredGroupedLeafletsListByPageUrl = this.filteredGroupedLeafletsListByPageUrl.filter(filterProduct);
+    if(this.selectedProductsList.length) {
+      filterProduct = (x: LeafletModel) => x.ocrResult.some(r => this.selectedProductsList.includes(r));
+      this.filteredGroupedLeafletsListByPageUrl = this.filteredGroupedLeafletsListByPageUrl.filter(filterProduct);
+    }
+
   }
 
 }
