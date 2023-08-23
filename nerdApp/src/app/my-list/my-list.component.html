@@ -3,8 +3,8 @@
 
   <div>
   <div>
-<input class="product-name" placeholder="Moja lista" [(ngModel)]="mySelectProduct">
-  <button [(ngModel)]="this.leafletsService.selectedProduct" (click)="addProduct()">+</button>
+<input (keyup.enter)="addProduct()" class="product-name" placeholder="Moja lista" [(ngModel)]="mySelectProduct">
+  <button (click)="addProduct()">+</button>
   </div>
   <div>
     <ul>

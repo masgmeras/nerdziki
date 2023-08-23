@@ -68,6 +68,31 @@ def createOcrParsedPageItem(leaflet, pageUrl, pdfUrl, thumbnailUrl, page, result
     return dictionary
 
 
+def handleKauflandPage():
+    driver.get('https://www.kaufland.pl/gazeta-reklamowa.html') # Otwórz stronę dla danego brandu
+    time.sleep(3) #czekanie 3s na zaladowanie strony
+    #KAUFLAND w konsoli F12 -> $x('//div[@data-download-url]')
+    wrapper = driver.find_elements(By.XPATH, "//a[contains(@class, 'm-flyer-tile__link')]")
+
+    flierlist = [];
+    for w in wrapper:
+        flierlist.append("https://endpoints.leaflets.schwarz/v4/flyer?flyer_identifier={}".format(w.get_attribute('href').split("/")[4:5][0]))    
+        print("https://endpoints.leaflets.schwarz/v4/flyer?flyer_identifier={}".format(w.get_attribute('href').split("/")[4:5][0]))
+
+
+    with open(OUTPUT_FILE_NAME, "w") as text_file: 
+        text_file.write("[")
+        for f in flierlist:
+            driver.get(f) # Otwórz stronę dla danego brandu
+            time.sleep(1) #czekanie 3s na zaladowanie strony
+
+            soup = BeautifulSoup(driver.page_source, features="lxml")
+            dict_from_json = json.loads(soup.find("body").text)
+            print('#')
+            for p in dict_from_json.get('flyer').get('pages'):
+                json.dump(createOcrParsedPageItem2(p, dict_from_json.get('flyer')), text_file)
+                text_file.write(",") 
+        text_file.write("]")
 
 def createOcrParsedPageItem2(p, dictFlier):
     dictionary = {
@@ -79,40 +104,9 @@ def createOcrParsedPageItem2(p, dictFlier):
         "ocrResult": p.get("keyWords")
         }
     return dictionary
-
-'''
-with open(OUTPUT_FILE_NAME, "w") as text_file:
-    text_file.write("[")
-    for leaflet in LEAFLETS_LIST:
-        find_urls_with_class(leaflet)
-    text_file.write("]")
-''' 
-
-driver.get('https://www.kaufland.pl/gazeta-reklamowa.html') # Otwórz stronę dla danego brandu
-time.sleep(3) #czekanie 3s na zaladowanie strony
-    #KAUFLAND w konsoli F12 -> $x('//div[@data-download-url]')
-wrapper = driver.find_elements(By.XPATH, "//a[contains(@class, 'm-flyer-tile__link')]")
-
-flierlist = [];
-for w in wrapper:
-    flierlist.append("https://endpoints.leaflets.schwarz/v4/flyer?flyer_identifier={}".format(w.get_attribute('href').split("/")[4:5][0]))    
-    print("https://endpoints.leaflets.schwarz/v4/flyer?flyer_identifier={}".format(w.get_attribute('href').split("/")[4:5][0]))
-
-driver.get(flierlist[0]) # Otwórz stronę dla danego brandu
-time.sleep(3) #czekanie 3s na zaladowanie strony
-
-soup = BeautifulSoup(driver.page_source, features="lxml")
-dict_from_json = json.loads(soup.find("body").text)
-#print()
-#print(dict_from_json.get('flyer').get('pdfUrl'))
-#print(dict_from_json.get('flyer').get('thumbnailUrl'))
-
-with open(OUTPUT_FILE_NAME, "w") as text_file:
-    text_file.write("[")
-    for p in dict_from_json.get('flyer').get('pages'):
-        json.dump(createOcrParsedPageItem2(p, dict_from_json.get('flyer')), text_file)
-        text_file.write(",") 
-    text_file.write("]")
+    
+    
+handleKauflandPage();
 
     
 #https://endpoints.leaflets.schwarz/v4/flyer?flyer_identifier=PL_pl_KDZ_5660_PL32-LFT&region_id=5660&region_code=5660

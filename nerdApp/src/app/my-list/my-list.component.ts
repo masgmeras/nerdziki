@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {LeafletsService} from "../lista-gazetek/leaflets.service";
 import {LeafletModel} from "../lista-gazetek/leafletModel";
 import {StoresListModel} from "../lista-gazetek/storesList.model";
@@ -9,31 +9,37 @@ import {StoresListModel} from "../lista-gazetek/storesList.model";
   templateUrl: './my-list.component.html',
   styleUrls: ['./my-list.component.css']
 })
-export class MyListComponent  implements OnInit {
-myListProduct: Array<string> = [];
-mySelectProduct: string = '';
+export class MyListComponent implements OnInit {
+  myListProduct: Array<string> = [];
+  mySelectProduct: string = '';
 
 
-constructor(protected leafletsService: LeafletsService) {
-    }
-    ngOnInit(){
-    }
+  constructor(protected leafletsService: LeafletsService) {
+  }
 
-addProduct() {
-this.leafletsService.selectedProduct = this.mySelectProduct;
-this.mySelectProduct= this.mySelectProduct.toLowerCase();
-this.myListProduct.push(this.mySelectProduct);
-let produkt = this.leafletsService.storesList.filter(x =>x.checked).map(x=> x.brand);
-this.leafletsService.groupedLeafletsListByPageUrl = this.leafletsService.fullList;
-        this.leafletsService.filteredGroupedLeafletsListByPageUrl = this.leafletsService.groupedLeafletsListByPageUrl.filter(x => produkt.includes(x.brand))
-        if (this.mySelectProduct) { this.leafletsService.filteredGroupedLeafletsListByPageUrl = this.leafletsService.groupedLeafletsListByPageUrl.filter(x => x.ocrResult.includes(this.mySelectProduct));
-        }
-        }
+  ngOnInit() {
+  }
+
+  addProduct() {
+    // this.leafletsService.selectedProduct = this.mySelectProduct;
+    this.mySelectProduct = this.mySelectProduct.toLowerCase();
+    this.myListProduct.push(this.mySelectProduct);
+    this.leafletsService.addProduct(this.mySelectProduct);
+    this.leafletsService.updateStoreResults();
+
+    this.mySelectProduct = '';
+    // let produkt = this.leafletsService.storesList.filter(x => x.checked).map(x => x.brand);
+    // this.leafletsService.groupedLeafletsListByPageUrl = this.leafletsService.fullList;
+    // this.leafletsService.filteredGroupedLeafletsListByPageUrl = this.leafletsService.groupedLeafletsListByPageUrl.filter(x => produkt.includes(x.brand))
+    // if (this.mySelectProduct) {
+    //   this.leafletsService.filteredGroupedLeafletsListByPageUrl = this.leafletsService.groupedLeafletsListByPageUrl.filter(x => x.ocrResult.includes(this.mySelectProduct));
+    // }
+  }
 
 
-remove(myProduct: string){
-this.myListProduct = this.myListProduct.filter(e => e !== myProduct)
-this.remove(myProduct)
-}
+  remove(myProduct: string) {
+    this.myListProduct = this.myListProduct.filter(e => e !== myProduct)
+    this.remove(myProduct)
+  }
 
 }
