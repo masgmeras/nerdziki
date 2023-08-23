@@ -111,10 +111,6 @@ h1 {
   font-weight: bold;
 }
 
-
-
-
-
 .product-name-aside {
   color: #24305E;
   font-size: 15px;
@@ -122,8 +118,6 @@ h1 {
   white-space: pre-line;
   margin: 0 0 0 10px;
 }
-
-
 
 .img-shop{ width: 80px;
                   height: 80px;}
@@ -151,8 +145,6 @@ h1 {
 .biedronka input:checked + img {
   content: url("../assets/images/button-row-second-color/biedronka2.png")
 }
-
-
 
 .arrow {                                              /* Strzałki i napisy */
   height: 40px;

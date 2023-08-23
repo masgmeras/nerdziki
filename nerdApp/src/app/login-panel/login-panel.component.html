@@ -3,22 +3,28 @@
     <img src="../assets/../assets/images/button-row-first-color/login1.png" alt="Zaloguj się">
     <span class="product-name">Zaloguj się</span>
   </div>
-
-<div id="login-board" [class.hidden]="!isLoginFormVisible">
+  
+<div class="form-box" [class.hidden]="!isLoginFormVisible">
+    <h1 id="title">Zaloguj się</h1>
     <form autocomplete="off">
-        <div class="input-box">
-          <input type="text" placeholder="Nazwa użytkownika" required>
-          <i class='bx bxs-user' ></i>
+        <div class="input-group">
+            <div class="input-field" id="nameField">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" placeholder="Nazwa użytkownika">
+            </div>
+            <div class="input-field">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email" placeholder="Adres E-mail">
+            </div>
+            <div class="input-field">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" placeholder="Hasło">
+            </div>
+            <p id="remindPassword">Nie pamiętasz hasła? <a href="#"> Kliknij tutaj</a></p>
         </div>
-        <div class="input-box">
-          <input type="password" placeholder="Hasło" required>
-          <i class='bx bxs-lock-alt' ></i>
+        <div class="option-field">
+            <button type="button" id="login">Zaloguj się</button>
+            <button type="button" id="register" class="disable">Zarejestruj się</button>
         </div>
-        <div id="remember-forgot">
-          <label><input type="checkbox">Zapamiętaj mnie</label>
-          <a href="#">Nie pamiętam hasła</a>
-        </div>
-        <button type="submit">Zaloguj</button>
-        <div id="register-link"><p>Nie masz konta? <a href="#">Stwórz nowe!</a></p></div>
     </form>
-  </div>
+</div>
