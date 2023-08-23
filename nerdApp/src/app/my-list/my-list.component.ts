@@ -13,12 +13,14 @@ export class MyListComponent  implements OnInit {
 myListProduct: Array<string> = [];
 mySelectProduct: string = '';
 
+
 constructor(protected leafletsService: LeafletsService) {
     }
     ngOnInit(){
     }
 
 addProduct() {
+this.leafletsService.selectedProduct = this.mySelectProduct;
 this.mySelectProduct= this.mySelectProduct.toLowerCase();
 this.myListProduct.push(this.mySelectProduct);
 let produkt = this.leafletsService.storesList.filter(x =>x.checked).map(x=> x.brand);

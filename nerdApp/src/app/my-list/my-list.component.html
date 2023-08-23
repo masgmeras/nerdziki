@@ -4,7 +4,7 @@
   <div>
   <div>
 <input class="product-name" placeholder="Moja lista" [(ngModel)]="mySelectProduct">
-  <button (click)="addProduct()">+</button>
+  <button [(ngModel)]="this.leafletsService.selectedProduct" (click)="addProduct()">+</button>
   </div>
   <div>
     <ul>
