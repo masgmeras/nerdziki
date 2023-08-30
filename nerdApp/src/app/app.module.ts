@@ -17,21 +17,29 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from "@angular/material/card";
 import {MatGridListModule} from "@angular/material/grid-list";
 import {MatTooltipModule} from "@angular/material/tooltip";
-import { LoginPanelComponent } from './login-panel/login-panel.component';
 import { ProductSearchComponent } from './product-search/product-search.component';
 import { ListCategoriesComponent } from './list-categories/list-categories.component';
 import { ListBrandsComponent } from './list-brands/list-brands.component';
 import { MyListComponent } from './my-list/my-list.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { FavouriteLeafletsComponent } from './favourite-leaflets/favourite-leaflets.component';
+import { FindProductsNumberComponent } from './find-products-number/find-products-number.component';
+import { BodyComponent } from './body/body.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LeafletsComponent,
-    LoginPanelComponent,
         ProductSearchComponent,
         ListCategoriesComponent,
         ListBrandsComponent,
-        MyListComponent
+        SignUpComponent,
+        SignInComponent,
+        FavouriteLeafletsComponent,
+        MyListComponent,
+        FindProductsNumberComponent,
+        BodyComponent
   ],
   imports: [
     BrowserModule,

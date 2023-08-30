@@ -15,6 +15,8 @@ export class LeafletsService {
   selectedProduct: string = '';
   selectedProductsList: string[] = [];
 
+  productsFind: string[] = [];
+
 
   constructor(private http: HttpClient) {
   }
@@ -45,14 +47,18 @@ export class LeafletsService {
       });
   }
 
-
   addProduct(itemToAdd: string) {
-    this.selectedProductsList.push(itemToAdd)
+   this.selectedProductsList.push(itemToAdd)
+   this.productsFind = this.selectedProductsList
+     console.log(this.selectedProductsList)
+     console.log('find:' ,this.productsFind.length)
   }
 
-  removeProduct(itemToRemove: string) {
+ removeProduct(itemToRemove: string) {
     this.selectedProductsList = this.selectedProductsList.filter(i => i !== itemToRemove);
+    console.log(this.selectedProductsList)
   }
+
 
   updateStoreResults() {
     // @ts-ignore
@@ -67,8 +73,8 @@ export class LeafletsService {
     if(this.selectedProductsList.length) {
       filterProduct = (x: LeafletModel) => x.ocrResult.some(r => this.selectedProductsList.includes(r));
       this.filteredGroupedLeafletsListByPageUrl = this.filteredGroupedLeafletsListByPageUrl.filter(filterProduct);
+      console.log(this.filteredGroupedLeafletsListByPageUrl.length)
     }
-
   }
 
 }

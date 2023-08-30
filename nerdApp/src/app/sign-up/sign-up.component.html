@@ -1,11 +1,5 @@
-<div class="button" id="login" (click)="toggleLoginForm()">
-    <input type="button" class="nothing">
-    <img src="../assets/../assets/images/button-row-first-color/login1.png" alt="Zaloguj się">
-    <span class="product-name">Zaloguj się</span>
-  </div>
-  
-<div class="form-box" [class.hidden]="!isLoginFormVisible">
-    <h1 id="title">Zaloguj się</h1>
+<div class="form-box">
+    <h1 id="title">Zarejestruj się</h1>
     <form autocomplete="off">
         <div class="input-group">
             <div class="input-field" id="nameField">
@@ -20,11 +14,11 @@
                 <i class="fa-solid fa-lock"></i>
                 <input type="password" placeholder="Hasło">
             </div>
-            <p id="remindPassword">Nie pamiętasz hasła? <a href="#"> Kliknij tutaj</a></p>
+
         </div>
         <div class="option-field">
-            <button type="button" id="login">Zaloguj się</button>
-            <button type="button" id="register" class="disable">Zarejestruj się</button>
+            <button type="button" id="login" class="disable">Zaloguj się</button>
+            <button type="button" id="register">Zarejestruj się</button>
         </div>
     </form>
 </div>
