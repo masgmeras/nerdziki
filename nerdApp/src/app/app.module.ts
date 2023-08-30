@@ -22,6 +22,7 @@ import { ProductSearchComponent } from './product-search/product-search.componen
 import { ListCategoriesComponent } from './list-categories/list-categories.component';
 import { ListBrandsComponent } from './list-brands/list-brands.component';
 import { MyListComponent } from './my-list/my-list.component';
+import { FindProductsNumberComponent } from './find-products-number/find-products-number.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { MyListComponent } from './my-list/my-list.component';
         ProductSearchComponent,
         ListCategoriesComponent,
         ListBrandsComponent,
-        MyListComponent
+        MyListComponent,
+        FindProductsNumberComponent
   ],
   imports: [
     BrowserModule,
