@@ -24,6 +24,9 @@ export class MyListComponent {
     this.leafletsService.addProduct(this.mySelectProduct);
     this.leafletsService.updateStoreResults();
     this.mySelectProduct = '';
+
+
+    //calculate
   }
 
 

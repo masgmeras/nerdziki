@@ -36,6 +36,11 @@ export class LeafletsComponent implements OnInit {
         return this.leafletsService.filteredGroupedLeafletsListByPageUrl;
     }
 
+
+    getSelectedProductsList(){
+      return this.leafletsService.selectedProductsList;
+    }
+
     private createGroupedLeaflets(leafletsList: LeafletModel[]) {
         const groupByPageUrl = this.groupBy(leafletsList, "pageUrl");
         for (const [key] of Object.entries(groupByPageUrl)) {

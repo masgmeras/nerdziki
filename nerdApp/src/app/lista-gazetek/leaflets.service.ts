@@ -49,9 +49,9 @@ export class LeafletsService {
 
   addProduct(itemToAdd: string) {
    this.selectedProductsList.push(itemToAdd)
-   this.productsFind = this.selectedProductsList
-     console.log(this.selectedProductsList)
-     console.log('find:' ,this.productsFind.length)
+   // this.productsFind = this.selectedProductsList
+   //   console.log(this.selectedProductsList)
+   //   console.log('find:' ,this.productsFind.length)
   }
 
  removeProduct(itemToRemove: string) {
@@ -72,9 +72,10 @@ export class LeafletsService {
       this.filteredGroupedLeafletsListByPageUrl = this.filteredGroupedLeafletsListByPageUrl.filter(filterProduct);
     }
     if(this.selectedProductsList.length) {
+      // console.log('siema')
       filterProduct = (x: LeafletModel) => x.ocrResult.some(r => this.selectedProductsList.includes(r));
       this.filteredGroupedLeafletsListByPageUrl = this.filteredGroupedLeafletsListByPageUrl.filter(filterProduct);
-      console.log(this.filteredGroupedLeafletsListByPageUrl.length)
+      console.log(this.filteredGroupedLeafletsListByPageUrl)
     }
   }
 

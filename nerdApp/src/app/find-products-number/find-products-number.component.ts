@@ -1,7 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {LeafletsService} from "../lista-gazetek/leaflets.service";
-import {LeafletModel} from "../lista-gazetek/leafletModel";
-import {StoresListModel} from "../lista-gazetek/storesList.model";
 
 @Component({
   selector: 'app-find-products-number',
@@ -9,16 +7,20 @@ import {StoresListModel} from "../lista-gazetek/storesList.model";
   styleUrls: ['./find-products-number.component.css']
 })
 export class FindProductsNumberComponent {
-//numberFind;
+  @Input()
+  ocrResult: string[] = [];
+
   constructor(private leafletsService: LeafletsService) {
   }
-//productsFind: Array<LeafletModel> = [];
-productsFind = this.leafletsService.productsFind;
-product = '';
 
-calculate(){
-this.leafletsService.addProduct(this.product);
-this.leafletsService.updateStoreResults();
-}
+  calculate() {
+    // let resultsCount = 0;
+    // for (let i = 0; i < this.leafletsService.selectedProductsList.length; i++) {
+    //   if (this.ocrResult.includes(this.leafletsService.selectedProductsList[i])) {
+    //     resultsCount += 1;
+    //   }
+    // }
+    return this.leafletsService.selectedProductsList.filter(x => this.ocrResult.includes(x)).length;
+  }
 }
 
