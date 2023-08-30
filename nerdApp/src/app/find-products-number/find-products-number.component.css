@@ -1,0 +1,8 @@
+.numberProduct {
+width: 20px;
+ height: 20px;
+ border: 2px solid white;
+ text-align: center;
+  /* list-style-type: none;*/
+  background: transparent;
+}

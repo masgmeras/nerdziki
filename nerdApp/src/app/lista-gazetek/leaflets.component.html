@@ -11,6 +11,7 @@
         <div mat-card-avatar [class]="'example-header-image-' + leaflet.brand" ></div>
         <mat-card-title>{{leaflet.brand | titlecase}}</mat-card-title>
         <mat-card-subtitle>Sprawdź ofertę sklepu</mat-card-subtitle>
+        <div style="float: right;"><app-find-products-number></app-find-products-number></div>
       </mat-card-header>
       <img class="example-image" mat-card-image [src]="leaflet.thumbnailUrl" alt="Leaflet logo">
       <!--      <mat-card-content>Simple card</mat-card-content>-->
