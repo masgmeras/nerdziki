@@ -3,8 +3,9 @@ margin-top: 50px;
 position: fixed;
 }
 
-.mat-checkbox .mat-checkbox-inner-container::after {
+.mdc-checkbox {
   display: none;
+  background-color: red;
 }
 
 .shop-header-image-kaufland {
@@ -29,7 +30,7 @@ position: fixed;
       width: 60px;
 
 }
-.shop-header-image-lidl:hover {
+.shop-header-image-lidl2, .shop-header-image-lidl:hover {
  background-image: url("../../assets/images/button-row-second-color/lidl2.png");
   background-size: cover;
       margin: 0 auto;
