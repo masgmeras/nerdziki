@@ -1,3 +1,4 @@
+<router-outlet></router-outlet>
 <body>
 <header>
   <div class="logo">
@@ -9,15 +10,12 @@
   </div>
   <app-list-categories></app-list-categories>
   <app-product-search></app-product-search>
-
 </header>
 <main>
   <div>
     <div class="checkbox-category-container" id="checkbox-aside">
     </div>
   </div>
-
-
   <app-list-brands></app-list-brands>
   <!-- REFACTOR do srodka app-leaflets -->
   <div id="container">
@@ -30,17 +28,20 @@
       <app-leaflets></app-leaflets>
     </div>
   </div>
-
-
+  <div class="my-list">
+    <app-my-list></app-my-list>
+  </div>
   <div id="button-row">
-    <div class="button" id="leaflets-my-list">
-     <app-my-list></app-my-list>
+    <div class="button" id="favourite-leaflets">
+      <img src="../assets/../assets/images/button-row-first-color/favourite1.png" alt="Ulubione promocje">
+      <span class="product-name">Ulubione</span>
     </div>
-    <div class="button">
-    <app-login-panel></app-login-panel>
+    <div class="button" id="login" [routerLink]="'/sign-in'">
+        <img src="../assets/images/button-row-first-color/login1.png" alt="Zaloguj się">
+        <span class="product-name">Zaloguj się</span>
+        <!-- <a routerLink="/sign-in">siema</a> -->
     </div>
   </div>
-
 </main>
 </body>
 

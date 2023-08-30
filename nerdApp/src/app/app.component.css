@@ -1,6 +1,9 @@
 body {
   background-color: #A8D0E6;
   font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
 }
 
 header {
@@ -8,6 +11,11 @@ header {
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background-color: #A8D0E6;
+  padding-bottom: 25px;
 }
 
 main {
@@ -28,6 +36,7 @@ h1 {
 }
 
 .logo {
+  margin-top: 15px;
   height: 80px;
   width: auto;
   display: flex;
@@ -37,113 +46,17 @@ h1 {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin: 0 0 0 200px;
+  margin-left: 20%;
   padding: 20px;
   border: 2px solid white;
   border-right: none;
   border-bottom: none;
+  border-top: none;
   max-width: auto;
 }
 
 #container {
   flex-grow: 5;
-}
-
-.tile {                                                     /* kafle */
-  width: 30%;
-  margin: 1.5%;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease-in-out;
-}
-
-.tile:hover {
-  transform: scale(1.1);
-  box-shadow: 0px 0px 10px 5px rgba(34, 36, 36, 0.388);
-  border-radius: 10px;
-}
-
-.tile:before {
-  content: '';
-  display: block;
-  position: absolute;
-  top: -10%;
-  left: -10%;
-  width: 120%;
-  height: 120%;
-  background-color: rgba(255,255,255,0.3);
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-  border-radius: 10px;
-}
-
-.tile img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 10px;
-}
-
-.search-box {                                         /* Wyszukiwarka */
-  margin: 8px 20px 0 0;
-  display: flex;
-  background-color: white;
-  border-radius: 30px;
-  padding: 20px;
-  height: 20px;
-}
-
-.search-box input[type="text"] {
-  padding: 10px;
-  width: 120px;
-  background-color: transparent;
-  border: none;
-}
-
-.search-box input[type="submit"] {
-  padding: 10px 20px;
-  background-color: white;
-  color: grey;
-  cursor: pointer;
-}
-
-.search-results {
-  font-weight: bold;
-}
-
-.product-name-aside {
-  color: #24305E;
-  font-size: 15px;
-  text-align: center;
-  white-space: pre-line;
-  margin: 0 0 0 10px;
-}
-
-.img-shop{ width: 80px;
-                  height: 80px;}
-
-.lidl:hover img {/* lidl */
-  content: url("../assets/images/button-row-second-color/lidl2.png")
-}
-
-.lidl input:checked + img {
-  content: url("../assets/images/button-row-second-color/lidl2.png")
-}
-
-.kaufland:hover img {/* kaufland */
-  content: url("../assets/images/button-row-second-color/kaufland2.png")
-}
-
-.kaufland input:checked + img {
-  content: url("../assets/images/button-row-second-color/kaufland2.png")
-}
-
-.biedronka:hover img {/* biedronka */
-  content: url("../assets/images/button-row-second-color/biedronka2.png")
-}
-
-.biedronka input:checked + img {
-  content: url("../assets/images/button-row-second-color/biedronka2.png")
 }
 
 .arrow {                                              /* Strzałki i napisy */
@@ -184,10 +97,13 @@ header div.logo span {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin: 50px 0 0 200px;
+  margin: 50px 0 0 20%;
   border: 2px solid white;
-  border-bottom: none;
   border-right: none;
+  position: sticky;
+  top: 119px;
+  background-color: #A8D0E6;
+  z-index: 6;
 }
 
 .dot {
@@ -201,107 +117,36 @@ header div.logo span {
 #button-row {                                      /* lista i login */
   position: fixed;
   bottom: 10px;
- left: 0px;
+  right: 0px;
   display: flex;
   flex-direction: column;
-
 }
 
-
-#login:hover img {/* login */
-  content: url("../assets/images/button-row-second-color/login2.png")
-}
-
-#login-board {            /* login */
-  width: 500px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #24305E;
-  border: 2px solid rgba(255, 255, 255, .2);
-  backdrop-filter: blur(20px);
-  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
-  color: white;
-  border-radius: 10px;
-  padding: 30px 40px;
-}
-
-.hidden {
-  display: none;
-}
-
-#login-board .input-box {
-  width: 100%;
-  height: 50px;
-  margin: 30px 0;
-}
-
-.input-box input {
-  width: 80%;
-  height: 80%;
-  align-items: center;
-  background: transparent;
-  border: none;
-  outline: none;
-  border: 2px solid rgba(255, 255, 255, .2);
-  border-radius: 40px;
-  font-size: 16px;
-  color: white;
-  padding: 20px 45px 20px 20px;
-  margin-bottom: 30px;
-}
-
-
-
-#login-board #remember-forgot {
-  display: flex;
-  justify-content: space-between;
-  font-size: 14px;
-  margin: 30px 0 15px;
-}
-
-#remember-forgot label input {
-  accent-color: white;
-  margin-right: 3px;
-}
-
-#remember-forgot a {
-  color: white;
-  text-decoration: none;
-}
-
-#remember-forgot a:hover {
-  text-decoration: underline;
-}
-
-#login-board button {
-  width: 100%;
-  height: 45px;
-  background-color: white;
-  border: none;
-  outline: none;
-  border-radius: 40px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+.button {
   cursor: pointer;
-  font-size: 16px;
-  color: #333;
-  font-weight: 600;
-  margin: 20px 0 20px 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  margin: 10px;
 }
 
-#login-board #register link {
-  font-size: 14px;
-  text-align: center;
-  margin: 20px 0 15px;
+.button img {
+  width: 60px;
+  height: 60px;
 }
 
-#register-link p a {
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
+
+#favourite-leaflets:hover img {/* lista */
+  content: url('../assets/images/button-row-second-color/favourite2.png');
 }
 
-#register-link p a:hover {
-  text-decoration: underline;
+#login:hover img {
+  content: url('../assets/images/button-row-second-color/login2.png');
+}
+
+.my-list {
+  position: fixed;
+  left: 0;
+  top: 50%;
 }

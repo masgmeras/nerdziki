@@ -1,8 +1,11 @@
-
 .button-row {
 margin-top: 50px;
+position: fixed;
 }
 
+.mat-checkbox .mat-checkbox-inner-container::after {
+  display: none;
+}
 
 .shop-header-image-kaufland {
   background-image: url("../../assets/images/button-row-first-color/kaufland1.png");
