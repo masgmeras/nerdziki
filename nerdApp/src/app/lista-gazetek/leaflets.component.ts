@@ -24,6 +24,7 @@ export class LeafletsComponent implements OnInit {
 
           this.createGroupedLeaflets(data);
             let brands = [...new Set(data.map(leaflet => leaflet.brand))];
+            this.leafletsService.storesList=[];
             for (let i = 0; i < brands.length; i++) {
                 this.leafletsService.storesList.push({'brand': brands[i], 'checked': true, 'ocrResult': ['']});
 

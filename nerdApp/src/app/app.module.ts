@@ -24,6 +24,8 @@ import { MyListComponent } from './my-list/my-list.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { FavouriteLeafletsComponent } from './favourite-leaflets/favourite-leaflets.component';
+import { FindProductsNumberComponent } from './find-products-number/find-products-number.component';
+import { BodyComponent } from './body/body.component';
 
 @NgModule({
   declarations: [
@@ -32,10 +34,12 @@ import { FavouriteLeafletsComponent } from './favourite-leaflets/favourite-leafl
         ProductSearchComponent,
         ListCategoriesComponent,
         ListBrandsComponent,
-        MyListComponent,
         SignUpComponent,
         SignInComponent,
         FavouriteLeafletsComponent,
+        MyListComponent,
+        FindProductsNumberComponent,
+        BodyComponent
   ],
   imports: [
     BrowserModule,

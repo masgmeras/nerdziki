@@ -1,4 +1,5 @@
 <div class="button-row">
+    <mat-checkbox [checked]="allComplete" (change)="setAll($event.checked)" >Zaznacz Wszystko</mat-checkbox>
     <div *ngFor="let store of getStoresList()">
         <mat-checkbox class="mat-checkbox" [(ngModel)]="store.checked" (click)="updateStoreResults()">
             <div [ngClass]="'shop-header-image-' + store.brand"></div>
