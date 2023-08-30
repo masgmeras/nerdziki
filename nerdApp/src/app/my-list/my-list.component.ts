@@ -30,8 +30,8 @@ export class MyListComponent {
   remove(myProduct: string) {
     this.myListProduct = this.myListProduct.filter(e => e !== myProduct)
     //this.remove(myProduct)
-    this.leafletsService.removeProduct(this.mySelectProduct);
-     this.leafletsService.updateStoreResults();
+    this.leafletsService.removeProduct(myProduct);
+    this.leafletsService.updateStoreResults();
   }
 
 }

@@ -55,6 +55,7 @@ export class LeafletsService {
   }
 
  removeProduct(itemToRemove: string) {
+    console.log(itemToRemove);
     this.selectedProductsList = this.selectedProductsList.filter(i => i !== itemToRemove);
     console.log(this.selectedProductsList)
   }

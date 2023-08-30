@@ -2,7 +2,8 @@
     <mat-checkbox [checked]="allComplete" (change)="setAll($event.checked)" >Zaznacz Wszystko</mat-checkbox>
     <div *ngFor="let store of getStoresList()">
         <mat-checkbox class="mat-checkbox" [(ngModel)]="store.checked" (click)="updateStoreResults()">
-            <div [ngClass]="'shop-header-image-' + store.brand"></div>
+            <div [ngClass]="store.checked ? 'shop-header-image-' + store.brand + '2': 'shop-header-image-' + 
+            store.brand">dupa</div>
         </mat-checkbox>
     </div>
 </div>
