@@ -9,74 +9,95 @@ import {StoresListModel} from "./storesList.model";
 })
 export class LeafletsService {
   storesList: StoresListModel[] = [];
-  fullList: LeafletModel[] = [];
-  groupedLeafletsListByPageUrl: LeafletModel[] = [];
-  filteredGroupedLeafletsListByPageUrl: LeafletModel[] = [];
+  filteredGroupedLeafletsListByPageUrl: LeafletModel[][] = [];
+  private fullList: LeafletModel[] = [];
+  private groupedLeafletsListByPageUrl: LeafletModel[][] = [];
   selectedProduct: string = '';
   selectedProductsList: string[] = [];
-
-  productsFind: string[] = [];
 
 
   constructor(private http: HttpClient) {
   }
 
-  getData() {
-    // this.http.get('https://jsonplaceholder.typicode.com/users')
-    return this.http.get('http://firelocker.pl:3000/getLeaflets')
-      .subscribe(data => {
-        //console.log(data);
-        return data;
-        // handle the data
-      });
-  }
-
-
-  public getLeaflets(): Observable<LeafletModel[]> {
+  public getLeaflets(isMock: boolean = false): Observable<LeafletModel[]> {
     const url = 'http://firelocker.pl:3000/getLeaflets';
     const localUrl = '../assets/generate_urls.json';
-    return this.http.get<LeafletModel[]>(localUrl);
-  }
-
-  getSpecificUser(nrUzytkownika: string) {
-    this.http.get('https://jsonplaceholder.typicode.com/users/' + nrUzytkownika)
-      .subscribe(data => {
-        console.log(data);
-        return [data];
-        // handle the data
-      });
+    return this.http.get<LeafletModel[]>(isMock ? localUrl : url);
   }
 
   addProduct(itemToAdd: string) {
-   this.selectedProductsList.push(itemToAdd)
-   // this.productsFind = this.selectedProductsList
-   //   console.log(this.selectedProductsList)
-   //   console.log('find:' ,this.productsFind.length)
+    this.selectedProductsList.push(itemToAdd)
   }
 
- removeProduct(itemToRemove: string) {
-    console.log(itemToRemove);
+  removeProduct(itemToRemove: string) {
     this.selectedProductsList = this.selectedProductsList.filter(i => i !== itemToRemove);
-    console.log(this.selectedProductsList)
   }
 
+
+  initStoreResults(data: LeafletModel[]) {
+    this.fullList = data;
+    for (let i: number = 0; i < data.length; i++) {
+      let ocrResult: string[] = data[i].ocrResult;
+      for (let j: number = 0; j < ocrResult.length; j++) {
+        ocrResult[j] = ocrResult[j].toLowerCase();
+      }
+    }
+    this.createGroupedLeaflets(data);
+    let brands = [...new Set(data.map(leaflet => leaflet.brand))];
+    this.storesList = [];
+    for (let i = 0; i < brands.length; i++) {
+      this.storesList.push({'brand': brands[i], 'checked': true, 'ocrResult': ['']});
+
+    }
+  }
 
   updateStoreResults() {
     // @ts-ignore
     let listaWybranych = this.storesList.filter(x => x.checked).map(x => x.brand);
-    this.groupedLeafletsListByPageUrl = this.fullList;
-    this.filteredGroupedLeafletsListByPageUrl = this.groupedLeafletsListByPageUrl.filter(x => listaWybranych.includes(x.brand))
+    this.createGroupedLeaflets(this.fullList);
+    this.filteredGroupedLeafletsListByPageUrl = this.groupedLeafletsListByPageUrl.filter(x => listaWybranych.includes(x[0].brand))
     let filterProduct;
     if (this.selectedProduct) {
-      filterProduct = (x: LeafletModel) => x.ocrResult.includes(this.selectedProduct);
-      this.filteredGroupedLeafletsListByPageUrl = this.filteredGroupedLeafletsListByPageUrl.filter(filterProduct);
-    }
-    if(this.selectedProductsList.length) {
-      // console.log('siema')
-      filterProduct = (x: LeafletModel) => x.ocrResult.some(r => this.selectedProductsList.includes(r));
-      this.filteredGroupedLeafletsListByPageUrl = this.filteredGroupedLeafletsListByPageUrl.filter(filterProduct);
+      // filterProduct = (x: LeafletModel[]) => x.filter(x => x.ocrResult.includes(this.selectedProduct));
       console.log(this.filteredGroupedLeafletsListByPageUrl)
+      // this.filteredGroupedLeafletsListByPageUrl = this.filteredGroupedLeafletsListByPageUrl.filter(filterProduct);
+      let temp = [];
+      for (let filteredGroupedLeafletsListByPageUrlElement of this.filteredGroupedLeafletsListByPageUrl) {
+        for (let leafletModel of filteredGroupedLeafletsListByPageUrlElement) {
+          if (leafletModel.ocrResult.includes(this.selectedProduct)) {
+            temp.push(filteredGroupedLeafletsListByPageUrlElement);
+          }
+        }
+      }
+      this.filteredGroupedLeafletsListByPageUrl = temp;
     }
+    if (this.selectedProductsList.length) {
+      console.log('siema')
+      //TODO
+    //   filterProduct = (x: LeafletModel) => x.ocrResult.some(r => this.selectedProductsList.includes(r));
+    //   this.filteredGroupedLeafletsListByPageUrl = this.filteredGroupedLeafletsListByPageUrl.filter(filterProduct);
+    //   console.log(this.filteredGroupedLeafletsListByPageUrl)
+    }
+  }
+
+  private createGroupedLeaflets(leafletsList: LeafletModel[]) {
+    const groupByPageUrl = this.groupBy(leafletsList, "pageUrl");
+    // console.log(groupByPageUrl)
+    this.groupedLeafletsListByPageUrl = [];
+    for (const [key] of Object.entries(groupByPageUrl)) {
+      // console.log(groupByPageUrl[key])
+      this.groupedLeafletsListByPageUrl.push(groupByPageUrl[key]);
+    }
+    this.filteredGroupedLeafletsListByPageUrl = this.groupedLeafletsListByPageUrl;
+  }
+
+  private groupBy(arr: any, key: any) {
+    const initialValue = {};
+    return arr.reduce((acc: any, cval: any) => {
+      const myAttribute = cval[key];
+      acc[myAttribute] = [...(acc[myAttribute] || []), cval]
+      return acc;
+    }, initialValue);
   }
 
 }

@@ -26,6 +26,8 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { FavouriteLeafletsComponent } from './favourite-leaflets/favourite-leaflets.component';
 import { FindProductsNumberComponent } from './find-products-number/find-products-number.component';
 import { BodyComponent } from './body/body.component';
+import {LeafletsService} from "./lista-gazetek/leaflets.service";
+import {MatBadgeModule} from "@angular/material/badge";
 
 @NgModule({
   declarations: [
@@ -51,11 +53,12 @@ import { BodyComponent } from './body/body.component';
     MatCheckboxModule,
     MatButtonModule,
     MatIconModule,
+    MatBadgeModule,
     MatCardModule,
     MatGridListModule,
     MatTooltipModule
   ],
-  providers: [],
+  providers: [LeafletsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

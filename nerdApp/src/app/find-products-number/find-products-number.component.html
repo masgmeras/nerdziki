@@ -1,7 +1,9 @@
-<!--<div >-->
-<!--  &lt;!&ndash; <ul>-->
-<!--  <li class="numberProduct " (change)="calculate()">{{productsFind.length}}</li>-->
-<!--   </ul>&ndash;&gt;-->
-<!--<button class="numberProduct" (click)="calculate()"></button>-->
+<!--<div *ngFor="let leafletPage of leafletPagesWithProducts">-->
+<!--  {{leafletPage.pageNo}}-->
+<!--  {{leafletPage.ocrResult}}-->
 <!--</div>-->
-{{calculate()}}
+<!--{{calculate()}}-->
+
+<div>
+  <mat-icon [matBadge]="calculate()" matBadgeColor="warn">search</mat-icon>
+</div>

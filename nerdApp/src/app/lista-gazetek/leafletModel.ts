@@ -6,5 +6,5 @@ export interface LeafletModel {
   pdfUrl: string;
   pageNo: number;
   ocrResult: string[];
-checked: boolean;
+  checked: boolean;
 }

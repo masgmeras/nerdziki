@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {LeafletsService} from "../lista-gazetek/leaflets.service";
+import {LeafletModel} from "../lista-gazetek/leafletModel";
 
 @Component({
   selector: 'app-find-products-number',
@@ -8,19 +9,29 @@ import {LeafletsService} from "../lista-gazetek/leaflets.service";
 })
 export class FindProductsNumberComponent {
   @Input()
-  ocrResult: string[] = [];
+  singleLeafletWithPages: LeafletModel[] = [];
+  leafletPagesWithProducts: LeafletModel[] = [];
 
   constructor(private leafletsService: LeafletsService) {
   }
 
   calculate() {
-    // let resultsCount = 0;
-    // for (let i = 0; i < this.leafletsService.selectedProductsList.length; i++) {
-    //   if (this.ocrResult.includes(this.leafletsService.selectedProductsList[i])) {
-    //     resultsCount += 1;
-    //   }
-    // }
-    return this.leafletsService.selectedProductsList.filter(x => this.ocrResult.includes(x)).length;
+    this.leafletPagesWithProducts = [];
+    this.singleLeafletWithPages.map(leafletPage => {
+        if (this.leafletsService.selectedProduct) {
+          if (leafletPage.ocrResult.includes(this.leafletsService.selectedProduct)) {
+            this.leafletPagesWithProducts.push(leafletPage);
+            return;
+          }
+        }
+        this.leafletsService.selectedProductsList.forEach(selectedProduct => {
+          if (leafletPage.ocrResult.includes(selectedProduct)) {
+            this.leafletPagesWithProducts.push(leafletPage);
+          }
+        });
+      }
+    )
+    return this.leafletPagesWithProducts.length;
   }
 }
 
