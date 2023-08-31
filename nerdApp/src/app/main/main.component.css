@@ -1,0 +1,158 @@
+body {
+background-color: #A8D0E6;
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+height: 100vh;
+}
+
+.sticky {
+position: fixed;
+top: 0;
+width: 100%
+}
+
+header {
+display: flex;
+align-items: center;
+justify-content: space-between;
+margin: 0 auto;
+position: sticky;
+top: 0;
+z-index: 5;
+background-color: #A8D0E6;
+padding-bottom: 25px;
+}
+
+main {
+background-color: #A8D0E6;
+display: flex;
+justify-content: flex-end;
+flex-grow: 1;
+}
+
+h1 {
+color: black;
+font-size: 36px;
+font-weight: bold;
+letter-spacing: 5px;
+text-align: center;
+margin: 20px 0;
+text-transform: uppercase;
+}
+
+.logo {
+margin-top: 15px;
+height: 80px;
+width: auto;
+display: flex;
+}
+
+.container {
+display: flex;
+justify-content: flex-start;
+align-items: center;
+margin-left: 20%;
+padding: 20px;
+border: 2px solid white;
+border-right: none;
+border-bottom: none;
+border-top: none;
+max-width: auto;
+}
+
+#container {
+flex-grow: 5;
+}
+
+.arrow {                                              /* Strzałki i napisy */
+height: 40px;
+width: auto;
+position: absolute;
+}
+
+#arrow-top {
+margin-top: 20px;
+margin-left: 230px;
+}
+
+#arrow-aside {
+transform: scaleY(-1);
+margin-top: 50px;
+margin-left: 230px;
+}
+
+header div.logo span {
+font-family: Buree Chalk;
+color: white;
+position: absolute;
+font-size: 21px;
+}
+
+#text-top {
+margin-top: 0px;
+margin-left: 255px;
+}
+
+#text-aside {
+margin-top: 90px;
+margin-left: 180px;
+}
+
+#dots {                                                /* kropki */
+display: flex;
+justify-content: flex-start;
+align-items: center;
+margin: 50px 0 0 20%;
+border: 2px solid white;
+border-right: none;
+position: sticky;
+top: 119px;
+background-color: #A8D0E6;
+z-index: 6;
+}
+
+.dot {
+background-color: white;
+height: 10px;
+width: 10px;
+border-radius: 50%;
+margin: 1px;
+}
+
+#button-row {                                      /* lista i login */
+position: fixed;
+bottom: 10px;
+right: 0px;
+display: flex;
+flex-direction: column;
+}
+
+.button {
+cursor: pointer;
+display: flex;
+flex-direction: column;
+position: relative;
+align-items: center;
+margin: 10px;
+}
+
+.button img {
+width: 60px;
+height: 60px;
+}
+
+
+#favourite-leaflets:hover img {/* lista */
+content: url('../../assets/images/button-row-second-color/favourite2.png');
+}
+
+#login:hover img {
+content: url('../../assets/images/button-row-second-color/login2.png');
+}
+
+.my-list {
+position: fixed;
+left: 0;
+top: 50%;
+}
