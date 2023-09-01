@@ -89,6 +89,7 @@ export class LeafletsService {
   }
 
   private createGroupedLeaflets(leafletsList: LeafletModel[]) {
+    console.log(leafletsList)
     const groupByPageUrl = this.groupBy(leafletsList, "pageUrl");
     // console.log(groupByPageUrl)
     this.groupedLeafletsListByPageUrl = [];

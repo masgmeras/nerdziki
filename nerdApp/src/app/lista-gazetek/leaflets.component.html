@@ -15,7 +15,10 @@
           <app-find-products-number [singleLeafletWithPages]="leafletPerPageUrl"></app-find-products-number>
         </div>
       </mat-card-header>
-      <img class="example-image" mat-card-image [src]="leafletPerPageUrl[0].thumbnailUrl" alt="Leaflet logo">
+
+        <img class="example-image" mat-card-image [src]="leafletPerPageUrl[0].thumbnailUrl" alt="Leaflet logo">
+
+
       <!--      <mat-card-content>Simple card</mat-card-content>-->
       <mat-card-actions>
         <a mat-icon-button color="primary" [href]="leafletPerPageUrl[0].pdfUrl" target="_blank">
