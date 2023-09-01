@@ -28,6 +28,8 @@ import { FindProductsNumberComponent } from './find-products-number/find-product
 import {LeafletsService} from "./lista-gazetek/leaflets.service";
 import {MatBadgeModule} from "@angular/material/badge";
 import { MainComponent } from './main/main.component';
+import {SlickCarouselModule} from "ngx-slick-carousel";
+import {NgOptimizedImage} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -56,7 +58,9 @@ import { MainComponent } from './main/main.component';
     MatBadgeModule,
     MatCardModule,
     MatGridListModule,
-    MatTooltipModule
+    MatTooltipModule,
+    SlickCarouselModule,
+    NgOptimizedImage
   ],
   providers: [LeafletsService],
   bootstrap: [AppComponent]

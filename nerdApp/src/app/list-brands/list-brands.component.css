@@ -8,14 +8,14 @@ position: fixed;
   background-color: red;
 }
 
-.shop-header-image-kaufland {
+.shop-header-image-kaufland\/pl-PL2 {
   background-image: url("../../assets/images/button-row-first-color/kaufland1.png");
   background-size: cover;
     margin: 0 auto;
     height: 60px;
     width: 60px;
 }
-.shop-header-image-kaufland:hover {
+.shop-header-image-kaufland\/pl-PL2:hover {
  background-image: url("../../assets/images/button-row-second-color/kaufland2.png");
   background-size: cover;
       margin: 0 auto;

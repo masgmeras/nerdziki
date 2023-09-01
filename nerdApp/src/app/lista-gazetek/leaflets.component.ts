@@ -8,6 +8,7 @@ import {LeafletsService} from "./leaflets.service";
 })
 export class LeafletsComponent implements OnInit {
 
+
   constructor(private leafletsService: LeafletsService) {
   }
 
@@ -19,6 +20,32 @@ export class LeafletsComponent implements OnInit {
 
   getFilteredGroupedLeafletsListByPageUrl() {
     return this.leafletsService.filteredGroupedLeafletsListByPageUrl;
+  }
+
+
+  slideConfig = {
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+  };
+
+
+  slickInit() {
+    console.log('slick initialized');
+  }
+
+  breakpoint() {
+    console.log('breakpoint');
+  }
+
+  afterChange() {
+    console.log('afterChange');
+  }
+
+  beforeChange() {
+    console.log('beforeChange');
   }
 
 
