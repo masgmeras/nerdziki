@@ -1,46 +1,30 @@
 import {Component} from '@angular/core';
 import {LeafletsService} from "../lista-gazetek/leaflets.service";
-import {LeafletModel} from "../lista-gazetek/leafletModel";
 
 
 @Component({
-  selector: 'app-list-brands',
-  templateUrl: './list-brands.component.html',
-  styleUrls: ['./list-brands.component.css'],
-  providers: []
+    selector: 'app-list-brands',
+    templateUrl: './list-brands.component.html',
+    styleUrls: ['./list-brands.component.css'],
+    providers: []
 })
 export class ListBrandsComponent {
 
-  constructor(private leafletsService: LeafletsService) {
-  }
-  checked:LeafletModel['checked'] = true;
-  //allComplete: LeafletModel['checked'] = true;
+    isAllSelected: boolean = true;
 
-/*  setAll(checked: boolean) {
-    this.allComplete = checked;
-    if (this.leafletsService.storesList == null) {
-      return;
+    constructor(private leafletsService: LeafletsService) {
     }
-    this.leafletsService.storesList.forEach(x => (x.checked = checked));
-    this.leafletsService.updateStoreResults();
 
-  }*/
+    setItAll() {
+        this.leafletsService.storesList.forEach(x => (x.checked = this.isAllSelected));
+    }
 
-  setItAll(checked: boolean){
- this.checked = !checked;
- if(this.leafletsService.storesList == null){
-return;
- }
-  this.leafletsService.storesList.forEach(x => (x.checked = checked));
-  this.leafletsService.updateStoreResults();
-  }
+    getStoresList() {
+        return this.leafletsService.storesList;
+    }
 
-  getStoresList() {
-    return this.leafletsService.storesList;
-  }
-
-  updateStoreResults(checked: boolean) {
-    this.leafletsService.updateStoreResults();
-    this.setItAll(checked);
-  }
+    updateStoreResults() {
+        this.isAllSelected = this.leafletsService.storesList.every(x => x.checked);
+        this.leafletsService.updateStoreResults();
+    }
 }

@@ -7,14 +7,14 @@ position: fixed;
   display: none !important;
 }
 
-.shop-header-image-kaufland\/pl-PL {
+.shop-header-image-kaufland\/pl-PL{
   background-image: url("../../assets/images/button-row-first-color/kaufland1.png");
   background-size: cover;
     margin: 0 auto;
     height: 60px;
     width: 60px;
 }
-.shop-header-image-kaufland\/pl-PL2:hover .shop-header-image-kaufland\/pl-PL2:hover {
+.shop-header-image-kaufland\/pl-PL2, .shop-header-image-kaufland\/pl-PL2:hover {
  background-image: url("../../assets/images/button-row-second-color/kaufland2.png");
   background-size: cover;
       margin: 0 auto;

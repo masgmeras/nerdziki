@@ -8,5 +8,5 @@ import { environment } from '../environments/environment';
 })
 export class AppComponent  {
   constructor() {
-    console.log(environment.firebase);
+    // console.log(environment.firebase);
   }}

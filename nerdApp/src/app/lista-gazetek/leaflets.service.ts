@@ -79,6 +79,7 @@ export class LeafletsService {
       }
       this.filteredGroupedLeafletsListByPageUrl = temp;
     }
+
     if (this.selectedProductsList.length) {
       console.log('siema')
       //TODO

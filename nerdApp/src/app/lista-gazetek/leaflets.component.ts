@@ -30,27 +30,28 @@ export class LeafletsComponent implements OnInit {
 
   slideConfig = {
     infinite: true,
+    dots:true,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 3000,
   };
 
 
   slickInit() {
-    console.log('slick initialized');
+    // console.log('slick initialized');
   }
 
   breakpoint() {
-    console.log('breakpoint');
+    // console.log('breakpoint');
   }
 
   afterChange() {
-    console.log('afterChange');
+    // console.log('afterChange');
   }
 
   beforeChange() {
-    console.log('beforeChange');
+    // console.log('beforeChange');
   }
 
 

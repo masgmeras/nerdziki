@@ -7,6 +7,8 @@ export interface LeafletModel {
   pageNo: number;
   ocrResult: string;
   checked: boolean;
+  offerStartDate: string;
+  offerEndDate: string; //"2023-09-06"
 
   specificFilteredLeaflets: LeafletModel[];
 }

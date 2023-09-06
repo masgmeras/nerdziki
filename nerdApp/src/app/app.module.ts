@@ -61,7 +61,7 @@ import {NgOptimizedImage} from "@angular/common";
     MatCardModule,
     MatGridListModule,
     MatTooltipModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    // AngularFireModule.initializeApp(environment.firebase),
     SlickCarouselModule,
     NgOptimizedImage
   ],
