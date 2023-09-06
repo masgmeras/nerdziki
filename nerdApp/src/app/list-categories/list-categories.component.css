@@ -2,7 +2,7 @@
   display: flex;
 }
 
-.product-name {
+.product-name {   /* checkboxy kategori produktów i sklepów */
   color: #24305E;
   font-size: 15px;
   text-align: center;
@@ -21,7 +21,7 @@
   margin-bottom: 10px;
 }
 
-.checkbox-category-container { /* checkboxy kategori produktów i sklepów */
+.checkbox-category-container {
   display: flex;
   background-color: red;
   margin-top: 20px;
@@ -33,26 +33,6 @@
   height: 60px;
   border-radius: 50%;
   transition: opacity 0.5s ease-in-out;
-}
-
-#button-row {                                      /* lista i login */
-  position: fixed;
-  bottom: 10px;
-  right: 0px;
-  display: flex;
-  flex-direction: column;
-
-}
-
-#checkbox-aside {
-  flex-direction: column;
-  margin-top: 40px;
-  margin-left: 30px;
-}
-
-.checkbox-aside {
-  flex-direction: row;
-
 }
 
 .checkbox-label input {

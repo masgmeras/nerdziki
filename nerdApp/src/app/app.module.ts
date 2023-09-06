@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -28,6 +28,8 @@ import { FindProductsNumberComponent } from './find-products-number/find-product
 import {LeafletsService} from "./lista-gazetek/leaflets.service";
 import {MatBadgeModule} from "@angular/material/badge";
 import { MainComponent } from './main/main.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -56,7 +58,8 @@ import { MainComponent } from './main/main.component';
     MatBadgeModule,
     MatCardModule,
     MatGridListModule,
-    MatTooltipModule
+    MatTooltipModule,
+    // AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [LeafletsService],
   bootstrap: [AppComponent]

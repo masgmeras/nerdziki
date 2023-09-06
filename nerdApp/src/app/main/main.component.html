@@ -11,10 +11,6 @@
       <app-product-search></app-product-search>
     </header>
     <main>
-      <div>
-        <div class="checkbox-category-container" id="checkbox-aside">
-        </div>
-      </div>
       <app-list-brands></app-list-brands>
       <!-- REFACTOR do srodka app-leaflets -->
       <div id="container">
@@ -31,7 +27,7 @@
         <app-my-list></app-my-list>
       </div>
       <div id="button-row">
-        <div class="button" id="favourite-leaflets">
+        <div class="button" id="favourite-leaflets" [routerLink]="['/favourite']">
           <img src="../assets/images/button-row-first-color/favourite1.png" alt="Ulubione promocje">
           <span class="product-name">Ulubione</span>
         </div>
@@ -41,6 +37,5 @@
         </div>
       </div>
     </main>
- 
 </body>
     
