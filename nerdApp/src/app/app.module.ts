@@ -29,7 +29,7 @@ import {LeafletsService} from "./lista-gazetek/leaflets.service";
 import {MatBadgeModule} from "@angular/material/badge";
 import { MainComponent } from './main/main.component';
 import { AngularFireModule } from '@angular/fire/compat';
-import { environment } from '../environments/environment';
+import { environment } from './../environments/environment';
 
 @NgModule({
   declarations: [
@@ -59,7 +59,7 @@ import { environment } from '../environments/environment';
     MatCardModule,
     MatGridListModule,
     MatTooltipModule,
-    // AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [LeafletsService],
   bootstrap: [AppComponent]
