@@ -1,5 +1,8 @@
 <div class="form-box">
     <h1 id="title">Zaloguj się</h1>
+    <div class="exit-button">
+        <button type="submit" class="x-mark"><i class="fa-regular fa-circle-xmark" [routerLink]="['/main']"></i></button>
+    </div>
     <form autocomplete="off">
         <div class="input-group">
             <div class="input-field">
@@ -14,7 +17,7 @@
         </div>
         <div class="option-field">
             <button type="button" id="login">Zaloguj się</button>
-            <button type="button" id="register" class="disable">Zarejestruj się</button>
+            <button type="button" id="register" class="disable" [routerLink]="['/signup']">Zarejestruj się</button>
         </div>
     </form>
 </div>

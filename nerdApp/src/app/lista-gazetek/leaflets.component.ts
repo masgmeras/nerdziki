@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {LeafletsService} from "./leaflets.service";
+import {LeafletModel} from "./leafletModel";
 
 @Component({
   selector: 'app-leaflets',
@@ -20,6 +21,10 @@ export class LeafletsComponent implements OnInit {
 
   getFilteredGroupedLeafletsListByPageUrl() {
     return this.leafletsService.filteredGroupedLeafletsListByPageUrl;
+  }
+
+  trackByMethod(index: number, el: any): number {
+    return index;
   }
 
 
@@ -49,4 +54,14 @@ export class LeafletsComponent implements OnInit {
   }
 
 
+  getListOfThumbnails(leafletPerPageUrl: LeafletModel[]) {
+    if (leafletPerPageUrl[0].specificFilteredLeaflets) {
+      return leafletPerPageUrl[0].specificFilteredLeaflets;
+    }
+    return leafletPerPageUrl;
+  }
+
+  updateImages() {
+
+  }
 }

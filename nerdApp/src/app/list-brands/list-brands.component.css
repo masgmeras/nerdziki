@@ -4,8 +4,7 @@ position: fixed;
 }
 
 .mdc-checkbox {
-  display: none;
-  background-color: red;
+  display: none !important;
 }
 
 .shop-header-image-kaufland\/pl-PL {
@@ -15,7 +14,7 @@ position: fixed;
     height: 60px;
     width: 60px;
 }
-.shop-header-image-kaufland\/pl-PL2, .shop-header-image-kaufland\/pl-PL:hover {
+.shop-header-image-kaufland\/pl-PL2:hover .shop-header-image-kaufland\/pl-PL2:hover {
  background-image: url("../../assets/images/button-row-second-color/kaufland2.png");
   background-size: cover;
       margin: 0 auto;
@@ -46,7 +45,7 @@ position: fixed;
       height: 60px;
       width: 60px;
 }
-.shop-header-image-Janusze-kradno:hover {
+.shop-header-image-Janusze-kradno2, .shop-header-image-Janusze-kradno:hover {
  background-image: url("../../assets/images/button-row-second-color/biedronka2.png");
   background-size: cover;
       margin: 0 auto;

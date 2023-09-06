@@ -89,3 +89,21 @@ height: 280px;
 .option-field button.disable {
 background: #dcd3d3cc;
 }
+
+.x-mark {
+position: absolute;
+right: 5px;
+top: 5px;
+height: 7vh;
+width: 7vh;
+background: none;
+border: none;
+padding: 0;
+cursor: pointer;
+}
+
+.x-mark i {
+font-size: 3vh;
+color: white;
+position: relative;
+}

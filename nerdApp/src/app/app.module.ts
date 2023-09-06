@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -28,6 +28,8 @@ import { FindProductsNumberComponent } from './find-products-number/find-product
 import {LeafletsService} from "./lista-gazetek/leaflets.service";
 import {MatBadgeModule} from "@angular/material/badge";
 import { MainComponent } from './main/main.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from '../environments/environment';
 import {SlickCarouselModule} from "ngx-slick-carousel";
 import {NgOptimizedImage} from "@angular/common";
 
@@ -59,6 +61,7 @@ import {NgOptimizedImage} from "@angular/common";
     MatCardModule,
     MatGridListModule,
     MatTooltipModule,
+    AngularFireModule.initializeApp(environment.firebase),
     SlickCarouselModule,
     NgOptimizedImage
   ],
