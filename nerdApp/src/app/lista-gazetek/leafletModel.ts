@@ -7,4 +7,6 @@ export interface LeafletModel {
   pageNo: number;
   ocrResult: string;
   checked: boolean;
+
+  specificFilteredLeaflets: LeafletModel[];
 }

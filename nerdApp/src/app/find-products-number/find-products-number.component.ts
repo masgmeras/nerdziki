@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {LeafletsService} from "../lista-gazetek/leaflets.service";
 import {LeafletModel} from "../lista-gazetek/leafletModel";
 
@@ -10,12 +10,20 @@ import {LeafletModel} from "../lista-gazetek/leafletModel";
 export class FindProductsNumberComponent {
   @Input()
   singleLeafletWithPages: LeafletModel[] = [];
+  // @Output() updateImagesEvent = new EventEmitter<string>();
   leafletPagesWithProducts: LeafletModel[] = [];
+
+
+  // refreshImages(value: LeafletModel[]) {
+  //   this.updateImagesEvent.emit(value);
+  // }
 
   constructor(private leafletsService: LeafletsService) {
   }
 
   calculate() {
+    // console.log('calculate')
+    // console.log(this.leafletPagesWithProducts)
     this.leafletPagesWithProducts = [];
     this.singleLeafletWithPages.map(leafletPage => {
         if (this.leafletsService.selectedProduct) {
@@ -31,6 +39,12 @@ export class FindProductsNumberComponent {
         });
       }
     )
+
+    // this.refreshImages(this.leafletPagesWithProducts);
+
+    if(this.leafletPagesWithProducts.length){
+      this.singleLeafletWithPages[0].specificFilteredLeaflets = this.leafletPagesWithProducts;
+    }
     return this.leafletPagesWithProducts.length;
   }
 }
