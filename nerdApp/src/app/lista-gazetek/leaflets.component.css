@@ -10,7 +10,11 @@ mat-card {
   height: calc(100% - 70px);
 }
 
-.example-header-image-kaufland {
+.mat-mdc-card-content {
+  padding: 0 32px;
+}
+
+.example-header-image-kaufland\/pl-PL {
   background-image: url('../../assets/images/button-row-second-color/kaufland2.png');
   background-size: cover;
 }

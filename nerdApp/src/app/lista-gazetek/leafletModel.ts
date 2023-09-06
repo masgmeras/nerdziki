@@ -5,6 +5,6 @@ export interface LeafletModel {
   thumbnailUrl: string; // TODO add in python script fields with values
   pdfUrl: string;
   pageNo: number;
-  ocrResult: string[];
+  ocrResult: string;
   checked: boolean;
 }

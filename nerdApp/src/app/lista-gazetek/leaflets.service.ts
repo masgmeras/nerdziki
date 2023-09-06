@@ -36,12 +36,20 @@ export class LeafletsService {
 
   initStoreResults(data: LeafletModel[]) {
     this.fullList = data;
+
+
+    for (let leaflet of data) {
+      leaflet.ocrResult = leaflet.ocrResult.toLowerCase();
+    }
+
+   /*
     for (let i: number = 0; i < data.length; i++) {
       let ocrResult: string[] = data[i].ocrResult;
       for (let j: number = 0; j < ocrResult.length; j++) {
         ocrResult[j] = ocrResult[j].toLowerCase();
       }
-    }
+    }*/
+
     this.createGroupedLeaflets(data);
     let brands = [...new Set(data.map(leaflet => leaflet.brand))];
     this.storesList = [];
@@ -81,6 +89,7 @@ export class LeafletsService {
   }
 
   private createGroupedLeaflets(leafletsList: LeafletModel[]) {
+    console.log(leafletsList)
     const groupByPageUrl = this.groupBy(leafletsList, "pageUrl");
     // console.log(groupByPageUrl)
     this.groupedLeafletsListByPageUrl = [];

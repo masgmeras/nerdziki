@@ -30,6 +30,8 @@ import {MatBadgeModule} from "@angular/material/badge";
 import { MainComponent } from './main/main.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from './../environments/environment';
+import {SlickCarouselModule} from "ngx-slick-carousel";
+import {NgOptimizedImage} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -59,7 +61,9 @@ import { environment } from './../environments/environment';
     MatCardModule,
     MatGridListModule,
     MatTooltipModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    SlickCarouselModule,
+    NgOptimizedImage
   ],
   providers: [LeafletsService],
   bootstrap: [AppComponent]
