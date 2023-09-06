@@ -8,14 +8,14 @@ position: fixed;
   background-color: red;
 }
 
-.shop-header-image-kaufland\/pl-PL2 {
+.shop-header-image-kaufland\/pl-PL {
   background-image: url("../../assets/images/button-row-first-color/kaufland1.png");
   background-size: cover;
     margin: 0 auto;
     height: 60px;
     width: 60px;
 }
-.shop-header-image-kaufland\/pl-PL2:hover {
+.shop-header-image-kaufland\/pl-PL2, .shop-header-image-kaufland\/pl-PL:hover {
  background-image: url("../../assets/images/button-row-second-color/kaufland2.png");
   background-size: cover;
       margin: 0 auto;
@@ -57,4 +57,21 @@ position: fixed;
 .mat-grid-list {
   width: 70vw;
   row-gap: 0px;
+}
+.pointer{
+      cursor: pointer;
+
+}
+.input_hidden{
+visibility: hidden;
+}
+.setAllButtonP{
+margin-left: 20px;
+}
+.buttonSetAll {
+
+}
+.buttonSetAll2{
+color: white;
+background: #24315E;
 }

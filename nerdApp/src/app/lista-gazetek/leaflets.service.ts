@@ -14,7 +14,7 @@ export class LeafletsService {
   private groupedLeafletsListByPageUrl: LeafletModel[][] = [];
   selectedProduct: string = '';
   selectedProductsList: string[] = [];
-
+  listCategoriesProducts: string[] = ['owoce'];
 
   constructor(private http: HttpClient) {
   }
