@@ -93,6 +93,34 @@ def handleKauflandPage():
                 json.dump(createOcrParsedPageItem2(p, dict_from_json.get('flyer')), text_file)
                 text_file.write(",") 
         text_file.write("]")
+        
+        
+def handleLidlPage():
+    driver.get('https://www.lidl.pl/informacje-dla-klienta/nasze-gazetki') # Otwórz stronę dla danego brandu
+    time.sleep(3) #czekanie 3s na zaladowanie strony
+    #KAUFLAND w konsoli F12 -> $x('//div[@data-download-url]')
+    wrapper = driver.find_elements(By.XPATH, "//a[contains(@class, '_flyer__link')]")
+   
+    flierlist = [];
+    for w in wrapper:
+       
+        flierlist.append("https://endpoints.leaflets.schwarz/v4/flyer?flyer_identifier={}".format(w.get_attribute('href').split("/")[6:7][0]))    
+        print("https://endpoints.leaflets.schwarz/v4/flyer?flyer_identifier={}".format(w.get_attribute('href').split("/")[6:7][0]))
+
+
+    with open(OUTPUT_FILE_NAME, "a") as text_file: 
+        text_file.write("[")
+        for f in flierlist:
+            driver.get(f) # Otwórz stronę dla danego brandu
+            time.sleep(1) #czekanie 3s na zaladowanie strony
+
+            soup = BeautifulSoup(driver.page_source, features="lxml")
+            dict_from_json = json.loads(soup.find("body").text)
+            print('#')
+            for p in dict_from_json.get('flyer').get('pages'):
+                json.dump(createOcrParsedPageItem2(p, dict_from_json.get('flyer')), text_file)
+                text_file.write(",") 
+        text_file.write("]")
 
 def createOcrParsedPageItem2(p, dictFlier):
     dictionary = {
@@ -101,13 +129,15 @@ def createOcrParsedPageItem2(p, dictFlier):
         "pdfUrl": dictFlier.get("pdfUrl"),
         "thumbnailUrl": p.get("thumbnail"),
         "pageNo": p.get("number"),
-        "ocrResult": p.get("keyWords")
+        "ocrResult": p.get("keyWords"),
+        "offerStartDate": dictFlier.get("offerStartDate"),
+        "offerEndDate": dictFlier.get("offerEndDate")  #"2023-09-06"
         }
     return dictionary
     
     
-handleKauflandPage();
-
+handleKauflandPage()
+handleLidlPage()
     
 #https://endpoints.leaflets.schwarz/v4/flyer?flyer_identifier=PL_pl_KDZ_5660_PL32-LFT&region_id=5660&region_code=5660
 driver.quit() # Zamknij przeglądarkę
