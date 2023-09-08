@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {LeafletsService} from "./leaflets.service";
 import {LeafletModel} from "./leafletModel";
+import { NgOptimizedImage } from '@angular/common'
 
 @Component({
   selector: 'app-leaflets',

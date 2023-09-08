@@ -26,7 +26,7 @@ export class FindProductsNumberComponent {
     // console.log(this.leafletPagesWithProducts)
     this.leafletPagesWithProducts = [];
     this.singleLeafletWithPages.map(leafletPage => {
-        if (this.leafletsService.selectedProduct) {
+        if (this.leafletsService.selectedProduct != '') {
           if (leafletPage.ocrResult.includes(this.leafletsService.selectedProduct)) {
             this.leafletPagesWithProducts.push(leafletPage);
             return;

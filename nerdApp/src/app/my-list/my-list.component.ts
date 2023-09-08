@@ -19,12 +19,14 @@ export class MyListComponent {
 
 
   addProduct() {
+    if(!this.mySelectProduct){
+      return;
+    }
     this.mySelectProduct = this.mySelectProduct.toLowerCase();
     this.myListProduct.push(this.mySelectProduct);
     this.leafletsService.addProduct(this.mySelectProduct);
-    this.leafletsService.updateStoreResults();
     this.mySelectProduct = '';
-
+    this.leafletsService.updateStoreResults();
 
     //calculate
   }
@@ -32,7 +34,6 @@ export class MyListComponent {
 
   remove(myProduct: string) {
     this.myListProduct = this.myListProduct.filter(e => e !== myProduct)
-    //this.remove(myProduct)
     this.leafletsService.removeProduct(myProduct);
     this.leafletsService.updateStoreResults();
   }

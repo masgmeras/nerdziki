@@ -21,7 +21,7 @@
 <!--      <button (click)="removeSlide()">Remove</button>-->
 <!--      <button (click)="slickModal.slickGoTo(2)">slickGoto 2</button>-->
 <!--      <button (click)="slickModal.unslick()">unslick</button>-->
-            <mat-card-content>
+            <mat-card-content style="width: 200px; height: 200px">
               <ngx-slick-carousel class="carousel"
                                   #slickModal="slick-carousel"
                                   [config]="slideConfig"
@@ -31,6 +31,7 @@
                                   (beforeChange)="beforeChange()">
                 <div ngxSlickItem *ngFor="let leafletModel of getListOfThumbnails(leafletPerPageUrl)" class="slide">
                   <img style="min-height: 280px; min-width: 70%;" [src]="leafletModel.thumbnailUrl" alt="Leaflet logo">
+<!--                  <img fill style="height: auto; width: auto; min-height: 280px; min-width: 70%;" ngSrc="{{leafletModel.thumbnailUrl}}" priority alt="Leaflet logo">-->
                 </div>
               </ngx-slick-carousel>
 
@@ -38,7 +39,7 @@
 
             </mat-card-content>
       <mat-card-actions>
-        <a mat-icon-button color="primary" [href]="leafletPerPageUrl[0].pdfUrl" target="_blank">
+        <a mat-icon-button aria-hidden="false" color="primary" [href]="leafletPerPageUrl[0].pdfUrl" target="_blank">
 <!--        <a mat-icon-button color="primary" [href]="leaflet.pdfUrl + '?page=' + leaflet.pageNo" target="_blank">-->
           <mat-icon>open_in_new</mat-icon>
         </a>
