@@ -21,7 +21,7 @@ position: fixed;
       height: 60px;
       width: 60px;
 }
-.shop-header-image-lidl {
+.shop-header-image-lidl\/pl-PL {
   background-image: url("../../assets/images/button-row-first-color/lidl1.png");
   background-size: cover;
       margin: 0 auto;
@@ -29,7 +29,7 @@ position: fixed;
       width: 60px;
 
 }
-.shop-header-image-lidl2, .shop-header-image-lidl:hover {
+.shop-header-image-lidl\/pl-PL2, .shop-header-image-lidl\/pl-PL2:hover {
  background-image: url("../../assets/images/button-row-second-color/lidl2.png");
   background-size: cover;
       margin: 0 auto;

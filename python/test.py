@@ -92,7 +92,7 @@ def handleKauflandPage():
             for p in dict_from_json.get('flyer').get('pages'):
                 json.dump(createOcrParsedPageItem2(p, dict_from_json.get('flyer')), text_file)
                 text_file.write(",") 
-        text_file.write("]")
+        #text_file.write("]")
         
         
 def handleLidlPage():
@@ -109,8 +109,8 @@ def handleLidlPage():
 
 
     with open(OUTPUT_FILE_NAME, "a") as text_file: 
-        text_file.write("[")
-        for f in flierlist:
+        #text_file.write("[")
+        for idx, f in enumerate(flierlist):
             driver.get(f) # Otwórz stronę dla danego brandu
             time.sleep(1) #czekanie 3s na zaladowanie strony
 
@@ -119,7 +119,7 @@ def handleLidlPage():
             print('#')
             for p in dict_from_json.get('flyer').get('pages'):
                 json.dump(createOcrParsedPageItem2(p, dict_from_json.get('flyer')), text_file)
-                text_file.write(",") 
+                if idx < len(flierlist)-1: text_file.write(",")
         text_file.write("]")
 
 def createOcrParsedPageItem2(p, dictFlier):
