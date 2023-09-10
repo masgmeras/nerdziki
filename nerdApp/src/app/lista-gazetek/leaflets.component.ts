@@ -11,7 +11,7 @@ import { NgOptimizedImage } from '@angular/common'
 export class LeafletsComponent implements OnInit {
 
 
-  constructor(private leafletsService: LeafletsService) {
+  constructor(protected leafletsService: LeafletsService) {
   }
 
   ngOnInit() {
@@ -21,11 +21,7 @@ export class LeafletsComponent implements OnInit {
   }
 
   getFilteredGroupedLeafletsListByPageUrl() {
-    return this.leafletsService.filteredGroupedLeafletsListByPageUrl;
-  }
-
-  trackByMethod(index: number, el: any): number {
-    return index;
+    return this.leafletsService?.filteredGroupedLeafletsListByPageUrl;
   }
 
 
@@ -39,26 +35,9 @@ export class LeafletsComponent implements OnInit {
   };
 
 
-  slickInit() {
-    // console.log('slick initialized');
-  }
-
-  breakpoint() {
-    // console.log('breakpoint');
-  }
-
-  afterChange() {
-    // console.log('afterChange');
-  }
-
-  beforeChange() {
-    // console.log('beforeChange');
-  }
-
-
   getListOfThumbnails(leafletPerPageUrl: LeafletModel[]) {
-    if (leafletPerPageUrl[0].specificFilteredLeaflets) {
-      return leafletPerPageUrl[0].specificFilteredLeaflets;
+    if (leafletPerPageUrl?.[0]?.specificFilteredLeaflets) {
+      return leafletPerPageUrl?.[0]?.specificFilteredLeaflets;
     }
     return leafletPerPageUrl;
   }

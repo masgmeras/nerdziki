@@ -1,5 +1,5 @@
 export interface StoresListModel {
-checked: boolean;
+  checked: boolean;
   brand: string;
   ocrResult: string[];
 

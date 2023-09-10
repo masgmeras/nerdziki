@@ -6,7 +6,8 @@
 <!--  </label></form>-->
 
 
-  <input [(ngModel)]="isAllSelected" type="checkbox" checked (change)="setItAll()" />Zaznacz
+  <input [(ngModel)]="isAllSelected" type="checkbox" checked (change)="setItAll()" />
+  <span>Zaznacz</span>
 
 
   <div *ngFor="let store of getStoresList()">
@@ -19,11 +20,11 @@
             store.brand"></div>
     </label></form>-->
 
-    <label><input type="checkbox"
-                  [(ngModel)]="store.checked"
-                  (change)="updateStoreResults()">
-      <div [ngClass]="store.checked ? 'shop-header-image-' + store.brand + '2' : 'shop-header-image-' + store.brand"></div>
-    </label>
+<!--    <label>-->
+    <input type="checkbox" [(ngModel)]="store.checked" (change)="updateStoreResults()">
+    <div [ngClass]="store.checked ? 'shop-header-image-' + store.brand + '2' : 'shop-header-image-' + store.brand">
+      </div>
+<!--    </label>-->
   </div>
 </div>
 

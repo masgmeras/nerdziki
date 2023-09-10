@@ -5,50 +5,49 @@
 
 <!--{{getFilteredGroupedLeafletsListByPageUrl() | json}}-->
 <mat-grid-list cols="3" rowHeight="1:1" [gutterSize]="'1px'">
-  <mat-grid-tile rowspan="1"  *ngFor="let leafletPerPageUrl of getFilteredGroupedLeafletsListByPageUrl(); trackBy:trackByMethod ">
-    <mat-card class="example-card tile" style="background: lightgray;">
-      <mat-card-header>
-        <div mat-card-avatar [class]="'example-header-image-' + leafletPerPageUrl[0].brand" ></div>
-        <mat-card-title>{{leafletPerPageUrl[0].brand | titlecase}}</mat-card-title>
-        <mat-card-subtitle>Sprawdź ofertę sklepu</mat-card-subtitle>
-        <div style="float: right;">
-          <app-find-products-number [singleLeafletWithPages]="leafletPerPageUrl"></app-find-products-number>
-        </div>
-      </mat-card-header>
+    <div *ngFor="let leafletPerPageUrl of getFilteredGroupedLeafletsListByPageUrl(); ">
+        <mat-grid-tile rowspan="1">
+            <mat-card  class="example-card tile" style="background: lightgray;">
+                <mat-card-header>
+                    <div mat-card-avatar [class]="'example-header-image-' + leafletPerPageUrl?.[0]?.brand" ></div>
+                    <mat-card-title>{{leafletPerPageUrl?.[0]?.brand | titlecase}}</mat-card-title>
+                    <mat-card-subtitle>Sprawdź ofertę sklepu</mat-card-subtitle>
+                    <div style="float: right;">
+                        <app-find-products-number [singleLeafletWithPages]="leafletPerPageUrl"></app-find-products-number>
+                    </div>
+                </mat-card-header>
 
-<!--        <img class="example-image" mat-card-image [src]="leafletPerPageUrl[0].thumbnailUrl" alt="Leaflet logo">-->
-<!--      <button (click)="addSlide()">Add</button>-->
-<!--      <button (click)="removeSlide()">Remove</button>-->
-<!--      <button (click)="slickModal.slickGoTo(2)">slickGoto 2</button>-->
-<!--      <button (click)="slickModal.unslick()">unslick</button>-->
-            <mat-card-content style="width: 200px; height: 200px">
-              <ngx-slick-carousel class="carousel"
-                                  #slickModal="slick-carousel"
-                                  [config]="slideConfig"
-                                  (init)="slickInit()"
-                                  (breakpoint)="breakpoint()"
-                                  (afterChange)="afterChange()"
-                                  (beforeChange)="beforeChange()">
-                <div ngxSlickItem *ngFor="let leafletModel of getListOfThumbnails(leafletPerPageUrl)" class="slide">
-                  <img style="min-height: 280px; min-width: 70%;" [src]="leafletModel.thumbnailUrl" alt="Leaflet logo">
-<!--                  <img fill style="height: auto; width: auto; min-height: 280px; min-width: 70%;" ngSrc="{{leafletModel.thumbnailUrl}}" priority alt="Leaflet logo">-->
-                </div>
-              </ngx-slick-carousel>
+                <!--        <img class="example-image" mat-card-image [src]="leafletPerPageUrl[0].thumbnailUrl" alt="Leaflet logo">-->
+                <!--      <button (click)="addSlide()">Add</button>-->
+                <!--      <button (click)="removeSlide()">Remove</button>-->
+                <!--      <button (click)="slickModal.slickGoTo(2)">slickGoto 2</button>-->
+                <!--      <button (click)="slickModal.unslick()">unslick</button>-->
+                <mat-card-content style="width: 200px; height: 200px">
+                    <ngx-slick-carousel class="carousel"
+                                        #slickModal="slick-carousel"
+                                        [config]="slideConfig">
+                        <div ngxSlickItem *ngFor="let leafletModel of getListOfThumbnails(leafletPerPageUrl)" class="slide">
+                            <img style="min-height: 250px; min-width: 70%;" [src]="leafletModel?.thumbnailUrl" alt="Leaflet logo">
+                            <!--                  <img fill style="height: auto; width: auto; min-height: 280px; min-width: 70%;" ngSrc="{{leafletModel.thumbnailUrl}}" priority alt="Leaflet logo">-->
+                        </div>
+                    </ngx-slick-carousel>
 
 
 
-            </mat-card-content>
-      <mat-card-actions>
-        <a mat-icon-button aria-hidden="false" color="primary" [href]="leafletPerPageUrl[0].pdfUrl" target="_blank">
-<!--        <a mat-icon-button color="primary" [href]="leaflet.pdfUrl + '?page=' + leaflet.pageNo" target="_blank">-->
-          <mat-icon>open_in_new</mat-icon>
-        </a>
-        <a  mat-icon-button >
-        <img style="width: 30px; height: 30px;" src="../assets/images/button-row-first-color/favourite1.png" alt="Ulubione promocje">
-        </a>
-      </mat-card-actions>
-    </mat-card>
-  </mat-grid-tile>
+                </mat-card-content>
+                <mat-card-actions>
+                    <a mat-icon-button aria-hidden="false" color="primary" [href]="leafletPerPageUrl[0].pdfUrl" target="_blank">
+                        <!--        <a mat-icon-button color="primary" [href]="leaflet.pdfUrl + '?page=' + leaflet.pageNo" target="_blank">-->
+                        <mat-icon>open_in_new</mat-icon>
+                    </a>
+                    <a  mat-icon-button >
+                        <img style="width: 30px; height: 30px;" src="../assets/images/button-row-first-color/favourite1.png" alt="Ulubione promocje">
+                    </a>
+                </mat-card-actions>
+            </mat-card>
+        </mat-grid-tile>
+    </div>
+
 
 
 </mat-grid-list>
