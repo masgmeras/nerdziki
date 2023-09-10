@@ -3,20 +3,25 @@
     <div class="exit-button">
         <button type="submit" class="x-mark"><i class="fa-regular fa-circle-xmark" [routerLink]="['/main']"></i></button>
     </div>
-    <form autocomplete="off">
+
+  <div style="color: red;">
+    {{errors}}
+  </div>
+
+    <form autocomplete="off" [formGroup]="signInForm" (ngSubmit)="onSubmit()">
         <div class="input-group">
             <div class="input-field">
                 <i class="fa-solid fa-envelope"></i>
-                <input type="email" placeholder="Adres E-mail">
+                <input formControlName="email" type="email" placeholder="Adres E-mail">
             </div>
             <div class="input-field">
                 <i class="fa-solid fa-lock"></i>
-                <input type="password" placeholder="Hasło">
+                <input  formControlName="password"  type="password" placeholder="Hasło">
             </div>
             <p id="remindPassword">Nie pamiętasz hasła? <a href="#"> Kliknij tutaj</a></p>
         </div>
         <div class="option-field">
-            <button type="button" id="login">Zaloguj się</button>
+            <button type="submit" id="login">Zaloguj się</button>
             <button type="button" id="register" class="disable" [routerLink]="['/signup']">Zarejestruj się</button>
         </div>
     </form>

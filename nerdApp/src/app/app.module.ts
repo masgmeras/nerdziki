@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from "@angular/common/http";
 import { LeafletsComponent } from './lista-gazetek/leaflets.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -21,8 +21,8 @@ import { ProductSearchComponent } from './product-search/product-search.componen
 import { ListCategoriesComponent } from './list-categories/list-categories.component';
 import { ListBrandsComponent } from './list-brands/list-brands.component';
 import { MyListComponent } from './my-list/my-list.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
-import { SignInComponent } from './sign-in/sign-in.component';
+import { SignUpComponent } from './admin-panel/sign-up/sign-up.component';
+import { SignInComponent } from './admin-panel/sign-in/sign-in.component';
 import { FavouriteLeafletsComponent } from './favourite-leaflets/favourite-leaflets.component';
 import { FindProductsNumberComponent } from './find-products-number/find-products-number.component';
 import {LeafletsService} from "./lista-gazetek/leaflets.service";
@@ -32,6 +32,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from '../environments/environment';
 import {SlickCarouselModule} from "ngx-slick-carousel";
 import {NgOptimizedImage} from "@angular/common";
+import {AngularFireAuthModule} from "@angular/fire/compat/auth";
 
 @NgModule({
   declarations: [
@@ -61,9 +62,11 @@ import {NgOptimizedImage} from "@angular/common";
     MatCardModule,
     MatGridListModule,
     MatTooltipModule,
-    // AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(environment.firebase), //https://www.youtube.com/watch?v=mp_kv6oB7xI
+    AngularFireAuthModule,
     SlickCarouselModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+    ReactiveFormsModule
   ],
   providers: [LeafletsService],
   bootstrap: [AppComponent]
