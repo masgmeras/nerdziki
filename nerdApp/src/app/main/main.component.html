@@ -33,9 +33,9 @@
         </div>
         <div class="button" id="login" [routerLink]="['/signin']">
             <img src="../assets/images/button-row-first-color/login1.png" alt="Zaloguj się">
-            <span class="product-name">Zaloguj się</span>
+            <span *ngIf="getLoggedInUsername()">Witaj, {{getLoggedInUsername()}}</span>
+            <span *ngIf="!getLoggedInUsername()" class="product-name">Zaloguj się</span>
         </div>
       </div>
     </main>
 </body>
-    

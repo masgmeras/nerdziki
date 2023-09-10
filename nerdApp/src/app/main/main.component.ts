@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {AdminService} from "../admin-panel/admin.service";
 
 @Component({
   selector: 'app-main',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class MainComponent {
 
+  constructor(private adminService: AdminService) {
+  }
+
+  getLoggedInUsername(){
+    return this.adminService.loggedInUsername;
+  }
 }

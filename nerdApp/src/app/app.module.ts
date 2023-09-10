@@ -33,6 +33,7 @@ import { environment } from '../environments/environment';
 import {SlickCarouselModule} from "ngx-slick-carousel";
 import {NgOptimizedImage} from "@angular/common";
 import {AngularFireAuthModule} from "@angular/fire/compat/auth";
+import {AdminService} from "./admin-panel/admin.service";
 
 @NgModule({
   declarations: [
@@ -68,7 +69,7 @@ import {AngularFireAuthModule} from "@angular/fire/compat/auth";
     NgOptimizedImage,
     ReactiveFormsModule
   ],
-  providers: [LeafletsService],
+  providers: [LeafletsService, AdminService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
