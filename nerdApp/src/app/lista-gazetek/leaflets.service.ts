@@ -10,7 +10,7 @@ import {StoresListModel} from "./storesList.model";
 export class LeafletsService {
   storesList: StoresListModel[] = [];
   filteredGroupedLeafletsListByPageUrl: LeafletModel[][] = [];
-  private groupedLeafletsListByPageUrl: LeafletModel[][] = [];
+  private readonly groupedLeafletsListByPageUrl: LeafletModel[][] = [];
   selectedProduct: string = '';
   selectedProductsList: string[] = [];
 
@@ -46,14 +46,14 @@ export class LeafletsService {
   updateStoreResults() {
     const selectedBrands: string[] = this.storesList.filter(x => x.checked).map(x => x.brand);
     let selectedBrandFilter = (x: LeafletModel[]) => x.some(x => selectedBrands.includes(x.brand));
-    this.filteredGroupedLeafletsListByPageUrl = this.groupedLeafletsListByPageUrl.filter(selectedBrandFilter)
+    const deepCopyOfGroupedLeaflets = JSON.parse(JSON.stringify(this.groupedLeafletsListByPageUrl));
+    this.filteredGroupedLeafletsListByPageUrl = deepCopyOfGroupedLeaflets.filter(selectedBrandFilter);
     if (this.selectedProduct !== '') {
       this.countOccurances([this.selectedProduct]);
     }
     if (this.selectedProductsList.length) {
       this.countOccurances(this.selectedProductsList);
     }
-
   }
 
   private countOccurances(selectedProducts: string[]) {
@@ -75,7 +75,6 @@ export class LeafletsService {
 
   private createGroupedLeaflets(leafletsList: LeafletModel[]) {
     const groupByPageUrl = this.groupBy(leafletsList, "pageUrl");
-    this.groupedLeafletsListByPageUrl = [];
     for (const [key] of Object.entries(groupByPageUrl)) {
       this.groupedLeafletsListByPageUrl.push(groupByPageUrl[key]);
     }

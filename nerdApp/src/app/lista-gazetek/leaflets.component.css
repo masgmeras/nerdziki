@@ -1,3 +1,9 @@
+.slick-list{
+  overflow: visible;
+  width: 100%;
+}
+
+
 .example-card {
   background: none;
   border: 2px solid white;

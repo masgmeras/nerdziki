@@ -1,6 +1,6 @@
 <div class="search-box">
     <input type="text" placeholder="Wyszukaj produkt"
            [(ngModel)]="this.leafletsService.selectedProduct"
-           (ngModelChange)="updateStoreResults()"/>
+           (ngModelChange)="this.userProductSearchUpdate.next($event)"/>
     <img src="../assets/images/loupe.png">
 </div>
