@@ -10,11 +10,9 @@ import {StoresListModel} from "./storesList.model";
 export class LeafletsService {
   storesList: StoresListModel[] = [];
   filteredGroupedLeafletsListByPageUrl: LeafletModel[][] = [];
-  private fullList: LeafletModel[] = [];
   private groupedLeafletsListByPageUrl: LeafletModel[][] = [];
   selectedProduct: string = '';
   selectedProductsList: string[] = [];
-  listCategoriesProducts: string[] = ['owoce'];
 
   constructor(private http: HttpClient) {
   }
@@ -34,7 +32,6 @@ export class LeafletsService {
   }
 
   initStoreResults(data: LeafletModel[]) {
-    this.fullList = data;
     for (let leaflet of data) {
       leaflet.ocrResult = leaflet.ocrResult.toLowerCase();
     }
