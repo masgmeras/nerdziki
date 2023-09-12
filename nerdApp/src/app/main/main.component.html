@@ -36,6 +36,11 @@
             <span *ngIf="getLoggedInUsername()">Witaj, {{getLoggedInUsername()}}</span>
             <span *ngIf="!getLoggedInUsername()" class="product-name">Zaloguj się</span>
         </div>
+        <div class="button" [routerLink]="['/rodo']">
+          <mat-icon>list</mat-icon>
+<!--          <img src="../assets/images/button-row-first-color/login1.png" alt="RODO">-->
+          <span class="product-name">RODO</span>
+        </div>
       </div>
     </main>
 </body>
