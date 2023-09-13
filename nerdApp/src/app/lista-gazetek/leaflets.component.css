@@ -44,7 +44,7 @@ mat-card {
 
 .mat-grid-card {
   width: 45%;
-  margin: 2%;
+  margin: 3%;
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease-in-out;
