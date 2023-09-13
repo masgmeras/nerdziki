@@ -13,11 +13,22 @@
     {{errors}}
   </div>
 
+  {{signInForm.valid}}
+  {{signInForm.errors}}
+
+
+
     <form autocomplete="off" [formGroup]="signInForm" (ngSubmit)="onSubmit()">
         <div class="input-group">
+          <div class="input-field" id="nameField">
+            <i class="fa-solid fa-user"></i>
+            <input formControlName="username" type="text" placeholder="Nazwa użytkownika">
+          </div>
             <div class="input-field">
+
                 <i class="fa-solid fa-envelope"></i>
                 <input formControlName="email" type="email" placeholder="Adres E-mail">
+              <div *ngIf="signInForm.controls['email'].invalid">Wypełnij to pole</div>
             </div>
             <div class="input-field">
                 <i class="fa-solid fa-lock"></i>

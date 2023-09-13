@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {LeafletsService} from "../lista-gazetek/leaflets.service";
 import {LeafletModel} from "../lista-gazetek/leafletModel";
 import {StoresListModel} from "../lista-gazetek/storesList.model";
@@ -9,12 +9,15 @@ import {StoresListModel} from "../lista-gazetek/storesList.model";
   templateUrl: './my-list.component.html',
   styleUrls: ['./my-list.component.css']
 })
-export class MyListComponent {
+export class MyListComponent implements OnInit {
   myListProduct: Array<string> = [];
   mySelectProduct: string = '';
 
-
   constructor(protected leafletsService: LeafletsService) {
+  }
+
+  ngOnInit(): void {
+    this.myListProduct = this.leafletsService.selectedProductsList;
   }
 
 
@@ -37,5 +40,7 @@ export class MyListComponent {
     this.leafletsService.removeProduct(myProduct);
     this.leafletsService.updateStoreResults();
   }
+
+
 
 }

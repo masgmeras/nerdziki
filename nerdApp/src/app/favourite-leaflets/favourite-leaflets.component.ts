@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {LeafletsService} from "../lista-gazetek/leaflets.service";
 
 @Component({
   selector: 'app-favourite-leaflets',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class FavouriteLeafletsComponent {
 
+
+  constructor(private leafletsService: LeafletsService) {
+  }
+
+  lista(){
+    return this.leafletsService.selectedProductsList;
+  }
 }
