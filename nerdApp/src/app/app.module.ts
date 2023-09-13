@@ -34,6 +34,7 @@ import {SlickCarouselModule} from "ngx-slick-carousel";
 import {NgOptimizedImage} from "@angular/common";
 import {AngularFireAuthModule} from "@angular/fire/compat/auth";
 import {AdminService} from "./admin-panel/admin.service";
+import { NewPasswordComponent } from './admin-panel/new-password/new-password.component';
 import { RodoComponent } from './admin-panel/rodo/rodo.component';
 
 @NgModule({
@@ -49,6 +50,7 @@ import { RodoComponent } from './admin-panel/rodo/rodo.component';
         MyListComponent,
         FindProductsNumberComponent,
         MainComponent,
+        NewPasswordComponent,
         RodoComponent
   ],
   imports: [

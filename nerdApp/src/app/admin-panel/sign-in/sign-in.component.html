@@ -34,7 +34,7 @@
                 <i class="fa-solid fa-lock"></i>
                 <input  formControlName="password"  type="password" placeholder="Hasło">
             </div>
-            <p id="remindPassword">Nie pamiętasz hasła? <a href="#"> Kliknij tutaj</a></p>
+            <p id="remindPassword">Nie pamiętasz hasła? <a href="#" [routerLink]="['/newpassword']"> Kliknij tutaj</a></p>
         </div>
         <div class="option-field">
             <button type="submit" id="login">Zaloguj się</button>
