@@ -11,8 +11,12 @@ export class FavouriteLeafletsComponent {
 
   constructor(private leafletsService: LeafletsService) {
   }
+   myList = this.leafletsService.selectedProductsList;
 
-  lista(){
-    return this.leafletsService.selectedProductsList;
-  }
+remove(list: string){
+    this.myList = this.myList.filter(e=> e!==list)
+    this.leafletsService.myListProduct = this.leafletsService.myListProduct.filter(e => e !== list)
+    this.leafletsService.removeProduct(list);
+    this.leafletsService.updateStoreResults();
+}
 }

@@ -12,6 +12,8 @@
                     <div mat-card-avatar [class]="'example-header-image-' + leafletPerPageUrl?.[0]?.brand" ></div>
                     <mat-card-title>{{leafletPerPageUrl?.[0]?.brand | titlecase}}</mat-card-title>
                     <mat-card-subtitle>Sprawdź ofertę sklepu</mat-card-subtitle>
+                  <div *ngFor="let leafletDate of getListOfThumbnails(leafletPerPageUrl)">
+           <mat-card-subtitle>Do końca zostało: {{leafletDate.offerStartDate}}  </mat-card-subtitle></div>
                     <div style="float: right;">
                         <app-find-products-number [singleLeafletWithPages]="leafletPerPageUrl"></app-find-products-number>
                     </div>
