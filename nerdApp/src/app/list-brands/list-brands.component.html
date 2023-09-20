@@ -1,30 +1,9 @@
 <div class="button-row">
-<!--  <mat-checkbox [checked]="allComplete" (change)="setAll($event.checked)" >Zaznacz Wszystko</mat-checkbox>-->
-<!--  <form><label class="pointer"><input class="input_hidden" type="checkbox" [checked]="checked"-->
-<!--                                      (change)="setItAll(checked)">-->
-<!--    <p class="setAllButtonP" [ngClass]="checked? 'buttonSetAll': 'buttonSetAll'+ '2'">Zaznacz Wszystko</p>-->
-<!--  </label></form>-->
-
-
-  <input [(ngModel)]="isAllSelected" type="checkbox" checked (change)="setItAll()" />
-  <span>Zaznacz</span>
-
-
+  <label class="pointer"><input  class="input_hidden" [(ngModel)]="isAllSelected" type="checkbox" checked (change)="setItAll()" />
+    <span>Zaznacz/Odznacz wszystko</span></label>
   <div *ngFor="let store of getStoresList()">
-    <!--  <mat-checkbox class="mat-checkbox" [(ngModel)]="store.checked" (click)="updateStoreResults()">
-          <div [ngClass]="store.checked? 'shop-header-image-' + store.brand + '2' : 'shop-header-image-' +
-          store.brand"></div>
-      </mat-checkbox>-->
-    <!--<form><label class="pointer" ><input class="input_hidden" type="checkbox"  [(ngModel)]="store.checked" (change)="updateStoreResults(checked)" [ngModelOptions]="{standalone: true}">
-      <div [ngClass]="store.checked? 'shop-header-image-' + store.brand + '2' : 'shop-header-image-' +
-            store.brand"></div>
-    </label></form>-->
-
-<!--    <label>-->
-    <input type="checkbox" [(ngModel)]="store.checked" (change)="updateStoreResults()">
-    <div [ngClass]="store.checked ? 'shop-header-image-' + store.brand + '2' : 'shop-header-image-' + store.brand">
-      </div>
-<!--    </label>-->
+    <label class="pointer"><input class="input_hidden" type="checkbox" [(ngModel)]="store.checked" (change)="updateStoreResults()">
+      <div [ngClass]="store.checked ? 'shop-header-image-' + store.brand + '2' : 'shop-header-image-' + store.brand">
+      </div></label>
   </div>
 </div>
-

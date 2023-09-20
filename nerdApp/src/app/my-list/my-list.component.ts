@@ -10,37 +10,19 @@ import {StoresListModel} from "../lista-gazetek/storesList.model";
   styleUrls: ['./my-list.component.css']
 })
 export class MyListComponent implements OnInit {
-  myListProduct: Array<string> = [];
-  mySelectProduct: string = '';
 
   constructor(protected leafletsService: LeafletsService) {
   }
 
   ngOnInit(): void {
-    this.myListProduct = this.leafletsService.selectedProductsList;
+    this.leafletsService.myListProduct = this.leafletsService.selectedProductsList;
   }
-
-
-  addProduct() {
-    if(!this.mySelectProduct){
-      return;
-    }
-    this.mySelectProduct = this.mySelectProduct.toLowerCase();
-    this.myListProduct.push(this.mySelectProduct);
-    this.leafletsService.addProduct(this.mySelectProduct);
-    this.mySelectProduct = '';
-    this.leafletsService.updateStoreResults();
-
-    //calculate
-  }
-
 
   remove(myProduct: string) {
-    this.myListProduct = this.myListProduct.filter(e => e !== myProduct)
+    this.leafletsService.myListProduct = this.leafletsService.myListProduct.filter(e => e !== myProduct)
     this.leafletsService.removeProduct(myProduct);
     this.leafletsService.updateStoreResults();
   }
 
-
-
 }
+
