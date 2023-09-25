@@ -43,7 +43,6 @@ if (start < time || end > time){
 let t = Math.floor((end- time)/math);
 return t +2;
 }
-
 return leafletPerPageUrl;
 }
 
