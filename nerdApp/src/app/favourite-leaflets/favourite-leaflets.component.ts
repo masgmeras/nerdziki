@@ -17,6 +17,6 @@ remove(list: string){
     this.myList = this.myList.filter(e=> e!==list)
     this.leafletsService.myListProduct = this.leafletsService.myListProduct.filter(e => e !== list)
     this.leafletsService.removeProduct(list);
-    this.leafletsService.updateStoreResults();
+    //this.leafletsService.updateStoreResults();
 }
 }

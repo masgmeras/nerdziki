@@ -31,6 +31,7 @@ export class LeafletsService {
 
   removeProduct(itemToRemove: string) {
     this.selectedProductsList = this.selectedProductsList.filter(i => i !== itemToRemove);
+    this.updateStoreResults();
   }
 
   initStoreResults(data: LeafletModel[]) {
