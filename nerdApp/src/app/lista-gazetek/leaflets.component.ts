@@ -24,57 +24,29 @@ date: LeafletModel[]=[];
     return this.leafletsService?.filteredGroupedLeafletsListByPageUrl;
   }
 
-/*getStart(leafletPerPageUrl: LeafletModel[]){
-const t = new Date();
-const d = new Date(leafletPerPageUrl?.[0]?.offerStartDate);
-const c= new Date(leafletPerPageUrl?.[0]?.offerEndDate);
-let z:number= c.getTime()
-let a: number = d.getTime()
-
-if (leafletPerPageUrl?.[0]?.offerStartDate){
-let l= (z-a)+86400000;
-let g= Math.floor(l/(1000 * 3600 * 24));
-return g;
-}
-return leafletPerPageUrl;
-}*/
 
 getTry(leafletPerPageUrl: LeafletModel[]){
-const time = new Date();
-const start = new Date(leafletPerPageUrl?.[0]?.offerStartDate);
-const end= new Date(leafletPerPageUrl?.[0]?.offerEndDate);
-let startN :number= start.getTime()
-let endN: number = end.getTime()
-let timeN: number = time.getTime()
+const time = new Date().getTime();
+const start = new Date(leafletPerPageUrl?.[0]?.offerStartDate).getTime();
+const end= new Date(leafletPerPageUrl?.[0]?.offerEndDate).getTime();
 let math = (1000 * 3600 * 24);
 
-if (startN >timeN){
-let x = (startN - timeN )+172800000;
-let g= Math.floor(x/math);
+if (start >time){
+let g= Math.floor((start - time )/math);
 return g;
 }
-if (startN<timeN || endN > timeN){
-let z = (endN- timeN)+86400000;
-let t = Math.floor(z/math);
-return t;
+if(end < time){
+ let m = Math.floor((end - time)/math);
+ return m + 1;
+ }
+if (start < time || end > time){
+let t = Math.floor((end- time)/math);
+return t +2;
 }
-if(endN < timeN){
-let y = (endN - timeN);
-let m = Math.floor(y/math);
-return m ;
 
-}
 return leafletPerPageUrl;
 }
 
-/*
-getDay(leaflet: LeafletModel[]){
-let dayStart: Date =new Date(leaflet?.[0]?.offerStartDate);
-let dayEnd: Date = new Date(leaflet?.[0]?.offerEndDate);
-let subtract: number= dayEnd.getTime() - dayStart.getTime();
-let diffInDays: number = subtract / (1000 * 3600 * 24);
-
-}*/
 
 
   slideConfig = {
