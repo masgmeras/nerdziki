@@ -9,11 +9,10 @@ import { NgOptimizedImage } from '@angular/common'
   styleUrls: ['./leaflets.component.css']
 })
 export class LeafletsComponent implements OnInit {
-date: LeafletModel[]=[];
+number=0;
+
   constructor(protected leafletsService: LeafletsService) {
   }
-
-
 
   ngOnInit() {
     this.leafletsService.getLeaflets(true).subscribe(data => {
@@ -31,22 +30,24 @@ const start = new Date(leafletPerPageUrl?.[0]?.offerStartDate).getTime();
 const end= new Date(leafletPerPageUrl?.[0]?.offerEndDate).getTime();
 let math = (1000 * 3600 * 24);
 
-if (start >time){
+if (start >time) {
 let g= Math.floor((start - time )/math);
-return g;
+this.number=g;
 }
-if(end < time){
+if (end < time){
  let m = Math.floor((end - time)/math);
- return m + 1;
+this.number= m + 1;
  }
 if (start < time || end > time){
-let t = Math.floor((end- time)/math);
-return t +2;
+let t = Math.floor((end - time)/math);
+this.number= t +1;
 }
-return leafletPerPageUrl;
+return this.number
 }
 
-
+color(){
+return this.number >= 2 ? 'green' : 'red'
+}
 
   slideConfig = {
     infinite: true,
@@ -65,14 +66,6 @@ return leafletPerPageUrl;
     }
     return leafletPerPageUrl;
   }
-
- //getStartDate(leafletPerPageUrl: LeafletModel[]) {
-   // if (leafletPerPageUrl?.[0]?.specificFilteredLeaflets) {
-     // return leafletPerPageUrl?.[0]?.specificFilteredLeaflets;
-    //}
-    //console.log(leafletPerPageUrl)
-
-  //}
 
   updateImages() {
 
