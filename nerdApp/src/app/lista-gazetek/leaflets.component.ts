@@ -9,7 +9,9 @@ import { NgOptimizedImage } from '@angular/common'
   styleUrls: ['./leaflets.component.css']
 })
 export class LeafletsComponent implements OnInit {
-number=0;
+number: number=0;
+col=true;
+dataLeaflet: LeafletModel[] = [];
 
   constructor(protected leafletsService: LeafletsService) {
   }
@@ -24,30 +26,41 @@ number=0;
   }
 
 
+
 getTry(leafletPerPageUrl: LeafletModel[]){
 const time = new Date().getTime();
 const start = new Date(leafletPerPageUrl?.[0]?.offerStartDate).getTime();
 const end= new Date(leafletPerPageUrl?.[0]?.offerEndDate).getTime();
-let math = (1000 * 3600 * 24);
+let math = (1000*60*60*24);
 
-if (start >time) {
+if (start > time) {
 let g= Math.floor((start - time )/math);
 this.number=g;
 }
 if (end < time){
- let m = Math.floor((end - time)/math);
-this.number= m + 1;
+ let m = Math.floor((end - time)/math)+1;
+this.number= m ;
+this.col=false;
  }
-if (start < time || end > time){
-let t = Math.floor((end - time)/math);
-this.number= t +1;
+if (start < time && end > time){
+let t = Math.floor((end - time)/math)+1;
+this.number= t ;
+this.col=true;
 }
 return this.number
 }
 
-color(){
-return this.number >= 2 ? 'green' : 'red'
-}
+
+
+//color(){
+//return this.number >= 2? 'green':'red';
+//}
+
+/*color(){
+  if (this.number >= 2){
+  return  true;
+  }else {return false;}
+  }*/
 
   slideConfig = {
     infinite: true,
