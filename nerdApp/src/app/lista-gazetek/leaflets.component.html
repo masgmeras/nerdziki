@@ -12,8 +12,16 @@
                     <div mat-card-avatar [class]="'example-header-image-' + leafletPerPageUrl?.[0]?.brand" ></div>
                     <mat-card-title>{{leafletPerPageUrl?.[0]?.brand | titlecase}}</mat-card-title>
                     <mat-card-subtitle>Sprawdź ofertę sklepu</mat-card-subtitle>
-                  <mat-card-subtitle ><p [ngClass]="col ? 'green' : 'red'" > Do końca zostało:  {{getTry(leafletPerPageUrl)}}</p></mat-card-subtitle>
+                  <mat-card-subtitle >
+
+                    <p [ngClass]="getTryNo(leafletPerPageUrl) > 0 ? 'green' : 'red'" > Stara oferta:  {{getTry(getTryNo(leafletPerPageUrl))}}</p>
+
+
+                  </mat-card-subtitle>
                     <div style="float: right;">
+                      -5 stara
+                      0 aktula
+                      5
                         <app-find-products-number [singleLeafletWithPages]="leafletPerPageUrl"></app-find-products-number>
                     </div>
                 </mat-card-header>
