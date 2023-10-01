@@ -4,7 +4,8 @@
 
 
 <!--{{getFilteredGroupedLeafletsListByPageUrl() | json}}-->
-<mat-grid-list cols="3" rowHeight="2:3"  [gutterSize]="'1px'">
+<!-- [rowSpacing]="'1px'" -->
+<mat-grid-list id="girdlist" [cols]="numberOfColumns" rowHeight="2:3" [gutterSize]="'1px'">
     <div *ngFor="let leafletPerPageUrl of getFilteredGroupedLeafletsListByPageUrl(); ">
         <mat-grid-tile rowspan="1">
             <mat-card  class="example-card tile" style="background: lightgray;">

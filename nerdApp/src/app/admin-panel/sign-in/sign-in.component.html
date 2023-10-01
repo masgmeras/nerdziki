@@ -9,9 +9,9 @@
         <button type="submit" class="x-mark"><i class="fa-regular fa-circle-xmark" [routerLink]="['/main']"></i></button>
     </div>
 
-  <div style="color: red;">
-    {{errors}}
-  </div>
+    <div style="color: red;">
+        {{errors}}
+    </div>
 
     <form autocomplete="off" [formGroup]="signInForm" (ngSubmit)="onSubmit()">
         <div class="input-group">

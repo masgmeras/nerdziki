@@ -1,5 +1,6 @@
 .button-row {
 margin-top: 150px;
+margin-left: 40px;
 position: fixed;
 }
 
@@ -67,9 +68,7 @@ visibility: hidden;
 .setAllButtonP{
 margin-left: 20px;
 }
-.buttonSetAll {
 
-}
 .buttonSetAll2{
 color: white;
 background: #24315E;
