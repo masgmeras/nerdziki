@@ -13,6 +13,8 @@ export class LeafletsService {
   private readonly groupedLeafletsListByPageUrl: LeafletModel[][] = [];
   selectedProduct: string = '';
   selectedProductsList: string[] = [];
+  myListProduct: Array<string> = [];
+  fruits = ['banany', 'jabłka','pomarańcze'];
 
   constructor(private http: HttpClient) {
   }
@@ -29,6 +31,7 @@ export class LeafletsService {
 
   removeProduct(itemToRemove: string) {
     this.selectedProductsList = this.selectedProductsList.filter(i => i !== itemToRemove);
+    this.updateStoreResults();
   }
 
   initStoreResults(data: LeafletModel[]) {
@@ -53,6 +56,9 @@ export class LeafletsService {
     }
     if (this.selectedProductsList.length) {
       this.countOccurances(this.selectedProductsList);
+    }
+    if (this.fruits.length){
+      console.log(this.fruits)
     }
   }
 

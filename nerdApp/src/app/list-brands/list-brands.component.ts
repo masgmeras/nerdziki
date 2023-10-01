@@ -5,8 +5,7 @@ import {LeafletsService} from "../lista-gazetek/leaflets.service";
 @Component({
     selector: 'app-list-brands',
     templateUrl: './list-brands.component.html',
-    styleUrls: ['./list-brands.component.css'],
-    providers: []
+    styleUrls: ['./list-brands.component.css']
 })
 export class ListBrandsComponent {
 
@@ -17,6 +16,7 @@ export class ListBrandsComponent {
 
     setItAll() {
         this.leafletsService.storesList.forEach(x => (x.checked = this.isAllSelected));
+        this.leafletsService.updateStoreResults();
     }
 
     getStoresList() {

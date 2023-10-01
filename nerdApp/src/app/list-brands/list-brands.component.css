@@ -1,3 +1,4 @@
+
 .button-row {
 margin-top: 150px;
 margin-left: 40px;
@@ -72,4 +73,15 @@ margin-left: 20px;
 .buttonSetAll2{
 color: white;
 background: #24315E;
+}
+.buttonSetAll {
+}
+.buttonSetAll2{
+color: white;
+background: #24315E;
+}
+.green {
+background: green;
+}
+.red {
 }

@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {AngularFireAuth} from "@angular/fire/compat/auth";
-import {FormBuilder} from '@angular/forms';
+import {FormBuilder, FormGroup, ValidationErrors, Validators} from '@angular/forms';
 import {from} from "rxjs";
 import {Router} from "@angular/router";
 import {AdminService} from "../admin.service";
@@ -16,8 +16,9 @@ export class SignInComponent {
   // README https://angular.io/start/start-forms
   // https://www.youtube.com/watch?v=F1NoohuveRQ
   signInForm = this.formBuilder.group({
-    email: '',
-    password: ''
+    email: ['', [Validators.required, Validators.email]],
+    password: '',
+    username: '',
   });
 
   errors: any;
@@ -35,7 +36,8 @@ export class SignInComponent {
         next: (v) => {
           console.log(<string>this.signInForm.value.email)
           console.log(v)
-          this.adminService.loggedInUsername = <string>this.signInForm.value.email;
+          // this.adminService.loggedInUsername = <string>this.signInForm.value.email;
+          this.adminService.loggedInUsername = <string>this.signInForm.value.username;
           this.router.navigate(['main'])
         },
         error: (e) => {

@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {LeafletsService} from "../lista-gazetek/leaflets.service";
 import {LeafletModel} from "../lista-gazetek/leafletModel";
 import {StoresListModel} from "../lista-gazetek/storesList.model";
@@ -9,33 +9,20 @@ import {StoresListModel} from "../lista-gazetek/storesList.model";
   templateUrl: './my-list.component.html',
   styleUrls: ['./my-list.component.css']
 })
-export class MyListComponent {
-  myListProduct: Array<string> = [];
-  mySelectProduct: string = '';
-
+export class MyListComponent implements OnInit {
 
   constructor(protected leafletsService: LeafletsService) {
   }
 
-
-  addProduct() {
-    if(!this.mySelectProduct){
-      return;
-    }
-    this.mySelectProduct = this.mySelectProduct.toLowerCase();
-    this.myListProduct.push(this.mySelectProduct);
-    this.leafletsService.addProduct(this.mySelectProduct);
-    this.mySelectProduct = '';
-    this.leafletsService.updateStoreResults();
-
-    //calculate
+  ngOnInit(): void {
+    this.leafletsService.myListProduct = this.leafletsService.selectedProductsList;
   }
 
-
   remove(myProduct: string) {
-    this.myListProduct = this.myListProduct.filter(e => e !== myProduct)
+    this.leafletsService.myListProduct = this.leafletsService.myListProduct.filter(e => e !== myProduct)
     this.leafletsService.removeProduct(myProduct);
     this.leafletsService.updateStoreResults();
   }
 
 }
+

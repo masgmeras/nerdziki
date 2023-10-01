@@ -12,4 +12,11 @@
       <!-- lista ulubionych -->
     </div>
   </div>
+  <ul>
+    <p>MOJA LISTA</p>
+    <li *ngFor="let list of myList">
+      {{list}}
+      <button (click)="remove(list)">-</button>
+    </li>
+  </ul>
 </div>

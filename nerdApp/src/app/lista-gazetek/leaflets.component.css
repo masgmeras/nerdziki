@@ -105,3 +105,9 @@ margin-top: 50px;
   width: 70vw;
   row-gap: 0px;
 }
+.green{
+background: green;
+}
+.red{
+background: red;
+}
