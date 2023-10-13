@@ -38,7 +38,7 @@ dataLeaflet: LeafletModel[] = [];
   }
 
   ngOnInit() {
-    this.leafletsService.getLeaflets(false).subscribe(data => {
+    this.leafletsService.getLeaflets().subscribe(data => {
       this.leafletsService.initStoreResults(data);
     })
   }
