@@ -1,8 +1,9 @@
+#!/usr/local/bin/python
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import json
 import time
-import easyocr
+#import easyocr
 import fitz
 import os
 import requests
@@ -16,12 +17,12 @@ LEAFLETS_LIST = [
 ]
 options = webdriver.ChromeOptions() 
 options.add_argument('--headless')  
-driver = webdriver.Chrome(options=options) # Inicjalizacja przeglądarki w trybie bezokienkowym, options=options
+driver = webdriver.Chrome(options=options) # 
 #reader = easyocr.Reader(['pl'], gpu=False)
 
 
 def find_urls_with_class(leaflet):
-    driver.get(leaflet['brand_url']) # Otwórz stronę dla danego brandu
+    driver.get(leaflet['brand_url']) #
     time.sleep(3) #czekanie 3s na zaladowanie strony
     #KAUFLAND w konsoli F12 -> $x('//div[@data-download-url]')
     wrapper = driver.find_elements(By.XPATH, "//div[@data-download-url]")
@@ -69,7 +70,7 @@ def createOcrParsedPageItem(leaflet, pageUrl, pdfUrl, thumbnailUrl, page, result
 
 
 def handleKauflandPage():
-    driver.get('https://www.kaufland.pl/gazeta-reklamowa.html') # Otwórz stronę dla danego brandu
+    driver.get('https://www.kaufland.pl/gazeta-reklamowa.html') # 
     time.sleep(3) #czekanie 3s na zaladowanie strony
     #KAUFLAND w konsoli F12 -> $x('//div[@data-download-url]')
     wrapper = driver.find_elements(By.XPATH, "//a[contains(@class, 'm-flyer-tile__link')]")
@@ -83,7 +84,7 @@ def handleKauflandPage():
     with open(OUTPUT_FILE_NAME, "w") as text_file: 
         text_file.write("[")
         for f in flierlist:
-            driver.get(f) # Otwórz stronę dla danego brandu
+            driver.get(f) # 
             time.sleep(1) #czekanie 3s na zaladowanie strony
 
             soup = BeautifulSoup(driver.page_source, features="lxml")
@@ -96,7 +97,7 @@ def handleKauflandPage():
         
         
 def handleLidlPage():
-    driver.get('https://www.lidl.pl/informacje-dla-klienta/nasze-gazetki') # Otwórz stronę dla danego brandu
+    driver.get('https://www.lidl.pl/informacje-dla-klienta/nasze-gazetki') # 
     time.sleep(3) #czekanie 3s na zaladowanie strony
     #KAUFLAND w konsoli F12 -> $x('//div[@data-download-url]')
     wrapper = driver.find_elements(By.XPATH, "//a[contains(@class, '_flyer__link')]")
@@ -111,7 +112,7 @@ def handleLidlPage():
     with open(OUTPUT_FILE_NAME, "a") as text_file: 
         #text_file.write("[")
         for idx, f in enumerate(flierlist):
-            driver.get(f) # Otwórz stronę dla danego brandu
+            driver.get(f) # 
             time.sleep(1) #czekanie 3s na zaladowanie strony
 
             soup = BeautifulSoup(driver.page_source, features="lxml")
@@ -140,5 +141,5 @@ handleKauflandPage()
 handleLidlPage()
     
 #https://endpoints.leaflets.schwarz/v4/flyer?flyer_identifier=PL_pl_KDZ_5660_PL32-LFT&region_id=5660&region_code=5660
-driver.quit() # Zamknij przeglądarkę
+driver.quit() # 
     

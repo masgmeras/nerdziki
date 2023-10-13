@@ -19,7 +19,7 @@ export class LeafletsComponent implements OnInit {
 
   private adjustNumberOfColumns(): void {
     const windowWidth = window.innerWidth;
-    
+
     if (windowWidth >= 1280) {
       this.numberOfColumns = 4;
     } else if (windowWidth >= 865) {
@@ -38,7 +38,7 @@ dataLeaflet: LeafletModel[] = [];
   }
 
   ngOnInit() {
-    this.leafletsService.getLeaflets(true).subscribe(data => {
+    this.leafletsService.getLeaflets(false).subscribe(data => {
       this.leafletsService.initStoreResults(data);
     })
   }
