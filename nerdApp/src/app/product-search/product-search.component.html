@@ -2,6 +2,6 @@
   <input (keyup.enter)="addProduct()" type="text" placeholder="Wyszukaj produkt"
          [(ngModel)]="this.leafletsService.selectedProduct"
          (ngModelChange)="this.userProductSearchUpdate.next($event)"/>
-  <img src="../assets/images/loupe.png">
+  <img src="../assets/images/loupe.png" alt="Szukajka">
   <button (click)="addProduct()">+</button>
 </div>

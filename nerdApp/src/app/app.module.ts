@@ -36,6 +36,7 @@ import {AngularFireAuthModule} from "@angular/fire/compat/auth";
 import {AdminService} from "./admin-panel/admin.service";
 import { NewPasswordComponent } from './admin-panel/new-password/new-password.component';
 import { RodoComponent } from './admin-panel/rodo/rodo.component';
+import { TeamComponent } from './team/team.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { RodoComponent } from './admin-panel/rodo/rodo.component';
         FindProductsNumberComponent,
         MainComponent,
         NewPasswordComponent,
-        RodoComponent
+        RodoComponent,
+        TeamComponent
   ],
   imports: [
     BrowserModule,

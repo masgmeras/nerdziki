@@ -1,9 +1,18 @@
 <div class="button-row">
-  <label class="pointer"><input  class="input_hidden" [(ngModel)]="isAllSelected" type="checkbox" checked (change)="setItAll()" />
+  <label class="pointer">
+    <input class="input_hidden" type="checkbox" checked [(ngModel)]="isAllSelected" (change)="setItAll()"/>
     <span>Zaznacz/Odznacz wszystko</span></label>
+  <span style="margin: 20px;">
+        Przeglądaj gazetki Lidla i Kauflandu, aby znaleźć swoje ulubione produkty i dokonać porównania zakupów w niezwykle wygodny sposób. Dzięki tym popularnym sieciom supermarketów masz dostęp do szerokiej gamy produktów spożywczych, świeżych warzyw i owoców, a także artykułów codziennego użytku.
+        Nasza aplikacja umożliwia Ci przeglądanie aktualnych ofert w jednym miejscu, co pozwala zaoszczędzić czas i pieniądze. Porównaj ceny, sprawdź dostępność produktów, a także odkryj nowości i promocje, które mogą Cię zainteresować.
+        Teraz możesz cieszyć się korzyściami z zakupów w Lidlu i Kauflandzie w jednym miejscu, dzięki intuicyjnemu narzędziu do porównywania cen. Niezależnie od tego, czy szukasz oszczędności, czy po prostu chcesz znaleźć swoje ulubione produkty, nasza aplikacja ułatwia Ci to zadanie. Znajdź najlepsze oferty i ciesz się zakupami z wygodą!
+      </span>
+
   <div *ngFor="let store of getStoresList()">
-    <label class="pointer"><input class="input_hidden" type="checkbox" [(ngModel)]="store.checked" (change)="updateStoreResults()">
-      <div [ngClass]="store.checked ? 'shop-header-image-' + store.brand + '2' : 'shop-header-image-' + store.brand">
-      </div></label>
+    <label class="pointer">
+      <input class="input_hidden" type="checkbox" [(ngModel)]="store.checked" (change)="updateStoreResults()"/>
+      <span
+        [ngClass]="store.checked ? 'shop-header-image-' + store.brand + '2' : 'shop-header-image-' + store.brand"></span>
+    </label>
   </div>
 </div>
