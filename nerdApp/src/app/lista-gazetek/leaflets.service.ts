@@ -29,6 +29,11 @@ export class LeafletsService {
     return this.http.get<LeafletModel[]>(isMock ? localUrl : url);
   }
 
+  public getCategories(): Observable<LeafletModel[]> {
+    const category = '../assets/categories-list.json';
+    return this.http.get<LeafletModel[]>(category);
+  }
+
   addProduct(itemToAdd: string) {
     this.selectedProductsList.push(itemToAdd);
   }
@@ -52,18 +57,18 @@ export class LeafletsService {
   }
 //////////////////////////////////////////////////////////////
   initCategories(data: LeafletModel[]){
-   this.createGroupedLeaflets(data);
-   let categories = [...new Set(data.map(x=> x.categories))];
-   this.categoriesList = [];
-   for (const element of categories){
-   this.categoriesList.push({'categories': element, 'checked': true, 'listOfCategories': ['']});
-   }console.log('aa')
+   // this.createGroupedLeaflets(data);
+   // let categories = [...new Set(data.map(x=> x.categories))];
+   // this.categoriesList = [];
+   // for (const element of categories){
+   // this.categoriesList.push({'categories': element, 'checked': true, 'listOfCategories': ['']});
+   // }console.log('aa')
   }
 /////////////////////////////////////////////////////////////
   listCategories(){
   // const selectedCategory: string[]= this.categoriesList.filter(x => x.checked).map(x=> x.categories);   /////////////////////
    //let selectedFilter = (x: LeafletModel[]) => x.some(x => selectedCategory.includes(x.categories));    //////////////////////
-S
+
   this.selectedProduct = this.fruits;
 this.updateStoreResults();
   }
