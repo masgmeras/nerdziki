@@ -106,8 +106,14 @@ margin-top: 50px;
   row-gap: 0px;
 }
 .green{
-background: green;
+   font-family: Arial, sans-serif;
+   font-size: 15px;
+  font-weight: bold;
+    color: green;
 }
 .red{
-background: red;
+   font-family: Arial, sans-serif;
+   font-size: 15px;
+   font-weight: bold;
+    color: red;
 }

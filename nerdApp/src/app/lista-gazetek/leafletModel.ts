@@ -12,4 +12,7 @@ export interface LeafletModel {
 
   specificFilteredLeaflets: LeafletModel[];
   occursOnPage: number;
+
+  categories: string;
+  listOfCategories: string[];
 }
