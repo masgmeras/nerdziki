@@ -38,3 +38,15 @@
   <img [src]="'./assets/images/button-row-first-color/wszystko1.png'" alt="Pokaż Wszystko">
   <span class="product-name">  Pokaż Wszystko</span>
 </label>
+
+
+
+<div class="button-row">
+  <label class="pointer"><input  class="input_hidden" [(ngModel)]="isAllSelected" type="checkbox" checked (change)="setItAll()" />
+    <span>Zaznacz/Odznacz wszystko</span></label>
+  <div *ngFor="let store of getStoresList()">
+    <label class="pointer"><input class="input_hidden" type="checkbox" [(ngModel)]="store.checked" (change)="updateStoreResults()">
+      <div [ngClass]="store.checked ? 'shop-header-image-' + store.categories + '2' : 'shop-header-image-' + store.categories">
+      </div></label>
+  </div>
+</div>

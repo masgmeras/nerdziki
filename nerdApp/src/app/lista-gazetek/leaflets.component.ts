@@ -34,6 +34,7 @@ export class LeafletsComponent implements OnInit {
 // col=true;
 dataLeaflet: LeafletModel[] = [];
 
+
   constructor(protected leafletsService: LeafletsService) {
   }
 
@@ -45,21 +46,17 @@ dataLeaflet: LeafletModel[] = [];
   getFilteredGroupedLeafletsListByPageUrl() {
     return this.leafletsService?.filteredGroupedLeafletsListByPageUrl;
   }
-
+licz(){
+let aa = this.leafletsService.filteredGroupedLeafletsListByPageUrl.map(x => {(x?.[0]?.offerStartDate)});
+console.log(aa);
+}
   getTryNo(leafletPerPageUrl: LeafletModel[]){
     return moment(new Date(leafletPerPageUrl?.[0]?.offerEndDate)).diff(moment(), 'days');
   }
 
   getTry(iloscDni: number) {
-    // const time = new Date().getTime();
-    // const start = new Date(leafletPerPageUrl?.[0]?.offerStartDate).getTime();
-    // const end = new Date(leafletPerPageUrl?.[0]?.offerEndDate).getTime();
-    // let math = (1000 * 60 * 60 * 24);
-
-    // let number = this.getTryNo(leafletPerPageUrl);
-
     if (iloscDni > 0) {
-      return 'Ilosc pozostalych dni: ' + iloscDni;
+      return 'Zostało: ' + iloscDni + ' dni';
     } else if (iloscDni == 0) {
       return 'Ostatni dzien';
     } else {
