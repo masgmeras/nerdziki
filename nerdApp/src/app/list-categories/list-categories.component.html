@@ -1,8 +1,10 @@
-<label class="checkbox-label" id="owoce">
+
+<!--<label class="checkbox-label" id="owoce">
   <input type="checkbox">
   <img [src]="'./assets/images/button-row-first-color/owoce1.png'" (click)="listCategories()" alt="Owoce">
   <span class="product-name">Owoce</span>
 </label>
+
 <label class="checkbox-label" id="warzywa">
   <input type="checkbox">
   <img [src]="'./assets/images/button-row-first-color/warzywa1.png'" alt="Warzywa">
@@ -32,21 +34,19 @@
   <input type="checkbox">
   <img [src]="'./assets/images/button-row-first-color/alkohol1.png'" alt="Alkohol">
   <span class="product-name">Alkohol</span>
-</label>
-<label class="checkbox-label" id="wszystko">
-  <input type="button">
-  <img [src]="'./assets/images/button-row-first-color/wszystko1.png'" alt="Pokaż Wszystko">
-  <span class="product-name">  Pokaż Wszystko</span>
-</label>
-
-
-
-<div class="button-row">
-  <label class="pointer"><input  class="input_hidden" [(ngModel)]="isAllSelected" type="checkbox" checked (change)="setItAll()" />
-    <span>Zaznacz/Odznacz wszystko</span></label>
-  <div *ngFor="let store of getStoresList()">
-    <label class="pointer"><input class="input_hidden" type="checkbox" [(ngModel)]="store.checked" (change)="updateStoreResults()">
-      <div [ngClass]="store.checked ? 'shop-header-image-' + store.categories + '2' : 'shop-header-image-' + store.categories">
-      </div></label>
+</label>-->
+<div class="checkbox-label" >
+  <div class="button-row">
+    <label><input  class="input_hidden" [(ngModel)]="categoryAllSelected" type="checkbox" checked (change)="setCategoryAll()"/>
+    </label>
+    <div *ngFor="let category of getCategoryList()">
+      <label><input class="input_hidden" type="checkbox" [(ngModel)]="category.checked" (change)="updateStoreResults()">
+        <div [ngClass]="category.checked ? 'category-header-image-' + category.categories +'2': 'category-header-image-' + category.categories">
+         </div>{{category.categories}}</label>
+    </div>
   </div>
+
 </div>
+
+
+

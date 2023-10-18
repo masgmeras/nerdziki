@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {LeafletsService} from "../lista-gazetek/leaflets.service";
 
 @Component({
@@ -6,28 +6,39 @@ import {LeafletsService} from "../lista-gazetek/leaflets.service";
   templateUrl: './list-categories.component.html',
   styleUrls: ['./list-categories.component.css']
 })
-export class ListCategoriesComponent {
+export class ListCategoriesComponent implements OnInit {
 
-  isAllSelected: boolean = true;
+  categoryAllSelected: boolean = false;
 
   constructor(protected leafletsService: LeafletsService) {
+  }
+
+ngOnInit() {
+this.leafletsService.getCategories().subscribe(data => {
+ let categoryy = [...new Set(data.map(x=> x.categories))];
+    this.leafletsService.categoriesList = [];
+   for (const element of categoryy){
+   this.leafletsService.categoriesList.push({'categories': element, 'checked': false, 'listOfCategories': ['']});
+    }console.log(this.leafletsService.categoriesList)
+    })
   }
 
 listCategories(){
     this.leafletsService.listCategories();
 }
 
-    setItAll() {
-        this.leafletsService.categoriesList.forEach(x => (x.checked = this.isAllSelected));
-        this.leafletsService.updateStoreResults();
+    setCategoryAll() {
+        this.leafletsService.categoriesList.forEach(x => (x.checked = this.categoryAllSelected));
+
     }
 
-    getStoresList() {
+   getCategoryList() {
         return this.leafletsService.categoriesList;
     }
 
     updateStoreResults() {
-        this.isAllSelected = this.leafletsService.categoriesList.every(x => x.checked);
-        this.leafletsService.updateStoreResults();
+       this.categoryAllSelected = this.leafletsService.categoriesList.every(x => x.checked);
+        this.leafletsService.listCategories();
+      ;
     }
 }

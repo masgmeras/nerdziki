@@ -15,9 +15,9 @@ export class LeafletsService {
   selectedProduct: string = '';
   selectedProductsList: string[] = [];
   myListProduct: Array<string> = [];
-
-  categoriesList: CategoriesListModel[] =[];              /////////////////////////////////////////
+  categoriesList: CategoriesListModel[] = [];              /////////////////////////////////////////
   fruits= 'owoce';
+  categoryProduct: CategoriesListModel[]= []
 
   constructor(private http: HttpClient) {
   }
@@ -25,13 +25,12 @@ export class LeafletsService {
   public getLeaflets(isMock: boolean = false): Observable<LeafletModel[]> {
     const url = 'http://firelocker.pl:3000/getLeaflets';
     const localUrl = '../assets/generate_urls.json';
-    const category = '../assets/categories-list.json';                    //////////////////////////////////
     return this.http.get<LeafletModel[]>(isMock ? localUrl : url);
   }
 
-  public getCategories(): Observable<LeafletModel[]> {
+ public getCategories(): Observable<CategoriesListModel[]> {
     const category = '../assets/categories-list.json';
-    return this.http.get<LeafletModel[]>(category);
+    return this.http.get<CategoriesListModel[]>(category);
   }
 
   addProduct(itemToAdd: string) {
@@ -44,7 +43,7 @@ export class LeafletsService {
   }
 
   initStoreResults(data: LeafletModel[]) {
-   // console.log(data)
+    console.log(data)
     for (let leaflet of data) {
       leaflet.ocrResult = leaflet.ocrResult.toLowerCase();
     }
@@ -53,23 +52,11 @@ export class LeafletsService {
     this.storesList = [];
     for (const element of brands) {
       this.storesList.push({'brand': element, 'checked': true, 'ocrResult': ['']});
-    }
+    }console.log(this.storesList)
   }
-//////////////////////////////////////////////////////////////
-  initCategories(data: LeafletModel[]){
-   // this.createGroupedLeaflets(data);
-   // let categories = [...new Set(data.map(x=> x.categories))];
-   // this.categoriesList = [];
-   // for (const element of categories){
-   // this.categoriesList.push({'categories': element, 'checked': true, 'listOfCategories': ['']});
-   // }console.log('aa')
-  }
-/////////////////////////////////////////////////////////////
-  listCategories(){
-  // const selectedCategory: string[]= this.categoriesList.filter(x => x.checked).map(x=> x.categories);   /////////////////////
-   //let selectedFilter = (x: LeafletModel[]) => x.some(x => selectedCategory.includes(x.categories));    //////////////////////
 
-  this.selectedProduct = this.fruits;
+  listCategories(){
+
 this.updateStoreResults();
   }
 

@@ -42,11 +42,6 @@ dataLeaflet: LeafletModel[] = [];
     this.leafletsService.getLeaflets().subscribe(data => {
       this.leafletsService.initStoreResults(data);
     })
-
-    this.leafletsService.getCategories().subscribe(data => {
-      console.log('categories');
-      console.log(data);
-    })
   }
   getFilteredGroupedLeafletsListByPageUrl() {
     return this.leafletsService?.filteredGroupedLeafletsListByPageUrl;

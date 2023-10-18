@@ -1,1 +1,2 @@
-[{"categories": "owoce", "listOfCategories": "owoce banany jabłka"},{"categories": "warzywa", "listOfCategories": "warzywa kapusta sałata ogórki"},{"categories": "mięso", "listOfCategories": "mięso kurczak"}]
+[{"categories": "owoce", "listOfCategories": "owoce"},{"categories": "warzywa", "listOfCategories": "warzywa"},{"categories": "mięso", "listOfCategories": "mięso"},
+  {"categories": "nabiał", "listOfCategories":"jajka"},{"categories": "chemia", "listOfCategories":"proszek do prania"}, {"categories": "napoje", "listOfCategories":"napoje"}, {"categories": "alkohol", "listOfCategories":"wino"}]

@@ -10,9 +10,11 @@ export interface LeafletModel {
   offerStartDate: string;
   offerEndDate: string; //"2023-09-06"
 
+  categories: string;
+  listOfCategories: string[];
+
   specificFilteredLeaflets: LeafletModel[];
   occursOnPage: number;
 
-  categories: string;
-  listOfCategories: string[];
+
 }

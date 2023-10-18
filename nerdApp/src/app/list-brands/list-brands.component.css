@@ -9,6 +9,7 @@ position: fixed;
   display: none !important;
 }
 
+
 .shop-header-image-kaufland\/pl-PL{
   background-image: url("../../assets/images/button-row-first-color/kaufland1.png");
   background-size: cover;
@@ -39,29 +40,12 @@ position: fixed;
       width: 60px;
 }
 
-
-.shop-header-image-Janusze-kradno{
-  background-image: url("../../assets/images/button-row-first-color/biedronka1.png");
-  background-size: cover;
-      margin: 0 auto;
-      height: 60px;
-      width: 60px;
-}
-.shop-header-image-Janusze-kradno2, .shop-header-image-Janusze-kradno:hover {
- background-image: url("../../assets/images/button-row-second-color/biedronka2.png");
-  background-size: cover;
-      margin: 0 auto;
-      height: 60px;
-      width: 60px;
-}
-
 .mat-grid-list {
   width: 70vw;
   row-gap: 0px;
 }
 .pointer{
       cursor: pointer;
-
 }
 .input_hidden{
 visibility: hidden;
@@ -79,9 +63,4 @@ background: #24315E;
 .buttonSetAll2{
 color: white;
 background: #24315E;
-}
-.green {
-background: green;
-}
-.red {
 }
