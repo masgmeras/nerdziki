@@ -1,9 +1,11 @@
 
-<!--<label class="checkbox-label" id="owoce">
-  <input type="checkbox">
-  <img [src]="'./assets/images/button-row-first-color/owoce1.png'" (click)="listCategories()" alt="Owoce">
-  <span class="product-name">Owoce</span>
-</label>
+<!--<label class="checkbox-label" id="owoce">-->
+<!--<input type="checkbox">-->
+<!--<img [src]="'./assets/images/button-row-first-color/owoce1.png'" (click)="listCategories()" alt="Owoce">-->
+<!--<span class="product-name">Owoce</span>-->
+<!--</label>-->
+
+<!--<
 
 <label class="checkbox-label" id="warzywa">
   <input type="checkbox">
@@ -40,9 +42,11 @@
     <label><input  class="input_hidden" [(ngModel)]="categoryAllSelected" type="checkbox" checked (change)="setCategoryAll()"/>
     </label>
     <div *ngFor="let category of getCategoryList()">
-      <label><input class="input_hidden" type="checkbox" [(ngModel)]="category.checked" (change)="updateStoreResults()">
+      <label>
+        <input class="input_hidden" type="checkbox" [(ngModel)]="category.checked" (change)="updateStoreResults()" />
         <div [ngClass]="category.checked ? 'category-header-image-' + category.categories +'2': 'category-header-image-' + category.categories">
-         </div>{{category.categories}}</label>
+         </div>{{category.categories}}
+      </label>
     </div>
   </div>
 

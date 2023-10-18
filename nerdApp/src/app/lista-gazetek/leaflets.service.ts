@@ -33,6 +33,10 @@ export class LeafletsService {
     return this.http.get<CategoriesListModel[]>(category);
   }
 
+  setCategories(categoriesList: CategoriesListModel[]){
+    this.categoriesList = categoriesList;
+  }
+
   addProduct(itemToAdd: string) {
     this.selectedProductsList.push(itemToAdd);
   }
@@ -52,7 +56,7 @@ export class LeafletsService {
     this.storesList = [];
     for (const element of brands) {
       this.storesList.push({'brand': element, 'checked': true, 'ocrResult': ['']});
-    }console.log(this.storesList)
+    }
   }
 
   listCategories(){
@@ -79,8 +83,8 @@ this.updateStoreResults();
       leaflet[0].occursOnPage = 0;
 
       leaflet.forEach(leafletPage => {
-        selectedProducts.forEach(x => {
-          if (leafletPage.ocrResult.includes(this.selectedProduct)) {
+        selectedProducts.forEach(product => {  /// TODO ???
+          if (leafletPage.ocrResult.includes(product)) {
             leaflet[0].specificFilteredLeaflets.push(leafletPage);
             leaflet[0].occursOnPage = leaflet[0].specificFilteredLeaflets.length;
           }

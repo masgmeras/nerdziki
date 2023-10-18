@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {LeafletsService} from "../lista-gazetek/leaflets.service";
 
 @Component({
@@ -13,32 +13,22 @@ export class ListCategoriesComponent implements OnInit {
   constructor(protected leafletsService: LeafletsService) {
   }
 
-ngOnInit() {
-this.leafletsService.getCategories().subscribe(data => {
- let categoryy = [...new Set(data.map(x=> x.categories))];
-    this.leafletsService.categoriesList = [];
-   for (const element of categoryy){
-   this.leafletsService.categoriesList.push({'categories': element, 'checked': false, 'listOfCategories': ['']});
-    }console.log(this.leafletsService.categoriesList)
-    })
+  ngOnInit() {
+    this.leafletsService.getCategories().subscribe(data => {
+      console.log(data)
+      this.leafletsService.setCategories(data);
+    });
   }
 
-listCategories(){
-    this.leafletsService.listCategories();
-}
+  setCategoryAll() {
+    this.leafletsService.categoriesList.forEach(x => (x.checked = this.categoryAllSelected));
+  }
 
-    setCategoryAll() {
-        this.leafletsService.categoriesList.forEach(x => (x.checked = this.categoryAllSelected));
+  getCategoryList() {
+    return this.leafletsService.categoriesList;
+  }
 
-    }
-
-   getCategoryList() {
-        return this.leafletsService.categoriesList;
-    }
-
-    updateStoreResults() {
-       this.categoryAllSelected = this.leafletsService.categoriesList.every(x => x.checked);
-        this.leafletsService.listCategories();
-      ;
-    }
+  updateStoreResults() {
+    this.leafletsService.updateStoreResults();
+  }
 }

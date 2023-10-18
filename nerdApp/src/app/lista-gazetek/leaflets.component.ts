@@ -32,25 +32,30 @@ export class LeafletsComponent implements OnInit {
   rowSpacing = '1px';
 // number: number=0;
 // col=true;
-dataLeaflet: LeafletModel[] = [];
+  dataLeaflet: LeafletModel[] = [];
 
 
   constructor(protected leafletsService: LeafletsService) {
   }
 
   ngOnInit() {
-    this.leafletsService.getLeaflets().subscribe(data => {
+    this.leafletsService.getLeaflets(true).subscribe(data => {
       this.leafletsService.initStoreResults(data);
     })
   }
+
   getFilteredGroupedLeafletsListByPageUrl() {
     return this.leafletsService?.filteredGroupedLeafletsListByPageUrl;
   }
-licz(){
-let aa = this.leafletsService.filteredGroupedLeafletsListByPageUrl.map(x => {(x?.[0]?.offerStartDate)});
-console.log(aa);
-}
-  getTryNo(leafletPerPageUrl: LeafletModel[]){
+
+  licz() {
+    let aa = this.leafletsService.filteredGroupedLeafletsListByPageUrl.map(x => {
+      (x?.[0]?.offerStartDate)
+    });
+    console.log(aa);
+  }
+
+  getTryNo(leafletPerPageUrl: LeafletModel[]) {
     return moment(new Date(leafletPerPageUrl?.[0]?.offerEndDate)).diff(moment(), 'days');
   }
 
@@ -81,21 +86,20 @@ console.log(aa);
   }
 
 
-
 //color(){
 //return this.number >= 2? 'green':'red';
 //}
 
-/*color(){
-  if (this.number >= 2){
-  return  true;
-  }else {return false;}
-  }*/
+  /*color(){
+    if (this.number >= 2){
+    return  true;
+    }else {return false;}
+    }*/
 
   slideConfig = {
     infinite: true,
     arrows: true,
-    dots:true,
+    dots: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
