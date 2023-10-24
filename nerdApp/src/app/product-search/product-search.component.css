@@ -5,6 +5,7 @@
   border-radius: 30px;
   padding: 20px;
   height: 20px;
+  align-items: center;
 }
 
 .search-box input[type="text"] {
@@ -12,4 +13,20 @@
   width: 120px;
   background-color: transparent;
   border: none;
+}
+
+#search-add {
+  margin-left: 1vw;
+  border: none;
+  background: none;
+  font-size: 2vw;
+  display: flex;
+}
+
+#search-img {
+  width: 2vw;
+  height: 2vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

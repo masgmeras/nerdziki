@@ -38,17 +38,23 @@ display: inline-flex;
   display: none !important;
 }
 
+label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .category-header-image-owoce {
   background-image: url('../../assets/images/button-row-first-color/owoce1.png');
   background-size: cover;
-    margin: 0 auto;
+    margin: 0 5px 0 5px;
     height: 60px;
     width: 60px;
 }
 .category-header-image-owoce2, .category-header-image-owoce:hover{
   background-image: url('../../assets/images/button-row-second-color/owoce2.png');
   background-size: cover;
-    margin: 0 auto;
+    margin: 0 5px 0 5px;
     height: 60px;
     width: 60px;
 }
@@ -56,84 +62,84 @@ display: inline-flex;
 .category-header-image-warzywa {
   background-image: url('../../assets/images/button-row-first-color/warzywa1.png');
   background-size: cover;
-    margin: 0 auto;
+    margin: 0 5px 0 5px;
     height: 60px;
     width: 60px;
 }
 .category-header-image-warzywa2, .category-header-image-warzywa:hover {
   background-image: url('../../assets/images/button-row-second-color/warzywa2.png');
   background-size: cover;
-    margin: 0 auto;
+    margin: 0 5px 0 5px;
     height: 60px;
     width: 60px;
 }
 .category-header-image-mięso {
   background-image: url('../../assets/images/button-row-first-color/mieso1.png');
   background-size: cover;
-    margin: 0 auto;
+    margin: 0 5px 0 5px;
     height: 60px;
     width: 60px;
 }
 .category-header-image-mięso2, .category-header-image-mięso:hover {
   background-image: url('../../assets/images/button-row-second-color/mieso2.png');
   background-size: cover;
-    margin: 0 auto;
+    margin: 0 5px 0 5px;
     height: 60px;
     width: 60px;
 }
 .category-header-image-nabiał {
   background-image: url('../../assets/images/button-row-first-color/nabial1.png');
   background-size: cover;
-    margin: 0 auto;
+    margin: 0 5px 0 5px;
     height: 60px;
     width: 60px;
 }
 .category-header-image-nabiał2, .category-header-image-nabiał:hover {
   background-image: url('../../assets/images/button-row-second-color/nabial2.png');
   background-size: cover;
-    margin: 0 auto;
+    margin: 0 5px 0 5px;
     height: 60px;
     width: 60px;
 }
 .category-header-image-chemia {
   background-image: url('../../assets/images/button-row-first-color/chemia1.png');
   background-size: cover;
-    margin: 0 auto;
+    margin: 0 5px 0 5px;
     height: 60px;
     width: 60px;
 }
 .category-header-image-chemia2, .category-header-image-chemia:hover {
   background-image: url('../../assets/images/button-row-second-color/chemia2.png');
   background-size: cover;
-    margin: 0 auto;
+    margin: 0 5px 0 5px;
     height: 60px;
     width: 60px;
 }
 .category-header-image-napoje{
   background-image: url('../../assets/images/button-row-first-color/napoje1.png');
   background-size: cover;
-    margin: 0 auto;
+    margin: 0 5px 0 5px;
     height: 60px;
     width: 60px;
 }
 .category-header-image-napoje2, .category-header-image-napoje:hover {
   background-image: url('../../assets/images/button-row-second-color/napoje2.png');
   background-size: cover;
-    margin: 0 auto;
+    margin: 0 5px 0 5px;
     height: 60px;
     width: 60px;
 }
 .category-header-image-alkohol {
   background-image: url('../../assets/images/button-row-first-color/alkohol1.png');
   background-size: cover;
-    margin: 0 auto;
+    margin: 0 5px 0 5px;
     height: 60px;
     width: 60px;
 }
 .category-header-image-alkohol2, .category-header-image-alkohol:hover {
   background-image: url('../../assets/images/button-row-second-color/alkohol2.png');
   background-size: cover;
-    margin: 0 auto;
+    margin: 0 5px 0 5px;
     height: 60px;
     width: 60px;
 }

@@ -5,7 +5,7 @@
 
 <!--{{getFilteredGroupedLeafletsListByPageUrl() | json}}-->
 <!-- [rowSpacing]="'1px'" -->
-<mat-grid-list id="girdlist" [cols]="numberOfColumns" rowHeight="2:3" [gutterSize]="'1px'">
+<mat-grid-list id="girdlist" [cols]="numberOfColumns">
     <div *ngFor="let leafletPerPageUrl of getFilteredGroupedLeafletsListByPageUrl(); ">
         <mat-grid-tile rowspan="1">
             <mat-card  class="example-card tile" style="background: lightgray;">
