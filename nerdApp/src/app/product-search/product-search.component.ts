@@ -29,9 +29,9 @@ if(!this.leafletsService.selectedProduct){
       }
       this.leafletsService.selectedProduct = this.leafletsService.selectedProduct.toLowerCase();
       this.leafletsService.myListProduct.push(this.leafletsService.selectedProduct);
-     // this.leafletsService.addProduct(this.leafletsService.selectedProduct);
+    // this.leafletsService.addProduct(this.leafletsService.selectedProduct);
       this.leafletsService.selectedProduct = '';
-      //this.leafletsService.updateStoreResults();
+    //  this.leafletsService.updateStoreResults();
 
 
  console.log(this.leafletsService.myListProduct);

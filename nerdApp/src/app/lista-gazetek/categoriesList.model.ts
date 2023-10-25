@@ -1,5 +1,5 @@
 export interface CategoriesListModel {
   categories: string;
-  listOfCategories: string[];
+  listOfCategories: string;
   checked: boolean;
 }

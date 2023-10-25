@@ -28,7 +28,8 @@ export class ListCategoriesComponent implements OnInit {
     return this.leafletsService.categoriesList;
   }
 
-  updateStoreResults() {
-    this.leafletsService.updateStoreResults();
+  updateCategoryResults() {
+  this.leafletsService.listCategories();
+    //this.leafletsService.updateStoreResults();
   }
 }

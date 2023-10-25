@@ -11,13 +11,12 @@ import {CategoriesListModel} from "./categoriesList.model";   //////////////////
 export class LeafletsService {
   storesList: StoresListModel[] = [];
   filteredGroupedLeafletsListByPageUrl: LeafletModel[][] = [];
+  private fullList: LeafletModel[] = [];
   private readonly groupedLeafletsListByPageUrl: LeafletModel[][] = [];
   selectedProduct: string = '';
   selectedProductsList: string[] = [];
   myListProduct: Array<string> = [];
   categoriesList: CategoriesListModel[] = [];              /////////////////////////////////////////
-  fruits= 'owoce';
-  categoryProduct: CategoriesListModel[]= []
 
   constructor(private http: HttpClient) {
   }
@@ -39,6 +38,7 @@ export class LeafletsService {
 
   addProduct(itemToAdd: string) {
     this.selectedProductsList.push(itemToAdd);
+    this.updateStoreResults();
   }
 
   removeProduct(itemToRemove: string) {
@@ -59,10 +59,13 @@ export class LeafletsService {
     }
   }
 
-  listCategories(){
 
+  listCategories(){
+this.selectedProductsList = this.categoriesList.filter(x=> x.checked).map(x => x.listOfCategories);
+console.log(this.selectedProductsList)
 this.updateStoreResults();
   }
+
 
   updateStoreResults() {
     const selectedBrands: string[] = this.storesList.filter(x => x.checked).map(x => x.brand);
@@ -76,6 +79,7 @@ this.updateStoreResults();
       this.countOccurances(this.selectedProductsList);
     }
   }
+
 
   private countOccurances(selectedProducts: string[]) {
     for (let leaflet of this.filteredGroupedLeafletsListByPageUrl) {
@@ -93,14 +97,54 @@ this.updateStoreResults();
     }
     this.filteredGroupedLeafletsListByPageUrl = this.filteredGroupedLeafletsListByPageUrl.filter(x => x[0].occursOnPage > 0);
   }
+/*
+ updateStoreResults() {
+    const selectedBrands: string[] = this.storesList.filter(x => x.checked).map(x => x.brand);
+    let selectedBrandFilter = (x: LeafletModel[]) => x.some(x => selectedBrands.includes(x.brand));
+    const deepCopyOfGroupedLeaflets = JSON.parse(JSON.stringify(this.groupedLeafletsListByPageUrl));
+    this.filteredGroupedLeafletsListByPageUrl = deepCopyOfGroupedLeaflets.filter(selectedBrandFilter);
+        let filterProduct;
+        if (this.selectedProduct) {
+            let temp = [];
+            for (let filteredGroupedLeafletsListByPageUrlElement of this.filteredGroupedLeafletsListByPageUrl) {
+                for (let leafletModel of filteredGroupedLeafletsListByPageUrlElement) {
+                    if (leafletModel.ocrResult.includes(this.selectedProduct)) {
+                        temp.push(filteredGroupedLeafletsListByPageUrlElement);
+                    }
+                }
+            }
+            this.filteredGroupedLeafletsListByPageUrl = temp;
+        }
+
+        if (this.selectedProductsList.length) {
+            for (let leaflet of this.filteredGroupedLeafletsListByPageUrl) {
+                leaflet[0].specificFilteredLeaflets = [];
+                leaflet[0].occursOnPage = 0;
+                for (let leafletPage of leaflet) {
+                    for (let product of this.selectedProductsList) {
+                        if (leafletPage.ocrResult.includes(product)) {
+                            leaflet[0].specificFilteredLeaflets.push(leafletPage);
+                            leaflet[0].occursOnPage = leaflet[0].specificFilteredLeaflets.length;
+                        }
+                    }
+                }
+
+            }
+        }
+
+    }
+
+    private countOccurances(singleLeaflet: LeafletModel[]) {
+    }*/
+
 
   private createGroupedLeaflets(leafletsList: LeafletModel[]) {
     const groupByPageUrl = this.groupBy(leafletsList, "pageUrl");
-    for (const [key] of Object.entries(groupByPageUrl)) {
-      this.groupedLeafletsListByPageUrl.push(groupByPageUrl[key]);
+      for (const [key] of Object.entries(groupByPageUrl)) {
+        this.groupedLeafletsListByPageUrl.push(groupByPageUrl[key]);
+      }
+      this.filteredGroupedLeafletsListByPageUrl = this.groupedLeafletsListByPageUrl;
     }
-    this.filteredGroupedLeafletsListByPageUrl = this.groupedLeafletsListByPageUrl;
-  }
 
   private groupBy(arr: any, key: any) {
     const initialValue = {};
@@ -110,5 +154,6 @@ this.updateStoreResults();
       return acc;
     }, initialValue);
   }
+
 
 }

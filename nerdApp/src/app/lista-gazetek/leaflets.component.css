@@ -25,7 +25,7 @@ mat-card {
   background-size: cover;
 }
 
-.example-header-image-lidl {
+.example-header-image-lidl\/pl-PL {
   background-image: url('../../assets/images/button-row-second-color/lidl2.png');
   background-size: cover;
 }
@@ -54,7 +54,7 @@ mat-card {
 margin-top: 50px;
 }
 
-
+/*
 .shop-header-image-kaufland {
   background-image: url("./images/button-row-first-color/kaufland1.png");
   background-size: cover;
@@ -100,7 +100,7 @@ margin-top: 50px;
       height: 60px;
       width: 60px;
 }
-
+*/
 .mat-grid-list {
   width: 70vw;
   row-gap: 0px;

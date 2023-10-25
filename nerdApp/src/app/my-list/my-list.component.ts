@@ -21,7 +21,7 @@ export class MyListComponent implements OnInit {
   remove(myProduct: string) {
     this.leafletsService.myListProduct = this.leafletsService.myListProduct.filter(e => e !== myProduct)
     this.leafletsService.removeProduct(myProduct);
-    this.leafletsService.updateStoreResults();
+    //this.leafletsService.updateStoreResults();
   }
 
 }
