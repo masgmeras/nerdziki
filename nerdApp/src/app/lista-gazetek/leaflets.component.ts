@@ -20,10 +20,12 @@ export class LeafletsComponent implements OnInit {
   private adjustNumberOfColumns(): void {
     const windowWidth = window.innerWidth;
 
-    if (windowWidth >= 1280) {
+    if (windowWidth >= 1920) {
       this.numberOfColumns = 4;
-    } else if (windowWidth >= 865) {
+    } else if (windowWidth >= 1440) {
       this.numberOfColumns = 3;
+    } else if (windowWidth >= 865) {
+      this.numberOfColumns = 2;
     } else {
       this.numberOfColumns = 1;
     }
