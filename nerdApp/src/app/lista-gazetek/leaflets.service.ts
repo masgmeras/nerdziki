@@ -60,10 +60,15 @@ export class LeafletsService {
   }
 
 
-  listCategories(){
-this.selectedProductsList = this.categoriesList.filter(x=> x.checked).map(x => x.listOfCategories);
-console.log(this.selectedProductsList)
-this.updateStoreResults();
+  listCategories() {
+    let selectedListsOfCategories = [];
+    for (let categoriesListModel of this.categoriesList.filter(x => x.checked)) {
+      selectedListsOfCategories.push(...categoriesListModel.listOfCategories);
+    }
+
+    this.selectedProductsList = selectedListsOfCategories;
+    console.log(this.selectedProductsList)
+    this.updateStoreResults();
   }
 
 

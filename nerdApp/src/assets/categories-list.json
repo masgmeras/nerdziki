@@ -1,30 +1,30 @@
 [
   {
     "categories": "owoce",
-    "listOfCategories": "owoce"
+    "listOfCategories": ["gruszki", "jabłka"]
   },
   {
     "categories": "warzywa",
-    "listOfCategories": "warzywa"
+    "listOfCategories": ["pomidor"]
   },
   {
     "categories": "mięso",
-    "listOfCategories": "mięso"
+    "listOfCategories": ["jabłka", "pomidor"]
   },
   {
     "categories": "nabiał",
-    "listOfCategories": "mleko"
+    "listOfCategories": ["jabłka", "pomidor"]
   },
   {
     "categories": "chemia",
-    "listOfCategories": "prania"
+    "listOfCategories": ["jabłka", "pomidor"]
   },
   {
     "categories": "napoje",
-    "listOfCategories": "napoje"
+    "listOfCategories": ["jabłka", "pomidor"]
   },
   {
     "categories": "alkohol",
-    "listOfCategories": "wódka"
+    "listOfCategories": ["jabłka", "pomidor"]
   }
 ]
