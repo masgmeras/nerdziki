@@ -5,7 +5,7 @@
   <div *ngFor="let store of getStoresList()">
     <label class="pointer">
       <input class="input_hidden" type="checkbox" [(ngModel)]="store.checked" (change)="updateStoreResults()"/>
-      <div [ngClass]="store.checked ? 'background-' + store.brand : 'background'"><div [ngClass]="store.checked ? 'shop-header-image-' + store.brand + '2' : 'shop-header-image-' + store.brand"></div>
+      <div [ngClass]="store.checked ? 'background-' + store.brand : 'background_shop'"><div [ngClass]="store.checked ? 'shop-header-image-' + store.brand + '2' : 'shop-header-image-' + store.brand"></div>
   </div></label>
   </div>
 </div>

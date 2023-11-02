@@ -1,0 +1,43 @@
+<div class="background">
+  <div class="exit-button">
+    <button type="submit" class="x-mark"><i class="fa-regular fa-circle-xmark" [routerLink]="['/main']"></i></button>
+  </div>
+  <div id="container">
+    <div id="dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <div id="tiles-container" class="container">
+      <!-- lista ulubionych -->
+    </div>
+  </div>
+
+  <div class="margin_list">
+  <div class="button" id="leaflets-my-list">
+    <img src="../assets/../assets/images/button-row-first-color/lista1.png" alt="Moja Lista">
+    <p>MOJA LISTA</p>
+  </div>
+  <ul>
+  <li *ngFor="let list of myList">
+    {{list}}
+    <button (click)="remove(list)">-</button>
+  </li>
+  </ul>
+    <button (click)="myLeaflet()">Szukaj po liscie</button>
+</div>
+
+
+    <div class="shop-inline" >
+      <input class="input_hidden" type="checkbox" checked [(ngModel)]="isAllSelected" (change)="setItAll()"/>
+      <div *ngFor="let store of getStoresList()">
+        <label class="pointer">
+          <input class="input_hidden" type="checkbox" [(ngModel)]="store.checked" (change)="updateStoreResults()"/>
+          <div [ngClass]="store.checked ? 'background-' + store.brand : 'background_shop'"><div [ngClass]="store.checked ? 'shop-header-image-' + store.brand + '2' : 'shop-header-image-' + store.brand"></div>
+          </div></label></div>
+  </div>
+
+  <div class="box-leaflet">
+    <p>GAZAETKI</p>
+  </div>
+</div>

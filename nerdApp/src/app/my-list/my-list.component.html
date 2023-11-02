@@ -8,12 +8,12 @@
         <button (click)="addProduct()">+</button>-->
     </div>
     <div>
-      <ul>
-        <li *ngFor="let  myProduct of this.leafletsService.myListProduct">
-          {{myProduct}}
-          <button (click)="remove(myProduct)">-</button>
-        </li>
-      </ul>
+
+        <div class="hiddenMyProduct" *ngFor="let  myProduct of this.leafletsService.myListProduct">{{myProduct}}
+         <!-- <button (click)="remove(myProduct)">-</button>-->
+        </div>
+
+      {{this.leafletsService.myListProduct.length}}
     </div>
   </div>
 </div>

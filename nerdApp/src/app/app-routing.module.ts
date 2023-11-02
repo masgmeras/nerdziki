@@ -7,6 +7,7 @@ import {FavouriteLeafletsComponent} from './favourite-leaflets/favourite-leaflet
 import {NewPasswordComponent} from './admin-panel/new-password/new-password.component';
 import {RodoComponent} from "./admin-panel/rodo/rodo.component";
 import {TeamComponent} from "./team/team.component";
+import {AdminListComponent} from './admin-list/admin-list.component';
 
 const routes: Routes = [
   {path: '', component: MainComponent},
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path: 'favourite', component: FavouriteLeafletsComponent},
   {path: 'newpassword', component: NewPasswordComponent},
   {path: 'rodo', component: RodoComponent},
-  {path: 'team', component: TeamComponent}
+  {path: 'team', component: TeamComponent},
+  {path: 'adminList', component: AdminListComponent}
 ];
 
 @NgModule({

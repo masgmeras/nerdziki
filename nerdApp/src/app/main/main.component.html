@@ -23,10 +23,12 @@
           <app-leaflets></app-leaflets>
         </div>
       </div>
-      <div class="my-list">
-        <app-my-list></app-my-list>
-      </div>
+
       <div id="button-row">
+        <div class="button"   [routerLink]="['/adminList']">
+        <app-my-list></app-my-list>
+          <span class="product-name">Moja lista</span>
+      </div>
         <div class="button" id="favourite-leaflets" [routerLink]="['/favourite']">
           <img src="../assets/images/button-row-first-color/favourite1.png" alt="Ulubione promocje">
           <span class="product-name">Ulubione</span>

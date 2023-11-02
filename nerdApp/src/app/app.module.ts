@@ -37,6 +37,7 @@ import {AdminService} from "./admin-panel/admin.service";
 import { NewPasswordComponent } from './admin-panel/new-password/new-password.component';
 import { RodoComponent } from './admin-panel/rodo/rodo.component';
 import { TeamComponent } from './team/team.component';
+import { AdminListComponent } from './admin-list/admin-list.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,9 @@ import { TeamComponent } from './team/team.component';
         MainComponent,
         NewPasswordComponent,
         RodoComponent,
-        TeamComponent
+        TeamComponent,
+        MyListComponent,
+        AdminListComponent
   ],
   imports: [
     BrowserModule,

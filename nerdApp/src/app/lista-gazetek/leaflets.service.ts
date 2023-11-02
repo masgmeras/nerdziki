@@ -15,6 +15,7 @@ export class LeafletsService {
   private readonly groupedLeafletsListByPageUrl: LeafletModel[][] = [];
   selectedProduct: string = '';
   selectedProductsList: string[] = [];
+  selectedProductCategory: string[]=[];
   myListProduct: Array<string> = [];
   categoriesList: CategoriesListModel[] = [];              /////////////////////////////////////////
 
@@ -65,9 +66,8 @@ export class LeafletsService {
     for (let categoriesListModel of this.categoriesList.filter(x => x.checked)) {
       selectedListsOfCategories.push(...categoriesListModel.listOfCategories);
     }
-
-    this.selectedProductsList = selectedListsOfCategories;
-    console.log(this.selectedProductsList)
+    this.selectedProductCategory = selectedListsOfCategories;
+    //console.log(this.selectedProductCategory)
     this.updateStoreResults();
   }
 
@@ -82,6 +82,9 @@ export class LeafletsService {
     }
     if (this.selectedProductsList.length) {
       this.countOccurances(this.selectedProductsList);
+    }
+    if (this.selectedProductCategory.length){
+     this.countOccurances(this.selectedProductCategory);
     }
   }
 

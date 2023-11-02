@@ -129,3 +129,45 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .slick-dots {
   bottom: unset;
 }
+.background_shop {
+background: rgba(255,255,255,0.3);
+width: 220px;
+}
+.background-kaufland\/pl-PL {
+background: red;
+width: 220px;
+}
+.background-lidl\/pl-PL {
+background: yellow;
+width: 220px;
+}
+
+.shop-header-image-kaufland\/pl-PL , .shop-header-image-kaufland\/pl-PL2:hover {
+  background-image: url("./assets/images/button-row-first-color/kaufland1.png");
+  background-size: cover;
+    margin: 0 auto;
+    height: 60px;
+    width: 60px;
+}
+.shop-header-image-kaufland\/pl-PL2  {
+ background-image: url("./assets/images/button-row-second-color/kaufland2.png");
+  background-size: cover;
+      margin: 0 auto;
+      height: 60px;
+      width: 60px;
+}
+.shop-header-image-lidl\/pl-PL , .shop-header-image-lidl\/pl-PL2:hover{
+  background-image: url("./assets/images/button-row-first-color/lidl1.png");
+  background-size: cover;
+      margin: 0 auto;
+      height: 60px;
+      width: 60px;
+
+}
+.shop-header-image-lidl\/pl-PL2, .shop-header-image-lidl\/pl-PL:hover {
+ background-image: url("./assets/images/button-row-second-color/lidl2.png");
+  background-size: cover;
+      margin: 0 auto;
+      height: 60px;
+      width: 60px;
+}
