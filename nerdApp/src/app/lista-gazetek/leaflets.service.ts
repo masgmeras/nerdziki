@@ -19,6 +19,8 @@ export class LeafletsService {
   myListProduct: Array<string> = [];
   categoriesList: CategoriesListModel[] = [];              /////////////////////////////////////////
 
+  wybranaGazeta: LeafletModel[] = [];
+
   constructor(private http: HttpClient) {
   }
 
@@ -36,6 +38,10 @@ export class LeafletsService {
   setCategories(categoriesList: CategoriesListModel[]){
     this.categoriesList = categoriesList;
   }
+
+  setWybranaGazeta(lista: LeafletModel[] ){
+  this.wybranaGazeta = lista;
+}
 
   addProduct(itemToAdd: string) {
     this.selectedProductsList.push(itemToAdd);

@@ -30,6 +30,10 @@ export class AdminListComponent implements OnInit{
     this.leafletsService.updateStoreResults();
   }
 
+  displayGazetka(){
+    return this.leafletsService.wybranaGazeta;
+  }
+
   getStoresList() {
     return this.leafletsService.storesList;
   }

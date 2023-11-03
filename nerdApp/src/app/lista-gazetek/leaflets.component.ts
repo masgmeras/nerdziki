@@ -58,6 +58,10 @@ export class LeafletsComponent implements OnInit {
     return this.leafletsService?.filteredGroupedLeafletsListByPageUrl.slice(0, Number(itemLimit));
   }
 
+  setGazetka(gazetka: LeafletModel[]){
+    this.leafletsService.setWybranaGazeta(gazetka);
+  }
+
   licz() {
     let aa = this.leafletsService.filteredGroupedLeafletsListByPageUrl.map(x => {
       (x?.[0]?.offerStartDate)
