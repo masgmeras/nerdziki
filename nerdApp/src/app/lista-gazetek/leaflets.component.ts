@@ -44,10 +44,18 @@ export class LeafletsComponent implements OnInit {
     this.leafletsService.getLeaflets().subscribe(data => {
       this.leafletsService.initStoreResults(data);
     })
+
+    if(this.leafletsService.myListProduct.length === 0){
+      // @ts-ignore
+      let item: string = localStorage.getItem("lista");
+      console.log('lista')
+      this.leafletsService.myListProduct = JSON.parse(item);
+    }
   }
 
   getFilteredGroupedLeafletsListByPageUrl() {
-    return this.leafletsService?.filteredGroupedLeafletsListByPageUrl;
+    let itemLimit = localStorage.getItem('limit');
+    return this.leafletsService?.filteredGroupedLeafletsListByPageUrl.slice(0, Number(itemLimit));
   }
 
   licz() {

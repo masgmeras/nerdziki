@@ -48,7 +48,6 @@ export class LeafletsService {
   }
 
   initStoreResults(data: LeafletModel[]) {
-    console.log(data)
     for (let leaflet of data) {
       leaflet.ocrResult = leaflet.ocrResult.toLowerCase();
     }
