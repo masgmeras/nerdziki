@@ -1,51 +1,54 @@
 <body>
-    <header class="sticky">
-      <div class="logo">
-        <img src="../assets/images/zniżka_full_logo.png"/>
-        <img src="../assets/images/arrow.png" id="arrow-top" class="arrow">
-        <img src="../assets/images/arrow.png" class="arrow" id="arrow-aside">
-        <span id="text-top">Oraz produkty</span>
-        <span id="text-aside">Wybierz Sklep</span>
-      </div>
-      <app-list-categories></app-list-categories>
-      <app-product-search></app-product-search>
-    </header>
-    <main>
-      <app-list-brands></app-list-brands>
-      <!-- REFACTOR do srodka app-leaflets -->
-      <div id="container">
-        <div id="dots">
-          <div class="dot"></div>
-          <div class="dot"></div>
-          <div class="dot"></div>
-        </div>
-        <div id="tiles-container" class="container">
-          <app-leaflets></app-leaflets>
-        </div>
-      </div>
 
-      <div id="button-row">
-        <div class="button"   [routerLink]="['/adminList']">
-        <app-my-list></app-my-list>
-          <span class="product-name">Moja lista</span>
-      </div>
-        <div class="button" id="favourite-leaflets" [routerLink]="['/favourite']">
-          <img src="../assets/images/button-row-first-color/favourite1.png" alt="Ulubione promocje">
-          <span class="product-name">Ulubione</span>
-        </div>
-        <div class="button" id="login" [routerLink]="['/signin']">
-            <img src="../assets/images/button-row-first-color/login1.png" alt="Zaloguj się">
-            <span *ngIf="getLoggedInUsername()">Witaj, {{getLoggedInUsername()}}</span>
-            <span *ngIf="!getLoggedInUsername()" class="product-name">Zaloguj się</span>
-        </div>
-        <div class="button" [routerLink]="['/rodo']">
-          <i class="fa-solid fa-lock" style="color: #24305E;"></i>
-          <span class="product-name">RODO</span>
-        </div>
-        <div class="button" [routerLink]="['/team']">
-          <i class="fa-solid fa-people-group" style="color: #24305E;"></i>
-          <span class="product-name">O nas</span>
-        </div>
-      </div>
-    </main>
+<app-leaflets></app-leaflets>
+
+<header class="sticky">
+  <div class="logo">
+    <img src="../assets/images/zniżka_full_logo.png"/>
+    <img src="../assets/images/arrow.png" id="arrow-top" class="arrow">
+    <img src="../assets/images/arrow.png" class="arrow" id="arrow-aside">
+    <span id="text-top">Oraz produkty</span>
+    <span id="text-aside">Wybierz Sklep</span>
+  </div>
+  <app-list-categories></app-list-categories>
+  <app-product-search></app-product-search>
+</header>
+<main>
+  <app-list-brands></app-list-brands>
+  <!-- REFACTOR do srodka app-leaflets -->
+  <div id="container">
+    <div id="dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <div id="tiles-container" class="container">
+
+    </div>
+  </div>
+
+  <div id="button-row">
+    <div class="button" [routerLink]="['/adminList']">
+      <app-my-list></app-my-list>
+      <span class="product-name">Moja lista</span>
+    </div>
+    <div class="button" id="favourite-leaflets" [routerLink]="['/favourite']">
+      <img src="../assets/images/button-row-first-color/favourite1.png" alt="Ulubione promocje">
+      <span class="product-name">Ulubione</span>
+    </div>
+    <div class="button" id="login" [routerLink]="['/signin']">
+      <img src="../assets/images/button-row-first-color/login1.png" alt="Zaloguj się">
+      <span *ngIf="getLoggedInUsername()">Witaj, {{getLoggedInUsername()}}</span>
+      <span *ngIf="!getLoggedInUsername()" class="product-name">Zaloguj się</span>
+    </div>
+    <div class="button" [routerLink]="['/rodo']">
+      <i class="fa-solid fa-lock" style="color: #24305E;"></i>
+      <span class="product-name">RODO</span>
+    </div>
+    <div class="button" [routerLink]="['/team']">
+      <i class="fa-solid fa-people-group" style="color: #24305E;"></i>
+      <span class="product-name">O nas</span>
+    </div>
+  </div>
+</main>
 </body>

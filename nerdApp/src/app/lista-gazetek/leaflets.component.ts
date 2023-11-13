@@ -1,4 +1,4 @@
-import {Component, OnInit, HostListener} from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {LeafletsService} from "./leaflets.service";
 import {LeafletModel} from "./leafletModel";
 import * as moment from 'moment';
@@ -31,34 +31,30 @@ export class LeafletsComponent implements OnInit {
     }
   }
 
-  rowSpacing = '1px';
-// number: number=0;
-// col=true;
-  dataLeaflet: LeafletModel[] = [];
-
 
   constructor(protected leafletsService: LeafletsService) {
   }
 
   ngOnInit() {
     this.leafletsService.getLeaflets().subscribe(data => {
+      console.log(data)
       this.leafletsService.initStoreResults(data);
     })
 
-    if(this.leafletsService.myListProduct.length === 0){
-      // @ts-ignore
-      let item: string = localStorage.getItem("lista");
-      console.log('lista')
-      this.leafletsService.myListProduct = JSON.parse(item);
-    }
+    // if (this.leafletsService.myListProduct.length === 0) {
+    //   // @ts-ignore
+    //   // let item: string = localStorage.getItem("lista");
+    //   // console.log('lista')
+    //   // this.leafletsService.myListProduct = JSON.parse(item);
+    // }
   }
 
   getFilteredGroupedLeafletsListByPageUrl() {
     let itemLimit = localStorage.getItem('limit');
-    return this.leafletsService?.filteredGroupedLeafletsListByPageUrl.slice(0, Number(itemLimit));
+    return this.leafletsService?.filteredGroupedLeafletsListByPageUrl;
   }
 
-  setGazetka(gazetka: LeafletModel[]){
+  setGazetka(gazetka: LeafletModel[]) {
     this.leafletsService.setWybranaGazeta(gazetka);
   }
 

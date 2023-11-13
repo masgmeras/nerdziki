@@ -53,8 +53,6 @@ h1 {
     justify-content: flex-start;
     align-items: center;
     margin-left: 20%;
-    /* margin-top: 3.8vw; */
-    /* padding: 20px; */
     border: 2px solid white;
     border-right: none;
     border-bottom: none;
@@ -219,9 +217,9 @@ i {
 }
 
 @media (min-width: 425px) and (max-width: 768px) {
-    
+
 }
 
 @media (max-width: 425px) {
-    
+
 }
