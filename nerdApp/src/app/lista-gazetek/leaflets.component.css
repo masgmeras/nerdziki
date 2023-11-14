@@ -44,7 +44,6 @@ mat-card {
 
 .mat-grid-card {
   width: 45%;
-  margin: 3%;
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease-in-out;
@@ -104,7 +103,7 @@ margin-top: 50px;
 .mat-grid-list {
   width: 70vw;
   row-gap: 0px;
-  padding-top: 1.5vw;
+  padding-top: 2.5vw;
 }
 .green{
    font-family: Arial, sans-serif;
@@ -117,4 +116,10 @@ margin-top: 50px;
    font-size: 15px;
    font-weight: bold;
     color: red;
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .mat-grid-list {
+      padding-top: 3.5vw;
+  }
 }

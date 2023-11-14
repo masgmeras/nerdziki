@@ -1,10 +1,11 @@
 .search-box {                                         /* Wyszukiwarka */
-  margin: 8px 20px 0 0;
+  margin: 1vw;
   display: flex;
   background-color: white;
   border-radius: 30px;
   padding: 20px;
-  height: 20px;
+  height: 1.5vw;
+  width: 13vw;
   align-items: center;
 }
 
@@ -19,13 +20,13 @@
   margin-left: 1vw;
   border: none;
   background: none;
-  font-size: 2vw;
+  font-size: 1.7vw;
   display: flex;
 }
 
 #search-img {
-  width: 2vw;
-  height: 2vw;
+  width: 1.7vw;
+  height: 1.7vw;
   display: flex;
   align-items: center;
   justify-content: center;

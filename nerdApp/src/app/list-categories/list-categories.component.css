@@ -14,9 +14,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 60px;
-  height: 60px;
-  margin: 10px;
+  width: 4vw;
+  height: 4vw;
+  margin: 0.5vw;
   cursor: pointer;
   margin-bottom: 10px;
 }
@@ -47,101 +47,101 @@ label {
 .category-header-image-owoce {
   background-image: url('../../assets/images/button-row-first-color/owoce1.png');
   background-size: cover;
-    margin: 0 5px 0 5px;
-    height: 60px;
-    width: 60px;
+  width: 4vw;
+  height: 4vw;
+  margin: 0 0.5vw;
 }
 .category-header-image-owoce2, .category-header-image-owoce:hover{
   background-image: url('../../assets/images/button-row-second-color/owoce2.png');
   background-size: cover;
-    margin: 0 5px 0 5px;
-    height: 60px;
-    width: 60px;
+  width: 4vw;
+  height: 4vw;
+  margin: 0 0.5vw;
 }
 
 .category-header-image-warzywa {
   background-image: url('../../assets/images/button-row-first-color/warzywa1.png');
   background-size: cover;
-    margin: 0 5px 0 5px;
-    height: 60px;
-    width: 60px;
+  width: 4vw;
+  height: 4vw;
+  margin: 0 0.5vw;
 }
 .category-header-image-warzywa2, .category-header-image-warzywa:hover {
   background-image: url('../../assets/images/button-row-second-color/warzywa2.png');
   background-size: cover;
-    margin: 0 5px 0 5px;
-    height: 60px;
-    width: 60px;
+  width: 4vw;
+  height: 4vw;
+  margin: 0 0.5vw;
 }
 .category-header-image-mięso {
   background-image: url('../../assets/images/button-row-first-color/mieso1.png');
   background-size: cover;
-    margin: 0 5px 0 5px;
-    height: 60px;
-    width: 60px;
+  width: 4vw;
+  height: 4vw;
+  margin: 0 0.5vw;
 }
 .category-header-image-mięso2, .category-header-image-mięso:hover {
   background-image: url('../../assets/images/button-row-second-color/mieso2.png');
   background-size: cover;
-    margin: 0 5px 0 5px;
-    height: 60px;
-    width: 60px;
+  width: 4vw;
+  height: 4vw;
+  margin: 0 0.5vw;
 }
 .category-header-image-nabiał {
   background-image: url('../../assets/images/button-row-first-color/nabial1.png');
   background-size: cover;
-    margin: 0 5px 0 5px;
-    height: 60px;
-    width: 60px;
+  width: 4vw;
+  height: 4vw;
+  margin: 0 0.5vw;
 }
 .category-header-image-nabiał2, .category-header-image-nabiał:hover {
   background-image: url('../../assets/images/button-row-second-color/nabial2.png');
   background-size: cover;
-    margin: 0 5px 0 5px;
-    height: 60px;
-    width: 60px;
+  width: 4vw;
+  height: 4vw;
+  margin: 0 0.5vw;
 }
 .category-header-image-chemia {
   background-image: url('../../assets/images/button-row-first-color/chemia1.png');
   background-size: cover;
-    margin: 0 5px 0 5px;
-    height: 60px;
-    width: 60px;
+  width: 4vw;
+  height: 4vw;
+  margin: 0 0.5vw;
 }
 .category-header-image-chemia2, .category-header-image-chemia:hover {
   background-image: url('../../assets/images/button-row-second-color/chemia2.png');
   background-size: cover;
-    margin: 0 5px 0 5px;
-    height: 60px;
-    width: 60px;
+  width: 4vw;
+  height: 4vw;
+  margin: 0 0.5vw;
 }
 .category-header-image-napoje{
   background-image: url('../../assets/images/button-row-first-color/napoje1.png');
   background-size: cover;
-    margin: 0 5px 0 5px;
-    height: 60px;
-    width: 60px;
+  width: 4vw;
+  height: 4vw;
+  margin: 0 0.5vw;
 }
 .category-header-image-napoje2, .category-header-image-napoje:hover {
   background-image: url('../../assets/images/button-row-second-color/napoje2.png');
   background-size: cover;
-    margin: 0 5px 0 5px;
-    height: 60px;
-    width: 60px;
+  width: 4vw;
+  height: 4vw;
+  margin: 0 0.5vw;
 }
 .category-header-image-alkohol {
   background-image: url('../../assets/images/button-row-first-color/alkohol1.png');
   background-size: cover;
-    margin: 0 5px 0 5px;
-    height: 60px;
-    width: 60px;
+  width: 4vw;
+  height: 4vw;
+  margin: 0 0.5vw;
 }
 .category-header-image-alkohol2, .category-header-image-alkohol:hover {
   background-image: url('../../assets/images/button-row-second-color/alkohol2.png');
   background-size: cover;
-    margin: 0 5px 0 5px;
-    height: 60px;
-    width: 60px;
+  width: 4vw;
+  height: 4vw;
+  margin: 0 0.5vw;
 }
 
 
@@ -206,4 +206,48 @@ label {
 
 #wszystko:hover img { /* wszystko */
   content: url('../../assets/images/button-row-second-color/wszystko2.png')
+}
+
+@media (min-width: 2700px) and (max-width: 3000px) {
+    
+}
+
+@media (min-width: 2600px) and (max-width: 2700px) {
+    
+}
+
+@media (min-width: 2250px) and (max-width: 2600px) {
+    
+}
+
+@media (min-width: 2000px) and (max-width: 2250px) {
+    
+}
+
+@media (min-width: 1920px) and (max-width: 2000px) {
+    
+}
+
+@media (min-width: 1600px) and (max-width: 1920px) {
+    
+}
+
+@media (min-width: 1440px) and (max-width: 1600px) {
+    
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+    
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    
+}
+
+@media (min-width: 425px) and (max-width: 768px) {
+
+}
+
+@media (max-width: 425px) {
+
 }

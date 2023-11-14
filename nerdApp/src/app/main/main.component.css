@@ -21,7 +21,7 @@ header {
     top: 0;
     z-index: 5;
     background-color: #A8D0E6;
-    padding-bottom: 1.5vw;
+    padding-bottom: 2vw;
 }
 
 main {
@@ -43,7 +43,7 @@ h1 {
 
 .logo {
     margin-top: 15px;
-    height: 80px;
+    height: 4vw;
     width: auto;
     display: flex;
 }
@@ -66,37 +66,37 @@ h1 {
 }
 
 .arrow {                                              /* Strzałki i napisy */
-    height: 40px;
+    height: 2.3vw;
     width: auto;
     position: absolute;
 }
 
 #arrow-top {
-    margin-top: 20px;
-    margin-left: 230px;
+    margin-top: 1vw;
+    margin-left: 12vw;
 }
 
 #arrow-aside {
     transform: scaleY(-1);
-    margin-top: 50px;
-    margin-left: 230px;
+    margin-top: 2.5vw;
+    margin-left: 12vw;
 }
 
 header div.logo span {
     font-family: Buree Chalk;
     color: white;
     position: absolute;
-    font-size: 21px;
+    font-size: 1vw;
 }
 
 #text-top {
-    margin-top: 0px;
-    margin-left: 255px;
+    margin-top: 0vw;
+    margin-left: 13vw;
 }
 
 #text-aside {
-    margin-top: 90px;
-    margin-left: 180px;
+    margin-top: 4.85vw;
+    margin-left: 10vw;
 }
 
 #dots {                                                /* kropki */
@@ -108,7 +108,7 @@ header div.logo span {
     border: 2px solid white;
     border-right: none;
     position: sticky;
-    top: 4.5vw;
+    top: 7vw;
     background-color: #A8D0E6;
     z-index: 6;
 }
@@ -162,57 +162,34 @@ i {
     font-size: 2vw;
 }
 
-@media (min-width: 2700px) and (max-width: 3000px) {
-    #dots {
-        top: 4.7vw;
-    }
-}
-
-@media (min-width: 2600px) and (max-width: 2700px) {
-    #dots {
-        top: 4.9vw;
-    }
-}
-
-@media (min-width: 2250px) and (max-width: 2600px) {
-    #dots {
-        top: 5vw;
-    }
-}
-
-@media (min-width: 2000px) and (max-width: 2250px) {
-    #dots {
-        top: 5.5vw;
-    }
-}
-
-@media (min-width: 1920px) and (max-width: 2000px) {
-    #dots {
-        top: 5.8vw;
-    }
-}
-
-@media (min-width: 1600px) and (max-width: 1920px) {
-    #dots {
-        top: 6.5vw;
-    }
-}
-
 @media (min-width: 1440px) and (max-width: 1600px) {
     #dots {
-        top: 6.9vw;
+        top: 8vw;
     }
+
 }
 
 @media (min-width: 1024px) and (max-width: 1440px) {
     #dots {
-        top: 7.5vw;
+        top: 9vw;
+    }
+    header {
+        padding-bottom: 3vw;
+    }
+    .button-row {
+        margin-top: 11vw
     }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
     #dots {
-        top: 8.5vw;
+        top: 9vw;
+    }
+    header {
+        padding-bottom: 3vw;
+    }
+    .button-row {
+        margin-top: 11vw
     }
 }
 
@@ -223,3 +200,4 @@ i {
 @media (max-width: 425px) {
 
 }
+
