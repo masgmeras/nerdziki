@@ -18,8 +18,17 @@
     <img src="../assets/../assets/images/button-row-first-color/lista1.png" alt="Moja Lista">
     <p>MOJA LISTA</p>
   </div>
+
+     <!--<input (keyup.enter)="addProduct()" class="product-name" placeholder="Moja lista"  [(ngModel)]="mySelectProduct">
+    <ul>
+      <li *ngFor="let myProduct of myListProduct">
+        {{myProduct}}
+        <button (click)="remove(myProduct)">-</button>
+      </li></ul>-->
+
+    <input (keyup.enter)="addProduct()" class="product-name" placeholder="Moja lista"  [(ngModel)]="this.leafletsService.mySelectedProduct">
   <ul>
-  <li *ngFor="let list of myList">
+  <li *ngFor="let list of this.leafletsService.myListProduct">
     {{list}}
     <button (click)="remove(list)">-</button>
   </li>
@@ -27,6 +36,7 @@
     <button (click)="myLeaflet()">Szukaj po liscie</button>
 </div>
 
+  <!--sklepy -->
 
     <div class="shop-inline" >
       <input class="input_hidden" type="checkbox" checked [(ngModel)]="isAllSelected" (change)="setItAll()"/>
@@ -37,10 +47,14 @@
           </div></label></div>
   </div>
 
+<!--gazetki -->
+
   <div class="box-leaflet">
     <p>GAZAETKI</p>
-    <div>
-      {{displayGazetka() | json }}
+ <div *ngFor="let choose of displayGazetka()">
+   <img style="min-height: 250px; min-width: 70%;" [src]="choose?.thumbnailUrl" alt="Leaflet logo">
+    {{choose.thumbnailUrl}}
     </div>
-  </div>
+      {{selectedProductsList}}
+</div>
 </div>

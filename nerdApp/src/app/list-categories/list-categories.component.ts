@@ -26,6 +26,7 @@ export class ListCategoriesComponent implements OnInit {
 
   getCategoryList() {
     return this.leafletsService.categoriesList;
+    let x = this.leafletsService.categoriesList.map(x => x.categories);
   }
 
   updateCategoryResults() {
