@@ -5,7 +5,7 @@
     <div *ngFor="let category of getCategoryList()">
       <label>
         <input class="input_hidden" type="checkbox" [(ngModel)]="category.checked" (change)="updateCategoryResults()" />
-        <div [ngClass]="category.checked ? 'category-header-image-' + category.categories +'2': 'category-header-image-' + category.categories">
+        <div (click)="age(category)" [ngClass]="category.checked ? 'category-header-image-' + category.categories +'2': 'category-header-image-' + category.categories">
          </div>{{category.categories}}
       </label>
     </div>

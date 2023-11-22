@@ -44,6 +44,7 @@ export class LeafletsService {
 }
 
   addProduct(itemToAdd: string) {
+  console.log(itemToAdd);
    this.myListProduct.push(itemToAdd);
    // this.selectedProductsList.push(itemToAdd);
    // this.updateStoreResults();
@@ -71,11 +72,12 @@ export class LeafletsService {
 
   listCategories() {
     let x = this.categoriesList.map(x=> x.categories);
+    //let y = this.categoriesList.filter(x=> x.age).map(x=> x.age);
     let selectedListsOfCategories = [];
     for (let categoriesListModel of this.categoriesList.filter(x => x.checked)) {
-    if( x = ['alkohol']){confirm("Czy masz skończone 18+ lat?")}
+    //if( x[6] == 'alkohol'){confirm("Czy masz skończone 18+ lat?")}
       selectedListsOfCategories.push(...categoriesListModel.listOfCategories);
-    }
+    } console.log(x)
     this.selectedProductCategory = selectedListsOfCategories;
 
     /* let text="Czy masz skończone 18+ lat?"
@@ -85,6 +87,7 @@ export class LeafletsService {
 
     }
     } */
+
     this.updateStoreResults();
 
   }

@@ -23,10 +23,13 @@ export class ListCategoriesComponent implements OnInit {
   setCategoryAll() {
     this.leafletsService.categoriesList.forEach(x => (x.checked = this.categoryAllSelected));
   }
+  age(category: any){
+  console.log(category)
+  if( category.categories == 'alkohol'){confirm("Czy masz skończone 18+ lat?")}
+  }
 
   getCategoryList() {
     return this.leafletsService.categoriesList;
-    let x = this.leafletsService.categoriesList.map(x => x.categories);
   }
 
   updateCategoryResults() {

@@ -36,7 +36,7 @@ export class LeafletsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.leafletsService.getLeaflets(true).subscribe(data => {
+    this.leafletsService.getLeaflets().subscribe(data => {
       console.log(data)
       this.leafletsService.initStoreResults(data);
     })

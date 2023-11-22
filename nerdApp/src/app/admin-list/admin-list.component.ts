@@ -23,8 +23,9 @@ addProduct() {
   // this.mySelectProduct= this.mySelectProduct.toLowerCase();
   //  this.myList.push(this.mySelectProduct);
   // this.myListProduct = this.leafletsService.myListProduct;
-      this.leafletsService.mySelectedProduct = this.leafletsService.mySelectedProduct.toLowerCase();
-      this.leafletsService.myListProduct.push(this.leafletsService.mySelectedProduct);
+     // this.leafletsService.mySelectedProduct = this.leafletsService.mySelectedProduct.toLowerCase();
+      //this.leafletsService.myListProduct.push(this.leafletsService.mySelectedProduct);
+       this.leafletsService.addProduct(this.leafletsService.mySelectedProduct);
       this.leafletsService.mySelectedProduct = '';
 }
 
