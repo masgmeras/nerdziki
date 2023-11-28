@@ -43,9 +43,12 @@ export class LeafletsService {
   this.wybranaGazeta = lista;
 }
 
-  addProduct(itemToAdd: string) {
-  console.log(itemToAdd);
-   this.myListProduct.push(itemToAdd);
+  addProduct() {
+    // console.log('addProduct');
+    // console.log(itemToAdd);
+    // this.leafletsService.mySelectedProduct
+   this.myListProduct.push(this.mySelectedProduct);
+   this.mySelectedProduct = '';
    // this.selectedProductsList.push(itemToAdd);
    // this.updateStoreResults();
 

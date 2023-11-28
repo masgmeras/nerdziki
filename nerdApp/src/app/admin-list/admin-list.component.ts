@@ -7,39 +7,34 @@ import {LeafletModel} from "../lista-gazetek/leafletModel";
   templateUrl: './admin-list.component.html',
   styleUrls: ['./admin-list.component.css']
 })
-export class AdminListComponent implements OnInit{
+export class AdminListComponent implements OnInit {
 
   isAllSelected: boolean = true;
 
- selectedProductsList: string[] = [];
- //mySelectProduct: string='';
- //myList:string[]=[];
-   // leafletPerPageUrl=[];
+  selectedProductsList: string[] = [];
+  //mySelectProduct: string='';
+  //myList:string[]=[];
+  // leafletPerPageUrl=[];
 
   constructor(protected leafletsService: LeafletsService) {
   }
 
-addProduct() {
-  // this.mySelectProduct= this.mySelectProduct.toLowerCase();
-  //  this.myList.push(this.mySelectProduct);
-  // this.myListProduct = this.leafletsService.myListProduct;
-     // this.leafletsService.mySelectedProduct = this.leafletsService.mySelectedProduct.toLowerCase();
-      //this.leafletsService.myListProduct.push(this.leafletsService.mySelectedProduct);
-       this.leafletsService.addProduct(this.leafletsService.mySelectedProduct);
-      this.leafletsService.mySelectedProduct = '';
-}
+  addProduct() {
+    this.leafletsService.addProduct();
+  }
 
-  remove(list: string){
-    //this.myList = this.myList.filter(e=> e!==list)
-    this.leafletsService.myListProduct = this.leafletsService.myListProduct.filter(e => e !== list)
+  remove(list: string) {
     this.leafletsService.removeProduct(list);
-   // let itemLimit = localStorage.setItem('lista', JSON.stringify(this.myList));
   }
 
   myLeaflet() {
     this.selectedProductsList = this.leafletsService.myListProduct;
+    console.log(this.selectedProductsList)
+    //TUTAJ filtrowanie
+
   }
- displayGazetka(){
+
+  displayGazetka() {
     return this.leafletsService.wybranaGazeta;
   }
 
@@ -59,25 +54,25 @@ addProduct() {
 
 
   ngOnInit(): void {
- /* this.leafletsService.myListProduct = this.leafletsService.selectedProductsList;
-    if (this.leafletsService.storesList.length === 0) {
-      this.leafletsService.getLeaflets().subscribe(data => {
-        this.leafletsService.initStoreResults(data);
-      });
-    }*/
-
-   /* if(this.leafletsService.myListProduct.length === 0){
-      // @ts-ignore
-      let item: string = localStorage.getItem("lista");
-      console.log(item);
-      this.myList = JSON.parse(item);
-      this.leafletsService.myListProduct = JSON.parse(item);
-      // this.my = ;
-    }*/
-     this.leafletsService.getLeaflets(true).subscribe(data => {
-           console.log(data)
+    /* this.leafletsService.myListProduct = this.leafletsService.selectedProductsList;
+       if (this.leafletsService.storesList.length === 0) {
+         this.leafletsService.getLeaflets().subscribe(data => {
            this.leafletsService.initStoreResults(data);
-         })
+         });
+       }*/
+
+    /* if(this.leafletsService.myListProduct.length === 0){
+       // @ts-ignore
+       let item: string = localStorage.getItem("lista");
+       console.log(item);
+       this.myList = JSON.parse(item);
+       this.leafletsService.myListProduct = JSON.parse(item);
+       // this.my = ;
+     }*/
+    this.leafletsService.getLeaflets(true).subscribe(data => {
+      console.log(data)
+      this.leafletsService.initStoreResults(data);
+    })
   }
 
 }
