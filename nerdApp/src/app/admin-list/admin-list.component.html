@@ -34,7 +34,7 @@
         <button (click)="remove(list)">-</button>
       </li>
     </ul>
-    <button (click)="myLeaflet()">Szukaj po liscie</button>
+    <button (click)="clickThumb(cos)" (click)="myLeaflet()">Szukaj po liscie</button>
   </div>
 
   <!--sklepy -->
@@ -51,13 +51,21 @@
       </label></div>
   </div>
 
-  <!--gazetki -->
+  <!------------------------------------------------------------------>
+<div class="box-leaflet">
+  <p>Test</p>
+<div *ngFor="let element of lista()">
+  <div (change)="Leaflet()">{{element?.thumbnailUrl}}</div>
+  <!-- <img style="min-height: 250px; min-width: 70%;" [src]="element?.thumbnailUrl" alt="Leaflet logo">-->
+</div>
+</div>
+
+  <!------------------------------------------------------------------>
 
   <div class="box-leaflet">
     <p>GAZAETKI</p>
-    <div *ngFor="let choose of displayGazetka()">
-      <img style="min-height: 250px; min-width: 70%;" [src]="choose?.thumbnailUrl" alt="Leaflet logo">
-      {{choose.thumbnailUrl}}
+    <div class="leaflets" *ngFor="let choose of displayGazetka()">
+     <img style="min-height: 250px; min-width: 70%;" [src]="choose?.thumbnailUrl" alt="Leaflet logo">
     </div>
 
     dupa - {{ selectedProductsList }}

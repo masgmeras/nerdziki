@@ -18,8 +18,10 @@ export class LeafletsService {
   selectedProductCategory: string[]=[];
   myListProduct: Array<string> = [];
   categoriesList: CategoriesListModel[] = [];
-   mySelectedProduct: string = '';  ////////////////////////////////////////////////
+   mySelectedProduct: string = '';
   wybranaGazeta: LeafletModel[] = [];
+selectedLeaflet: LeafletModel[] = [];////////////////////////////////////
+
 
   constructor(private http: HttpClient) {
   }
@@ -42,11 +44,24 @@ export class LeafletsService {
   setWybranaGazeta(lista: LeafletModel[] ){
   this.wybranaGazeta = lista;
 }
+/******************************************************/
+  setLeaflet(lista: LeafletModel[]){
+  this.selectedLeaflet = lista;
+  }
 
+listLeaflet(){
+let cos = [];
+for (let leafletModel of this.selectedLeaflet) {
+cos.push(...leafletModel.thumbnailUrl)
+}
+this.myListProduct = this.selectedProductsList;
+this.selectedProductsList = cos;
+}
+
+
+
+/******************************************************/
   addProduct() {
-    // console.log('addProduct');
-    // console.log(itemToAdd);
-    // this.leafletsService.mySelectedProduct
    this.myListProduct.push(this.mySelectedProduct);
    this.mySelectedProduct = '';
    // this.selectedProductsList.push(itemToAdd);
@@ -75,21 +90,11 @@ export class LeafletsService {
 
   listCategories() {
     let x = this.categoriesList.map(x=> x.categories);
-    //let y = this.categoriesList.filter(x=> x.age).map(x=> x.age);
     let selectedListsOfCategories = [];
     for (let categoriesListModel of this.categoriesList.filter(x => x.checked)) {
-    //if( x[6] == 'alkohol'){confirm("Czy masz skończone 18+ lat?")}
       selectedListsOfCategories.push(...categoriesListModel.listOfCategories);
-    } console.log(x)
-    this.selectedProductCategory = selectedListsOfCategories;
-
-    /* let text="Czy masz skończone 18+ lat?"
-    if ( x = ['alkohol']){
-    if (confirm(text) == true){
-    }else {
-
     }
-    } */
+    this.selectedProductCategory = selectedListsOfCategories;
 
     this.updateStoreResults();
 

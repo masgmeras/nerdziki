@@ -77,7 +77,10 @@
   width: 60px;
   height: 60px;
 }
-
+.leaflets{
+display: inline-block;
+width: 250px;
+}
 
 #leaflets-my-list:hover img {/* lista */
   content: url("../../assets/images/button-row-second-color/lista2.png")
