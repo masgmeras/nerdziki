@@ -34,7 +34,7 @@
         <button (click)="remove(list)">-</button>
       </li>
     </ul>
-    <button (click)="clickThumb(cos)" (click)="myLeaflet()">Szukaj po liscie</button>
+    <button  (click)="myLeaflet(selectedProductsList)">Szukaj po liscie</button>
   </div>
 
   <!--sklepy -->
@@ -54,8 +54,8 @@
   <!------------------------------------------------------------------>
 <div class="box-leaflet">
   <p>Test</p>
-<div *ngFor="let element of lista()">
-  <div (change)="Leaflet()">{{element?.thumbnailUrl}}</div>
+<div *ngFor="let element of lista()">{{element?.thumbnailUrl}}
+ <!-- <div (change)="Leaflet()"></div>-->
   <!-- <img style="min-height: 250px; min-width: 70%;" [src]="element?.thumbnailUrl" alt="Leaflet logo">-->
 </div>
 </div>

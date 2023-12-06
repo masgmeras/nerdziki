@@ -27,28 +27,56 @@ export class AdminListComponent implements OnInit{
     this.leafletsService.removeProduct(list);
   }
   ///////////////////////////////////////
-  Leaflet() {
-  this.leafletsService.listLeaflet();
-        }
+ /* Leaflet() {
+  for(let cos of this.leafletsService.filteredGroupedLeafletsListByPageUrl){
+  cos[0].occursOnPage = 0;
+  }
+
+  //this.leafletsService.listLeaflet();
+        }*/
 
  lista(){
- return this.leafletsService.selectedLeaflet;
+ //let cos =  (x: LeafletModel[]) => x.map(x=> x.thumbnailUrl);
+// const deepCopyOfGroupedLeaflets = JSON.parse(JSON.stringify(this.leafletsService.filteredGroupedLeafletsListByPageUrl));
+ //this.leafletsService.filteredGroupedLeafletsListByPageUrl = this.deepCopyOfGroupedLeaflets.filter(cos);
 
+ return this.leafletsService.selectedLeaflet;
  }
 
-clickThumb(x:LeafletModel[]){
- this.leafletsService.setLeaflet(x);
-}
+//clickThumb(x:LeafletModel[]){
+ //this.leafletsService.setLeaflet(x);
+//}
+
+
+
+  myLeaflet(selectedProductsList: string[]) {
+   this.selectedProductsList = this.leafletsService.myListProduct;
+    //this.selectedProductsList = this.leafletsService.selectedProductsList;
+ /*for (let leaflet of this.leafletsService.filteredGroupedLeafletsListByPageUrl) {
+        leaflet[0].specificFilteredLeaflets = [];
+        leaflet[0].occursOnPage = 0;
+
+        leaflet.forEach(leafletPage => {
+          this.selectedProductsList.forEach(product => {  /// TODO ???
+            if (leafletPage.ocrResult.includes(product)) {
+              leaflet[0].specificFilteredLeaflets.push(leafletPage);
+              leaflet[0].occursOnPage = leaflet[0].specificFilteredLeaflets.length;
+            }
+          });
+        });
+      }
+      this.leafletsService.filteredGroupedLeafletsListByPageUrl = this.leafletsService.filteredGroupedLeafletsListByPageUrl.filter(x => x[0].occursOnPage > 0);*/
+     this.leafletsService.updateStoreResults();
+
+
+
+        console.log(this.selectedProductsList)
+        console.log(this.leafletsService.filteredGroupedLeafletsListByPageUrl)
+        // console.log(this.leafletsService.updateStoreResults());
+        //TUTAJ filtrowanie
+    }
 
 //////////////////////////////////////////////
-
-  myLeaflet() {
-    this.selectedProductsList = this.leafletsService.myListProduct;
-    console.log(this.selectedProductsList)
-    console.log(this.leafletsService.selectedLeaflet)
-    //TUTAJ filtrowanie
-
-  }
 
   displayGazetka() {
     return this.leafletsService.wybranaGazeta;

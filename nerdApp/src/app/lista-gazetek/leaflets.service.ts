@@ -109,8 +109,8 @@ this.selectedProductsList = cos;
     if (this.selectedProduct !== '') {
       this.countOccurances([this.selectedProduct]);
     }
-    if (this.selectedProductsList.length) {
-      this.countOccurances(this.selectedProductsList);
+    if (this.myListProduct.length) {
+      this.countOccurances(this.myListProduct);
     }
     if (this.selectedProductCategory.length){
      this.countOccurances(this.selectedProductCategory);
