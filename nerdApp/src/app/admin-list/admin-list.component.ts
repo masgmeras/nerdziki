@@ -36,11 +36,8 @@ export class AdminListComponent implements OnInit{
         }*/
 
  lista(){
- //let cos =  (x: LeafletModel[]) => x.map(x=> x.thumbnailUrl);
-// const deepCopyOfGroupedLeaflets = JSON.parse(JSON.stringify(this.leafletsService.filteredGroupedLeafletsListByPageUrl));
- //this.leafletsService.filteredGroupedLeafletsListByPageUrl = this.deepCopyOfGroupedLeaflets.filter(cos);
 
- return this.leafletsService.selectedLeaflet;
+ return this.leafletsService.filteredGroupedLeafletsListByPageUrl;
  }
 
 //clickThumb(x:LeafletModel[]){
@@ -51,25 +48,7 @@ export class AdminListComponent implements OnInit{
 
   myLeaflet(selectedProductsList: string[]) {
    this.selectedProductsList = this.leafletsService.myListProduct;
-    //this.selectedProductsList = this.leafletsService.selectedProductsList;
- /*for (let leaflet of this.leafletsService.filteredGroupedLeafletsListByPageUrl) {
-        leaflet[0].specificFilteredLeaflets = [];
-        leaflet[0].occursOnPage = 0;
-
-        leaflet.forEach(leafletPage => {
-          this.selectedProductsList.forEach(product => {  /// TODO ???
-            if (leafletPage.ocrResult.includes(product)) {
-              leaflet[0].specificFilteredLeaflets.push(leafletPage);
-              leaflet[0].occursOnPage = leaflet[0].specificFilteredLeaflets.length;
-            }
-          });
-        });
-      }
-      this.leafletsService.filteredGroupedLeafletsListByPageUrl = this.leafletsService.filteredGroupedLeafletsListByPageUrl.filter(x => x[0].occursOnPage > 0);*/
      this.leafletsService.updateStoreResults();
-
-
-
         console.log(this.selectedProductsList)
         console.log(this.leafletsService.filteredGroupedLeafletsListByPageUrl)
         // console.log(this.leafletsService.updateStoreResults());

@@ -52,10 +52,11 @@
   </div>
 
   <!------------------------------------------------------------------>
-<div class="box-leaflet">
+<div *ngIf="selectedProductsList.length" class="box-leaflet">
   <p>Test</p>
-<div *ngFor="let element of lista()">{{element?.thumbnailUrl}}
- <!-- <div (change)="Leaflet()"></div>-->
+<div  *ngFor="let element of lista()" >{{element[0]?.thumbnailUrl}}
+   <img style="min-height: 250px; min-width: 70%;" [src]="element[0]?.thumbnailUrl" alt="Leaflet logo">
+  <!--<div (change)="Leaflet()"></div>-->
   <!-- <img style="min-height: 250px; min-width: 70%;" [src]="element?.thumbnailUrl" alt="Leaflet logo">-->
 </div>
 </div>
