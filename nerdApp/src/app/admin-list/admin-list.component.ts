@@ -7,14 +7,14 @@ import {LeafletModel} from "../lista-gazetek/leafletModel";
   templateUrl: './admin-list.component.html',
   styleUrls: ['./admin-list.component.css']
 })
-export class AdminListComponent implements OnInit{
+export class AdminListComponent implements OnInit {
 
   isAllSelected: boolean = true;
- selectedProductsList: string[] = [];
- cos: LeafletModel[] = [];
- //mySelectProduct: string='';
- //myList:string[]=[];
-   // leafletPerPageUrl=[];
+  selectedProductsList: string[] = [];
+  cos: LeafletModel[] = [];
+  //mySelectProduct: string='';
+  //myList:string[]=[];
+  // leafletPerPageUrl=[];
 
   constructor(protected leafletsService: LeafletsService) {
   }
@@ -26,34 +26,34 @@ export class AdminListComponent implements OnInit{
   remove(list: string) {
     this.leafletsService.removeProduct(list);
   }
+
   ///////////////////////////////////////
- /* Leaflet() {
-  for(let cos of this.leafletsService.filteredGroupedLeafletsListByPageUrl){
-  cos[0].occursOnPage = 0;
+  /* Leaflet() {
+   for(let cos of this.leafletsService.filteredGroupedLeafletsListByPageUrl){
+   cos[0].occursOnPage = 0;
+   }
+
+   //this.leafletsService.listLeaflet();
+         }*/
+
+  lista() {
+
+    return this.leafletsService.filteredGroupedLeafletsListByPageUrl;
   }
 
-  //this.leafletsService.listLeaflet();
-        }*/
-
- lista(){
-
- return this.leafletsService.filteredGroupedLeafletsListByPageUrl;
- }
-
 //clickThumb(x:LeafletModel[]){
- //this.leafletsService.setLeaflet(x);
+  //this.leafletsService.setLeaflet(x);
 //}
 
 
-
   myLeaflet(selectedProductsList: string[]) {
-   this.selectedProductsList = this.leafletsService.myListProduct;
-     this.leafletsService.updateStoreResults();
-        console.log(this.selectedProductsList)
-        console.log(this.leafletsService.filteredGroupedLeafletsListByPageUrl)
-        // console.log(this.leafletsService.updateStoreResults());
-        //TUTAJ filtrowanie
-    }
+    this.selectedProductsList = this.leafletsService.myListProduct;
+    this.leafletsService.updateStoreResults(true);
+    console.log(this.selectedProductsList)
+    console.log(this.leafletsService.filteredGroupedLeafletsListByPageUrl)
+    // console.log(this.leafletsService.updateStoreResults());
+    //TUTAJ filtrowanie
+  }
 
 //////////////////////////////////////////////
 

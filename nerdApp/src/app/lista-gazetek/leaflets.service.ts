@@ -101,7 +101,7 @@ this.selectedProductsList = cos;
   }
 
 
-  updateStoreResults() {
+  updateStoreResults(includeMyList = false) {
     const selectedBrands: string[] = this.storesList.filter(x => x.checked).map(x => x.brand);
     let selectedBrandFilter = (x: LeafletModel[]) => x.some(x => selectedBrands.includes(x.brand));
     const deepCopyOfGroupedLeaflets = JSON.parse(JSON.stringify(this.groupedLeafletsListByPageUrl));
@@ -109,7 +109,8 @@ this.selectedProductsList = cos;
     if (this.selectedProduct !== '') {
       this.countOccurances([this.selectedProduct]);
     }
-    if (this.myListProduct.length) {
+    if (includeMyList && this.myListProduct.length) {
+      console.log('weszlem');
       this.countOccurances(this.myListProduct);
     }
     if (this.selectedProductCategory.length){
@@ -124,7 +125,7 @@ this.selectedProductsList = cos;
       leaflet[0].occursOnPage = 0;
 
       leaflet.forEach(leafletPage => {
-        selectedProducts.forEach(product => {  /// TODO ???
+        selectedProducts.forEach(product => {
           if (leafletPage.ocrResult.includes(product)) {
             leaflet[0].specificFilteredLeaflets.push(leafletPage);
             leaflet[0].occursOnPage = leaflet[0].specificFilteredLeaflets.length;

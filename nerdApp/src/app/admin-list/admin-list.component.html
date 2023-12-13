@@ -42,20 +42,29 @@
   <div class="shop-inline">
     <input class="input_hidden" type="checkbox" checked [(ngModel)]="isAllSelected" (change)="setItAll()"/>
     <div *ngFor="let store of getStoresList()">
+<!--      https://html.spec.whatwg.org/multipage/forms.html#the-label-element-->
+<!--      https://stackoverflow.com/questions/18609554/is-div-inside-label-block-correct-->
+<!--     TODO remove div inside label-->
       <label class="pointer">
         <input class="input_hidden" type="checkbox" [(ngModel)]="store.checked" (change)="updateStoreResults()"/>
         <div [ngClass]="store.checked ? 'background-' + store.brand : 'background_shop'">
-          <div
-            [ngClass]="store.checked ? 'shop-header-image-' + store.brand + '2' : 'shop-header-image-' + store.brand"></div>
+          <div [ngClass]="store.checked ? 'shop-header-image-' + store.brand + '2' : 'shop-header-image-' + store.brand"></div>
         </div>
-      </label></div>
+      </label>
+    </div>
   </div>
 
   <!------------------------------------------------------------------>
 <div *ngIf="selectedProductsList.length" class="box-leaflet">
   <p>Test</p>
-<div  *ngFor="let element of lista()" >{{element[0]?.thumbnailUrl}}
-   <img style="min-height: 250px; min-width: 70%;" [src]="element[0]?.thumbnailUrl" alt="Leaflet logo">
+<div  *ngFor="let gazetka of lista()" >
+
+  <div  *ngFor="let stronyZWybranymiProduktami of gazetka[0].specificFilteredLeaflets" >
+<!--      {{}}-->
+    <img style="min-height: 250px; min-width: 70%;" [src]="stronyZWybranymiProduktami.thumbnailUrl" alt="Leaflet logo">
+  </div>
+
+
   <!--<div (change)="Leaflet()"></div>-->
   <!-- <img style="min-height: 250px; min-width: 70%;" [src]="element?.thumbnailUrl" alt="Leaflet logo">-->
 </div>
