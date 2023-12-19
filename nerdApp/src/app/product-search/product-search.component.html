@@ -2,6 +2,6 @@
   <input (keyup.enter)="addProduct()" type="text" placeholder="Wyszukaj produkt"
          [(ngModel)]="this.leafletsService.selectedProduct"
          (ngModelChange)="this.userProductSearchUpdate.next($event)"/>
-  <img id="search-img" src="../assets/images/loupe.png" alt="Szukajka">
-  <button id="search-add" (click)="addProduct()"><i class="fa-solid fa-plus" style="color: #3269c8;"></i></button>
+         <i class="fa-solid fa-magnifying-glass" style="color: #8e8d8a;"></i>
+  <button id="search-add" (click)="addProduct()"><i class="fa-solid fa-plus" style="color: #8e8d8a;"></i></button>
 </div>

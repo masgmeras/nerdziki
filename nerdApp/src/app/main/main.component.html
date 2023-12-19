@@ -1,6 +1,98 @@
-<body>
+<body class="grey">
 
-<header class="sticky">
+  <mat-toolbar class="lightbeige">
+    <button
+      mat-icon-button
+      *ngIf="sidenav.mode === 'over'"
+      (click)="sidenav.toggle()">
+  
+      <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+      <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+    </button>
+
+    <div class="topbar">
+      <div class="logo">
+        <img src="../assets/images/zniżka_full_logo.png"/>
+      </div>
+
+      <div>
+        <app-product-search></app-product-search>
+      </div>
+
+      <div class="button" id="login" [routerLink]="['/signin']">
+        <img src="../assets/images/button-row-first-color/login1.png" alt="Zaloguj się">
+        <span *ngIf="getLoggedInUsername()">Witaj, {{getLoggedInUsername()}}</span>
+        <span *ngIf="!getLoggedInUsername()" class="product-name" style="font-size: 1vw; margin-left: 5px;">Zaloguj się</span>
+      </div>
+    </div>
+    
+  </mat-toolbar>
+  
+  <mat-sidenav-container class="grey">
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8 lightbeige">
+      
+      <mat-divider></mat-divider>
+      
+      <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Kategoria
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+            <app-list-categories style="padding: 0px;"></app-list-categories>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Sklep
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <app-list-brands></app-list-brands>
+      </mat-expansion-panel>
+
+      <mat-divider></mat-divider>
+
+      <div id="button-row">
+        <div class="button" [routerLink]="['/adminList']">
+          <app-my-list></app-my-list>
+          <span class="product-name">Moja lista</span>
+        </div>
+        <div class="button" id="favourite-leaflets" [routerLink]="['/favourite']">
+          <img src="../assets/images/button-row-first-color/favourite1.png" alt="Ulubione promocje">
+          <span class="product-name">Ulubione</span>
+        </div>
+        
+        <div class="button" [routerLink]="['/rodo']">
+          <i class="fa-solid fa-lock" style="color: #24305E;"></i>
+          <span class="product-name">RODO</span>
+        </div>
+        <div class="button" [routerLink]="['/team']">
+          <i class="fa-solid fa-people-group" style="color: #24305E;"></i>
+          <span class="product-name">O nas</span>
+        </div>
+      </div>
+      
+    </mat-sidenav>
+    <mat-sidenav-content class="grey">
+      <div class="content mat-elevation-z8 lightbeige">
+        <router-outlet>
+          <div id="container">
+            <div id="dots">
+              <div class="dot grey"></div>
+              <div class="dot grey"></div>
+              <div class="dot grey"></div>
+            </div>
+            <div id="tiles-container" class="container">
+                <app-leaflets></app-leaflets>
+            </div>
+          </div>
+        </router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+<!-- <header class="sticky">
   <div class="logo">
     <img src="../assets/images/zniżka_full_logo.png"/>
     <img src="../assets/images/arrow.png" id="arrow-top" class="arrow">
@@ -8,13 +100,13 @@
     <span id="text-top">Oraz produkty</span>
     <span id="text-aside">Wybierz Sklep</span>
   </div>
-  <app-list-categories></app-list-categories>
-  <app-product-search></app-product-search>
+  
+  
 </header>
 <main>
-  <app-list-brands></app-list-brands>
-  <!-- REFACTOR do srodka app-leaflets -->
-  <div id="container">
+  
+  REFACTOR do srodka app-leaflets -->
+  <!-- <div id="container">
     <div id="dots">
       <div class="dot"></div>
       <div class="dot"></div>
@@ -34,11 +126,7 @@
       <img src="../assets/images/button-row-first-color/favourite1.png" alt="Ulubione promocje">
       <span class="product-name">Ulubione</span>
     </div>
-    <div class="button" id="login" [routerLink]="['/signin']">
-      <img src="../assets/images/button-row-first-color/login1.png" alt="Zaloguj się">
-      <span *ngIf="getLoggedInUsername()">Witaj, {{getLoggedInUsername()}}</span>
-      <span *ngIf="!getLoggedInUsername()" class="product-name">Zaloguj się</span>
-    </div>
+    
     <div class="button" [routerLink]="['/rodo']">
       <i class="fa-solid fa-lock" style="color: #24305E;"></i>
       <span class="product-name">RODO</span>
@@ -48,5 +136,6 @@
       <span class="product-name">O nas</span>
     </div>
   </div>
-</main>
+</main> -->
 </body>
+

@@ -1,7 +1,7 @@
 <div class="button-row">
   <label class="pointer">
     <input class="input_hidden" type="checkbox" checked [(ngModel)]="isAllSelected" (change)="setItAll()"/>
-    <div class="mark_shop">Zaznacz/Odznacz wszystko</div></label>
+    <div class="mark_shop" onclick="zmienTresc()">Zaznacz<br>wszystko</div></label> 
   <div *ngFor="let store of getStoresList()">
     <label class="pointer">
       <input class="input_hidden" type="checkbox" [(ngModel)]="store.checked" (change)="updateStoreResults()"/>

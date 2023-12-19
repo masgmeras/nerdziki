@@ -38,6 +38,11 @@ import { NewPasswordComponent } from './admin-panel/new-password/new-password.co
 import { RodoComponent } from './admin-panel/rodo/rodo.component';
 import { TeamComponent } from './team/team.component';
 import { AdminListComponent } from './admin-list/admin-list.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatExpansionModule } from '@angular/material/expansion';
+
 
 @NgModule({
   declarations: [
@@ -76,7 +81,11 @@ import { AdminListComponent } from './admin-list/admin-list.component';
     AngularFireAuthModule,
     SlickCarouselModule,
     NgOptimizedImage,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatDividerModule,
+    MatExpansionModule
   ],
   providers: [LeafletsService, AdminService],
   bootstrap: [AppComponent]

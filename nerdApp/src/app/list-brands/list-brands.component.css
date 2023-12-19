@@ -1,8 +1,5 @@
 
 .button-row {
-  margin-top: 10vw;
-  margin-left: 5vw;
-  position: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,9 +25,7 @@
 visibility: hidden;
 position: absolute;
 }
-.setAllButtonP{
-margin-left: 20px;
-}
+
 
 .buttonSetAll2{
 color: white;

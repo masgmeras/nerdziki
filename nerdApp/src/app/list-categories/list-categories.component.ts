@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, HostListener} from '@angular/core';
 import {LeafletsService} from "../lista-gazetek/leaflets.service";
 
 @Component({

@@ -3,7 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {LeafletModel} from "./leafletModel";
 import {Observable} from "rxjs";
 import {StoresListModel} from "./storesList.model";
-import {CategoriesListModel} from "./categoriesList.model";   //////////////////////////////////////////////
+import {CategoriesListModel} from "./images/button-row-second-color/categoriesList.model";   //////////////////////////////////////////////
 
 @Injectable({
   providedIn: 'root'

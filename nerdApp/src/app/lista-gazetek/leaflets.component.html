@@ -6,12 +6,10 @@
 <!--{{getFilteredGroupedLeafletsListByPageUrl() | json}}-->
 <!-- [rowSpacing]="'1px'" -->
 
-DUPA
-
-<mat-grid-list id="girdlist" [cols]="numberOfColumns">
+<mat-grid-list id="girdlist" [cols]="numberOfColumns" gutterSize="50">
     <div *ngFor="let leafletPerPageUrl of getFilteredGroupedLeafletsListByPageUrl(); ">
         <mat-grid-tile rowspan="1">
-            <mat-card  class="example-card tile" style="background: lightgray;">
+            <mat-card  class="example-card tile" style="background: none;">
                 <mat-card-header>
                     <div mat-card-avatar [class]="'example-header-image-' + leafletPerPageUrl?.[0]?.brand" ></div>
                     <mat-card-title>{{leafletPerPageUrl?.[0]?.brand | titlecase}}</mat-card-title>
@@ -62,14 +60,6 @@ DUPA
         </mat-grid-tile>
     </div>
 
-
-
 </mat-grid-list>
 
 <mat-grid-list cols="3" rowHeight="1:1"></mat-grid-list>
-
-
-
-
-
-

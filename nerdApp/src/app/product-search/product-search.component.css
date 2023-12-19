@@ -1,19 +1,24 @@
 .search-box {                                         /* Wyszukiwarka */
-  margin: 1vw;
+  margin: 0;
   display: flex;
   background-color: white;
   border-radius: 30px;
-  padding: 20px;
+  padding: 0.7vw;
   height: 1.5vw;
-  width: 13vw;
+  width: 100%;
+  justify-content: space-between;
   align-items: center;
 }
 
 .search-box input[type="text"] {
-  padding: 10px;
-  width: 120px;
-  background-color: transparent;
+  padding: 0;
+  width: 12vw;
+  background-color: none;
   border: none;
+}
+
+input:focus {
+  outline: none;
 }
 
 #search-add {
