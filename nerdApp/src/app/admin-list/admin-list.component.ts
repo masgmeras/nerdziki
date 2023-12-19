@@ -1,37 +1,69 @@
 import {Component, OnInit} from '@angular/core';
 import {LeafletsService} from "../lista-gazetek/leaflets.service";
+import {LeafletModel} from "../lista-gazetek/leafletModel";
 
 @Component({
   selector: 'app-admin-list',
   templateUrl: './admin-list.component.html',
   styleUrls: ['./admin-list.component.css']
 })
-export class AdminListComponent implements OnInit{
+export class AdminListComponent implements OnInit {
 
   isAllSelected: boolean = true;
+  selectedProductsList: string[] = [];
+  cos: LeafletModel[] = [];
+  //mySelectProduct: string='';
+  //myList:string[]=[];
+  // leafletPerPageUrl=[];
 
-  constructor(private leafletsService: LeafletsService) {
+  constructor(protected leafletsService: LeafletsService) {
   }
-  myList = this.leafletsService.selectedProductsList;
 
-  remove(list: string){
-    this.myList = this.myList.filter(e=> e!==list)
-    this.leafletsService.myListProduct = this.leafletsService.myListProduct.filter(e => e !== list)
+  addProduct() {
+    this.leafletsService.addProduct();
+  }
+
+  remove(list: string) {
     this.leafletsService.removeProduct(list);
-
-    let itemLimit = localStorage.setItem('lista', JSON.stringify(this.myList));
   }
-  myLeaflet(){
-    console.log(this.myList);
+
+  ///////////////////////////////////////
+  /* Leaflet() {
+   for(let cos of this.leafletsService.filteredGroupedLeafletsListByPageUrl){
+   cos[0].occursOnPage = 0;
+   }
+
+   //this.leafletsService.listLeaflet();
+         }*/
+
+  lista() {
+
+    return this.leafletsService.filteredGroupedLeafletsListByPageUrl;
+  }
+
+//clickThumb(x:LeafletModel[]){
+  //this.leafletsService.setLeaflet(x);
+//}
+
+
+  myLeaflet(selectedProductsList: string[]) {
+    this.selectedProductsList = this.leafletsService.myListProduct;
+    this.leafletsService.updateStoreResults(true);
+    console.log(this.selectedProductsList)
+    console.log(this.leafletsService.filteredGroupedLeafletsListByPageUrl)
+    // console.log(this.leafletsService.updateStoreResults());
+    //TUTAJ filtrowanie
+  }
+
+//////////////////////////////////////////////
+
+  displayGazetka() {
+    return this.leafletsService.wybranaGazeta;
   }
 
   setItAll() {
     this.leafletsService.storesList.forEach(x => (x.checked = this.isAllSelected));
     this.leafletsService.updateStoreResults();
-  }
-
-  displayGazetka(){
-    return this.leafletsService.wybranaGazeta;
   }
 
   getStoresList() {
@@ -43,21 +75,28 @@ export class AdminListComponent implements OnInit{
     this.leafletsService.updateStoreResults();
   }
 
-  ngOnInit(): void {
-    if (this.leafletsService.storesList.length === 0) {
-      this.leafletsService.getLeaflets().subscribe(data => {
-        this.leafletsService.initStoreResults(data);
-      });
-    }
 
-    if(this.leafletsService.myListProduct.length === 0){
-      // @ts-ignore
-      let item: string = localStorage.getItem("lista");
-      console.log(item);
-      this.myList = JSON.parse(item);
-      this.leafletsService.myListProduct = JSON.parse(item);
-      // this.my = ;
-    }
+  ngOnInit(): void {
+    /* this.leafletsService.myListProduct = this.leafletsService.selectedProductsList;
+       if (this.leafletsService.storesList.length === 0) {
+         this.leafletsService.getLeaflets().subscribe(data => {
+           this.leafletsService.initStoreResults(data);
+         });
+       }*/
+
+    /* if(this.leafletsService.myListProduct.length === 0){
+       // @ts-ignore
+       let item: string = localStorage.getItem("lista");
+       console.log(item);
+       this.myList = JSON.parse(item);
+       this.leafletsService.myListProduct = JSON.parse(item);
+       // this.my = ;
+     }*/
+    this.leafletsService.getLeaflets().subscribe(data => {
+      console.log(data)
+      this.leafletsService.initStoreResults(data);
+    })
   }
+
 }
 

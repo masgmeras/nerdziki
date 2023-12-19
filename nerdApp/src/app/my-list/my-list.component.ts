@@ -17,12 +17,12 @@ export class MyListComponent implements OnInit {
   ngOnInit(): void {
     this.leafletsService.myListProduct = this.leafletsService.selectedProductsList;
   }
-
+/*
   remove(myProduct: string) {
     this.leafletsService.myListProduct = this.leafletsService.myListProduct.filter(e => e !== myProduct)
     this.leafletsService.removeProduct(myProduct);
     //this.leafletsService.updateStoreResults();
-  }
+  }*/
 
 }
 

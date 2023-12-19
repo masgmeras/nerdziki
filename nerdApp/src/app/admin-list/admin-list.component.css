@@ -3,7 +3,7 @@
     padding: 0;
     background-color: #A8D0E6;
     width: 100%;
-    height: 100vh;
+    height: 100%;
 }
 
 #dots {                                                /* kropki */
@@ -61,7 +61,7 @@
 
 
 .margin_list{
-  height: 100%;
+  height: auto;
   width: 20%;
   position: fixed;
   z-index: 1;
@@ -70,23 +70,27 @@
   overflow-x: hidden;
   padding-top: 60px;
     text-align: center;
+    overflow: sticky;
 }
 
 .button img {
   width: 60px;
   height: 60px;
 }
-
+.leaflets{
+display: inline-block;
+width: 250px;
+}
 
 #leaflets-my-list:hover img {/* lista */
   content: url("../../assets/images/button-row-second-color/lista2.png")
 }
 /**********************************************************/
 .box-leaflet {
-border: 2px solid gray;
 width:auto;
-height: 200px;
-  margin-left: 20%;
+margin-left: 20%;
+height: auto;
+background: #A8D0E6;
 }
 
 .mdc-checkbox {
@@ -104,3 +108,4 @@ display: inline-flex;
 visibility: hidden;
 position: absolute;
 }
+

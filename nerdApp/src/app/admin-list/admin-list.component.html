@@ -14,33 +14,74 @@
   </div>
 
   <div class="margin_list">
-  <div class="button" id="leaflets-my-list">
-    <img src="../assets/../assets/images/button-row-first-color/lista1.png" alt="Moja Lista">
-    <p>MOJA LISTA</p>
+    <div class="button" id="leaflets-my-list">
+      <img src="../assets/../assets/images/button-row-first-color/lista1.png" alt="Moja Lista">
+      <p>MOJA LISTA</p>
+    </div>
+
+    <!--<input (keyup.enter)="addProduct()" class="product-name" placeholder="Moja lista"  [(ngModel)]="mySelectProduct">
+   <ul>
+     <li *ngFor="let myProduct of myListProduct">
+       {{myProduct}}
+       <button (click)="remove(myProduct)">-</button>
+     </li></ul>-->
+
+    <input (keyup.enter)="addProduct()" class="product-name" placeholder="Moja lista"
+           [(ngModel)]="this.leafletsService.mySelectedProduct">
+    <ul>
+      <li *ngFor="let list of this.leafletsService.myListProduct">
+        {{list}}
+        <button (click)="remove(list)">-</button>
+      </li>
+    </ul>
+    <button  (click)="myLeaflet(selectedProductsList)">Szukaj po liscie</button>
   </div>
-  <ul>
-  <li *ngFor="let list of myList">
-    {{list}}
-    <button (click)="remove(list)">-</button>
-  </li>
-  </ul>
-    <button (click)="myLeaflet()">Szukaj po liscie</button>
+
+  <!--sklepy -->
+
+  <div class="shop-inline">
+    <input class="input_hidden" type="checkbox" checked [(ngModel)]="isAllSelected" (change)="setItAll()"/>
+    <div *ngFor="let store of getStoresList()">
+<!--      https://html.spec.whatwg.org/multipage/forms.html#the-label-element-->
+<!--      https://stackoverflow.com/questions/18609554/is-div-inside-label-block-correct-->
+<!--     TODO remove div inside label-->
+      <label class="pointer">
+        <input class="input_hidden" type="checkbox" [(ngModel)]="store.checked" (change)="updateStoreResults()"/>
+        <div [ngClass]="store.checked ? 'background-' + store.brand : 'background_shop'">
+          <div [ngClass]="store.checked ? 'shop-header-image-' + store.brand + '2' : 'shop-header-image-' + store.brand"></div>
+        </div>
+      </label>
+    </div>
+  </div>
+
+  <!------------------------------------------------------------------>
+<div *ngIf="selectedProductsList.length" class="box-leaflet">
+  <p>Test</p>
+<div  *ngFor="let gazetka of lista()" >
+
+  <div  *ngFor="let stronyZWybranymiProduktami of gazetka[0].specificFilteredLeaflets" >
+<!--      {{}}-->
+    <img style="min-height: 250px; min-width: 70%;" [src]="stronyZWybranymiProduktami.thumbnailUrl" alt="Leaflet logo">
+  </div>
+
+
+  <!--<div (change)="Leaflet()"></div>-->
+  <!-- <img style="min-height: 250px; min-width: 70%;" [src]="element?.thumbnailUrl" alt="Leaflet logo">-->
+</div>
 </div>
 
-
-    <div class="shop-inline" >
-      <input class="input_hidden" type="checkbox" checked [(ngModel)]="isAllSelected" (change)="setItAll()"/>
-      <div *ngFor="let store of getStoresList()">
-        <label class="pointer">
-          <input class="input_hidden" type="checkbox" [(ngModel)]="store.checked" (change)="updateStoreResults()"/>
-          <div [ngClass]="store.checked ? 'background-' + store.brand : 'background_shop'"><div [ngClass]="store.checked ? 'shop-header-image-' + store.brand + '2' : 'shop-header-image-' + store.brand"></div>
-          </div></label></div>
-  </div>
+  <!------------------------------------------------------------------>
 
   <div class="box-leaflet">
     <p>GAZAETKI</p>
-    <div>
-      {{displayGazetka() | json }}
+    <div class="leaflets" *ngFor="let choose of displayGazetka()">
+     <img style="min-height: 250px; min-width: 70%;" [src]="choose?.thumbnailUrl" alt="Leaflet logo">
     </div>
+
+    dupa - {{ selectedProductsList }}
+    <div *ngFor="let el of selectedProductsList">
+      {{ el }}
+    </div>
+
   </div>
 </div>

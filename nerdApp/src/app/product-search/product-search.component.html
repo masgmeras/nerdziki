@@ -1,7 +1,8 @@
 <div class="search-box">
-  <input (keyup.enter)="addProduct()" type="text" placeholder="Wyszukaj produkt"
+  <input type="text"   placeholder="Wyszukaj produkt"
          [(ngModel)]="this.leafletsService.selectedProduct"
-         (ngModelChange)="this.userProductSearchUpdate.next($event)"/>
-         <i class="fa-solid fa-magnifying-glass" style="color: #8e8d8a;"></i>
+         (ngModelChange)="this.userProductSearchUpdate.next($event)"/><!--(keyup.enter)="addProduct()"-->
+  <img id="search-img" src="../assets/images/loupe.png" alt="Szukajka">
+  <i class="fa-solid fa-magnifying-glass" style="color: #8e8d8a;"></i>
   <button id="search-add" (click)="addProduct()"><i class="fa-solid fa-plus" style="color: #8e8d8a;"></i></button>
 </div>

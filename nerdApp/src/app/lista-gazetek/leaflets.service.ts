@@ -17,9 +17,11 @@ export class LeafletsService {
   selectedProductsList: string[] = [];
   selectedProductCategory: string[]=[];
   myListProduct: Array<string> = [];
-  categoriesList: CategoriesListModel[] = [];              /////////////////////////////////////////
-
+  categoriesList: CategoriesListModel[] = [];
+   mySelectedProduct: string = '';
   wybranaGazeta: LeafletModel[] = [];
+selectedLeaflet: LeafletModel[] = [];////////////////////////////////////
+
 
   constructor(private http: HttpClient) {
   }
@@ -42,15 +44,35 @@ export class LeafletsService {
   setWybranaGazeta(lista: LeafletModel[] ){
   this.wybranaGazeta = lista;
 }
+/******************************************************/
+  setLeaflet(lista: LeafletModel[]){
+  this.selectedLeaflet = lista;
+  }
 
-  addProduct(itemToAdd: string) {
-    this.selectedProductsList.push(itemToAdd);
-    this.updateStoreResults();
+listLeaflet(){
+let cos = [];
+for (let leafletModel of this.selectedLeaflet) {
+cos.push(...leafletModel.thumbnailUrl)
+}
+this.myListProduct = this.selectedProductsList;
+this.selectedProductsList = cos;
+}
+
+
+
+/******************************************************/
+  addProduct() {
+   this.myListProduct.push(this.mySelectedProduct);
+   this.mySelectedProduct = '';
+   // this.selectedProductsList.push(itemToAdd);
+   // this.updateStoreResults();
+
   }
 
   removeProduct(itemToRemove: string) {
-    this.selectedProductsList = this.selectedProductsList.filter(i => i !== itemToRemove);
-    this.updateStoreResults();
+    this.myListProduct =  this.myListProduct.filter(i => i !== itemToRemove);
+   //this.selectedProductsList = this.selectedProductsList.filter(i => i !== itemToRemove);
+    //this.updateStoreResults();
   }
 
   initStoreResults(data: LeafletModel[]) {
@@ -67,17 +89,19 @@ export class LeafletsService {
 
 
   listCategories() {
+    let x = this.categoriesList.map(x=> x.categories);
     let selectedListsOfCategories = [];
     for (let categoriesListModel of this.categoriesList.filter(x => x.checked)) {
       selectedListsOfCategories.push(...categoriesListModel.listOfCategories);
     }
     this.selectedProductCategory = selectedListsOfCategories;
-    //console.log(this.selectedProductCategory)
+
     this.updateStoreResults();
+
   }
 
 
-  updateStoreResults() {
+  updateStoreResults(includeMyList = false) {
     const selectedBrands: string[] = this.storesList.filter(x => x.checked).map(x => x.brand);
     let selectedBrandFilter = (x: LeafletModel[]) => x.some(x => selectedBrands.includes(x.brand));
     const deepCopyOfGroupedLeaflets = JSON.parse(JSON.stringify(this.groupedLeafletsListByPageUrl));
@@ -85,8 +109,9 @@ export class LeafletsService {
     if (this.selectedProduct !== '') {
       this.countOccurances([this.selectedProduct]);
     }
-    if (this.selectedProductsList.length) {
-      this.countOccurances(this.selectedProductsList);
+    if (includeMyList && this.myListProduct.length) {
+      console.log('weszlem');
+      this.countOccurances(this.myListProduct);
     }
     if (this.selectedProductCategory.length){
      this.countOccurances(this.selectedProductCategory);
@@ -100,7 +125,7 @@ export class LeafletsService {
       leaflet[0].occursOnPage = 0;
 
       leaflet.forEach(leafletPage => {
-        selectedProducts.forEach(product => {  /// TODO ???
+        selectedProducts.forEach(product => {
           if (leafletPage.ocrResult.includes(product)) {
             leaflet[0].specificFilteredLeaflets.push(leafletPage);
             leaflet[0].occursOnPage = leaflet[0].specificFilteredLeaflets.length;
@@ -110,46 +135,6 @@ export class LeafletsService {
     }
     this.filteredGroupedLeafletsListByPageUrl = this.filteredGroupedLeafletsListByPageUrl.filter(x => x[0].occursOnPage > 0);
   }
-/*
- updateStoreResults() {
-    const selectedBrands: string[] = this.storesList.filter(x => x.checked).map(x => x.brand);
-    let selectedBrandFilter = (x: LeafletModel[]) => x.some(x => selectedBrands.includes(x.brand));
-    const deepCopyOfGroupedLeaflets = JSON.parse(JSON.stringify(this.groupedLeafletsListByPageUrl));
-    this.filteredGroupedLeafletsListByPageUrl = deepCopyOfGroupedLeaflets.filter(selectedBrandFilter);
-        let filterProduct;
-        if (this.selectedProduct) {
-            let temp = [];
-            for (let filteredGroupedLeafletsListByPageUrlElement of this.filteredGroupedLeafletsListByPageUrl) {
-                for (let leafletModel of filteredGroupedLeafletsListByPageUrlElement) {
-                    if (leafletModel.ocrResult.includes(this.selectedProduct)) {
-                        temp.push(filteredGroupedLeafletsListByPageUrlElement);
-                    }
-                }
-            }
-            this.filteredGroupedLeafletsListByPageUrl = temp;
-        }
-
-        if (this.selectedProductsList.length) {
-            for (let leaflet of this.filteredGroupedLeafletsListByPageUrl) {
-                leaflet[0].specificFilteredLeaflets = [];
-                leaflet[0].occursOnPage = 0;
-                for (let leafletPage of leaflet) {
-                    for (let product of this.selectedProductsList) {
-                        if (leafletPage.ocrResult.includes(product)) {
-                            leaflet[0].specificFilteredLeaflets.push(leafletPage);
-                            leaflet[0].occursOnPage = leaflet[0].specificFilteredLeaflets.length;
-                        }
-                    }
-                }
-
-            }
-        }
-
-    }
-
-    private countOccurances(singleLeaflet: LeafletModel[]) {
-    }*/
-
 
   private createGroupedLeaflets(leafletsList: LeafletModel[]) {
     const groupByPageUrl = this.groupBy(leafletsList, "pageUrl");
